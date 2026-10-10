@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+X-Nemo-Application-Type=silica-qt5
+Icon=harbour-inari-blue-notifier
+Exec=harbour-inari-blue-notifier
+Name=Inari Blue Notifier
+
+[X-Sailjail]
+OrganizationName=dev.rikudou
+ApplicationName=inari-blue-notifier
+Permissions=AppLaunch
