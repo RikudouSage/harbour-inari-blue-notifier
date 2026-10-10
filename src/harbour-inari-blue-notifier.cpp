@@ -12,6 +12,8 @@
 
 #include <sailfishapp.h>
 
+#include "appsettings.h"
+
 constexpr auto TRANSLATION_INSTALL_DIR = "/usr/share/harbour-inari-blue-notifier/translations";
 
 namespace {
@@ -91,6 +93,9 @@ int main(int argc, char *argv[])
         qWarning() << "Could not load translations for" << QLocale::system().name();
     }
     QCoreApplication::installTranslator(translator);
+
+    AppSettings *appSettings = new AppSettings(app.data());
+    v->rootContext()->setContextProperty("appSettings", appSettings);
 
     v->setSource(SailfishApp::pathToMainQml());
     v->show();

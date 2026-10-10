@@ -5,6 +5,7 @@ import "pages"
 
 ApplicationWindow {
     property string unitActiveState
+    property bool serviceNeedsRestart: false
 
     id: app
 

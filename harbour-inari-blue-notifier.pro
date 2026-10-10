@@ -14,12 +14,16 @@ TARGET = harbour-inari-blue-notifier
 
 CONFIG += sailfishapp
 
-SOURCES += src/harbour-inari-blue-notifier.cpp
+SOURCES += src/harbour-inari-blue-notifier.cpp \
+    src/appsettings.cpp
 
 DISTFILES += qml/harbour-inari-blue-notifier.qml \
+    qml/components/ServiceRestartNotice.qml \
     qml/components/StandardLabel.qml \
     qml/cover/CoverPage.qml \
     qml/pages/MainPage.qml \
+    qml/pages/PatternSelectorPage.qml \
+    qml/pages/PatternsPage.qml \
     rpm/harbour-inari-blue-notifier.changes.in \
     rpm/harbour-inari-blue-notifier.changes.run.in \
     rpm/harbour-inari-blue-notifier.spec \
@@ -38,3 +42,7 @@ CONFIG += sailfishapp_i18n sailfishapp_i18n_idbased
 # modify the localized app name in the the .desktop file.
 TRANSLATIONS += translations/harbour-inari-blue-notifier-en.ts \
                 translations/harbour-inari-blue-notifier-cs.ts
+
+HEADERS += \
+    src/appsettings.h \
+    src/defer.h
