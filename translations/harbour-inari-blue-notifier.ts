@@ -9,7 +9,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message id="main.intro">
-        <source>Using the pull down menu app you can control whether the background process blinking your Inari Blue on events like incoming calls is running or not.</source>
+        <source>Using the pull down menu app you can configure the patterns and control the active state of the background process.</source>
+        <oldsource>Using the pull down menu app you can control whether the background process blinking your Inari Blue on events like incoming calls is running or not.</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message id="main.current_status">
@@ -42,6 +43,34 @@
     </message>
     <message id="main.activate">
         <source>Start notifier</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="patterns.title">
+        <source>Patterns</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="patterns.active">
+        <source>Active patterns</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="patterns.active.call">
+        <source>Active call pattern</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="pattern_selector.title">
+        <source>Choose a pattern</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="patterns.not_found">
+        <source>A pattern with the name &apos;%1&apos; was not found.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="service_restart_notice.title">
+        <source>Service restart required</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="service_restart_notice.message">
+        <source>Restart the service to apply your changes.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

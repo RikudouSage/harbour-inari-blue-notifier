@@ -31,9 +31,17 @@ Page {
         contentHeight: column.height
 
         PullDownMenu {
-            visible: unitActiveState == "active" || unitActiveState == "inactive"
 
             MenuItem {
+                //% "Patterns"
+                text: qsTrId("patterns.title")
+                onClicked: {
+                    pageStack.push("PatternsPage.qml")
+                }
+            }
+
+            MenuItem {
+                visible: unitActiveState == "active" || unitActiveState == "inactive"
                 text: unitActiveState == "active"
                         //% "Stop notifier"
                         ? qsTrId("main.deactivate")
@@ -46,6 +54,7 @@ Page {
                             "inari-blue-notifier-daemon.service",
                             "replace"
                         ]);
+                        app.serviceNeedsRestart = false;
                         return;
                     }
 
@@ -70,8 +79,12 @@ Page {
                 title: qsTrId("app.name")
             }
 
+            ServiceRestartNotice {
+                visible: app.serviceNeedsRestart
+            }
+
             StandardLabel {
-                //% "Using the pull down menu app you can control whether the background process blinking your Inari Blue on events like incoming calls is running or not."
+                //% "Using the pull down menu app you can configure the patterns and control the active state of the background process."
                 text: qsTrId("main.intro")
             }
 
