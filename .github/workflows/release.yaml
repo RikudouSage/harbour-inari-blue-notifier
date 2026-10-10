@@ -1,0 +1,77 @@
+name: Build RPMs
+
+on:
+  push:
+    tags:
+      - 'v*'
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+  workflow_dispatch:
+
+env:
+  OS_VERSION: 5.2.0.15
+
+permissions:
+  actions: read
+  contents: write
+  pull-requests: read
+
+jobs:
+  build:
+    name: Build App
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        arch: [aarch64]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          submodules: recursive
+
+      - name: Prepare
+        run: docker pull coderus/sailfishos-platform-sdk:$OS_VERSION && mkdir -p output && chmod 777 output
+
+      - name: Build ${{ matrix.arch }}
+        run: >-
+          docker run --rm --privileged -v $PWD:/share
+          coderus/sailfishos-platform-sdk:$OS_VERSION /bin/bash -c "
+          mkdir -p build ;
+          cd build ;
+          cp -r /share/* . ;
+          mb2 -t SailfishOS-$OS_VERSION-${{ matrix.arch }} build ;
+          cp -r RPMS/*.rpm /share/output"
+
+      - name: Upload RPM (${{ matrix.arch }})
+        uses: actions/upload-artifact@v7
+        with:
+          name: rpm-${{ matrix.arch }}
+          path: output
+
+  release:
+    name: Release
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download aarch64 RPM
+        uses: actions/download-artifact@v8
+        with:
+          name: rpm-aarch64
+          path: release-rpms/aarch64
+
+      - name: Create GitHub release
+        uses: softprops/action-gh-release@v3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          name: ${{ github.ref_name }}
+          draft: false
+          prerelease: false
+          generate_release_notes: true
+          files: release-rpms/**/*.rpm
