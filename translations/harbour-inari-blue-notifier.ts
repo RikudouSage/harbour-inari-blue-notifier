@@ -1,11 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="en">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="en">
 <context>
-    <name></name>
+    <name/>
     <message id="app.name">
         <source>Inari Blue Notifier</source>
-        <extracomment>The app name, you may or may not translate it, it&apos;s up to you.</extracomment>
+        <extracomment>The app name, you may or may not translate it, it's up to you.</extracomment>
         <translation>Inari Blue Notifier</translation>
     </message>
     <message id="main.intro">
@@ -136,20 +134,20 @@
     <message id="edit_pattern.channels">
         <source>Channels</source>
         <extracomment>The LED channels that will be used in the pattern</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Channels</translation>
     </message>
     <message id="edit_pattern.all_channels">
         <source>All channels</source>
-        <translation type="unfinished"></translation>
+        <translation>All channels</translation>
     </message>
     <message id="edit_pattern.channel">
         <source>Channel #%1</source>
         <extracomment>The index of the channel</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Channel #%1</translation>
     </message>
     <message id="edit_pattern.channel_0_required">
         <source>Note that channel 0 will always be used even if you disable, the Inari Blue does not light up any channels if the channel #0 is not also present.</source>
-        <translation type="unfinished"></translation>
+        <translation>Note that channel 0 will always be used even if you disable, the Inari Blue does not light up any channels if the channel #0 is not also present.</translation>
     </message>
 </context>
 </TS>
