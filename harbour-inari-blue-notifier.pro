@@ -26,11 +26,16 @@ DISTFILES += qml/harbour-inari-blue-notifier.qml \
     qml/pages/MainPage.qml \
     qml/pages/PatternSelectorPage.qml \
     qml/pages/PatternsPage.qml \
+    rpm/InariBlueNotifier.permission \
     rpm/harbour-inari-blue-notifier.changes.in \
     rpm/harbour-inari-blue-notifier.changes.run.in \
     rpm/harbour-inari-blue-notifier.spec \
     translations/*.ts \
     harbour-inari-blue-notifier.desktop
+
+sailjail_permission.path = /etc/sailjail/permissions
+sailjail_permission.files = rpm/InariBlueNotifier.permission
+INSTALLS += sailjail_permission
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
 

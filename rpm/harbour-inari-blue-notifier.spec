@@ -31,7 +31,6 @@ A controller for the Inari Blue Notifier
 %install
 %qmake5_install
 
-
 desktop-file-install --delete-original         --dir %{buildroot}%{_datadir}/applications                %{buildroot}%{_datadir}/applications/*.desktop
 
 %files
@@ -40,3 +39,4 @@ desktop-file-install --delete-original         --dir %{buildroot}%{_datadir}/app
 %{_datadir}/%{name}
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
+%{_sysconfdir}/sailjail/permissions/InariBlueNotifier.permission
