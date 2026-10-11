@@ -32,7 +32,7 @@
     </message>
     <message id="patterns.title">
         <location filename="../qml/pages/MainPage.qml" line="37"/>
-        <location filename="../qml/pages/PatternsPage.qml" line="23"/>
+        <location filename="../qml/pages/PatternsPage.qml" line="24"/>
         <source>Patterns</source>
         <translation>Patterns</translation>
     </message>
@@ -63,19 +63,24 @@
         <translation>Right now the app is rather simple, but no worries, more is coming!</translation>
     </message>
     <message id="patterns.active">
-        <location filename="../qml/pages/PatternsPage.qml" line="32"/>
+        <location filename="../qml/pages/PatternsPage.qml" line="33"/>
         <source>Active patterns</source>
         <translation>Active patterns</translation>
     </message>
     <message id="patterns.active.call">
-        <location filename="../qml/pages/PatternsPage.qml" line="37"/>
+        <location filename="../qml/pages/PatternsPage.qml" line="38"/>
         <source>Active call pattern</source>
         <translation>Active call pattern</translation>
     </message>
     <message id="patterns.not_found">
-        <location filename="../qml/pages/PatternsPage.qml" line="48"/>
+        <location filename="../qml/pages/PatternsPage.qml" line="49"/>
         <source>A pattern with the name &apos;%1&apos; was not found.</source>
         <translation>A pattern with the name &apos;%1&apos; was not found.</translation>
+    </message>
+    <message id="patterns.stored">
+        <location filename="../qml/pages/PatternsPage.qml" line="67"/>
+        <source>All patterns</source>
+        <translation>All patterns</translation>
     </message>
     <message id="pattern_selector.title">
         <location filename="../qml/pages/PatternSelectorPage.qml" line="15"/>

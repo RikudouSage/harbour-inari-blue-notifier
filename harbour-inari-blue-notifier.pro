@@ -11,11 +11,13 @@
 
 # The name of your application
 TARGET = harbour-inari-blue-notifier
+QT += dbus
 
 CONFIG += sailfishapp
 
 SOURCES += src/harbour-inari-blue-notifier.cpp \
-    src/appsettings.cpp
+    src/appsettings.cpp \
+    src/daemoncontroller.cpp
 
 DISTFILES += qml/harbour-inari-blue-notifier.qml \
     qml/components/ServiceRestartNotice.qml \
@@ -45,4 +47,5 @@ TRANSLATIONS += translations/harbour-inari-blue-notifier-en.ts \
 
 HEADERS += \
     src/appsettings.h \
+    src/daemoncontroller.h \
     src/defer.h
