@@ -33,6 +33,10 @@ DISTFILES += qml/harbour-inari-blue-notifier.qml \
     translations/*.ts \
     harbour-inari-blue-notifier.desktop
 
+sailjail_permission.path = /etc/sailjail/permissions
+sailjail_permission.files = rpm/InariBlueNotifier.permission
+INSTALLS += sailjail_permission
+
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
 
 # to disable building translations every time, comment out the

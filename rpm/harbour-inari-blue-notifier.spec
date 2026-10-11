@@ -31,8 +31,6 @@ A controller for the Inari Blue Notifier
 %install
 %qmake5_install
 
-install -Dm644 rpm/InariBlueNotifier.permission %{buildroot}%{_sysconfdir}/sailjail/permissions/InariBlueNotifier.permission
-
 desktop-file-install --delete-original         --dir %{buildroot}%{_datadir}/applications                %{buildroot}%{_datadir}/applications/*.desktop
 
 %files
