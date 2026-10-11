@@ -4,6 +4,7 @@ import Sailfish.Silica 1.0
 import "../components"
 
 Page {
+    property bool anyPlaying: false
     property string errorText
 
     id: page
@@ -59,6 +60,65 @@ Page {
                 visible: errorText !== ''
                 text: errorText
                 color: Theme.errorColor
+            }
+
+            SectionHeader {
+                //% "All patterns"
+                text: qsTrId("patterns.stored")
+            }
+
+            Repeater {
+                model: appSettings.storedPatterns
+
+                ListItem {
+                    id: patternItem
+                    property bool playing: false
+
+                    contentHeight: Theme.itemSizeSmall
+
+                    Label {
+                        anchors {
+                            left: parent.left
+                            leftMargin: Theme.horizontalPageMargin
+                            right: playButton.left
+                            rightMargin: Theme.paddingMedium
+                            verticalCenter: parent.verticalCenter
+                        }
+                        text: modelData.name
+                        truncationMode: TruncationMode.Fade
+                    }
+
+                    IconButton {
+                        enabled: !anyPlaying || patternItem.playing
+
+                        id: playButton
+                        anchors {
+                            right: parent.right
+                            rightMargin: Theme.paddingMedium
+                            verticalCenter: parent.verticalCenter
+                        }
+                        icon.source: patternItem.playing
+                                     ? "image://theme/icon-m-stop"
+                                     : "image://theme/icon-m-play"
+                        onClicked: {
+                            patternItem.playing = !patternItem.playing;
+                            anyPlaying = patternItem.playing;
+
+                            if (patternItem.playing) {
+                                daemon.playPattern(modelData);
+                            } else {
+                                daemon.stopPlaying();
+                            }
+                        }
+                    }
+
+                    /*menu: ContextMenu {
+                        MenuItem {
+                            //% "Edit"
+                            text: qsTrId("patterns.edit")
+                        }
+                    }*/
+                }
             }
         }
     }

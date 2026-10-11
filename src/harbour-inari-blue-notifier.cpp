@@ -13,6 +13,7 @@
 #include <sailfishapp.h>
 
 #include "appsettings.h"
+#include "daemoncontroller.h"
 
 constexpr auto TRANSLATION_INSTALL_DIR = "/usr/share/harbour-inari-blue-notifier/translations";
 
@@ -95,7 +96,10 @@ int main(int argc, char *argv[])
     QCoreApplication::installTranslator(translator);
 
     AppSettings *appSettings = new AppSettings(app.data());
+    DaemonController *controller = new DaemonController(app.data());
+
     v->rootContext()->setContextProperty("appSettings", appSettings);
+    v->rootContext()->setContextProperty("daemon", controller);
 
     v->setSource(SailfishApp::pathToMainQml());
     v->show();
