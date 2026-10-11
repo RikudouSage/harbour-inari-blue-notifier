@@ -11,7 +11,7 @@ Dialog {
         return name !== originalName;
     });
     property string originalName
-    property var pattern: ({name: '', rise: 0, hold: 0, decay: 0, off: 0, delay: 0, repeat: 0, brightness: 255})
+    property var pattern: ({name: '', rise: 0, hold: 0, decay: 0, off: 0, delay: 0, repeat: 0, brightness: 255, channels: []})
     id: page
 
     function convertToMs(value) {
@@ -123,6 +123,57 @@ Dialog {
                 onValueChanged: pattern.brightness = Math.round(Math.max(0, Math.min(100, value)) / 100 * 255);
             }
 
+            SectionHeader {
+                //: The LED channels that will be used in the pattern
+                //% "Channels"
+                text: qsTrId("edit_pattern.channels")
+            }
+
+            TextSwitch {
+                id: allChannelsSwitch
+                //% "All channels"
+                text: qsTrId("edit_pattern.all_channels")
+
+                onCheckedChanged: {
+                    if (checked) {
+                        pattern.channels = [];
+                    } else {
+                        pattern.channels = [0, 1, 2];
+                    }
+
+                    // do not remove, this needs to be here
+                    pattern = pattern
+                }
+            }
+
+            Repeater {
+                model: [0, 1, 2]
+
+                TextSwitch {
+                    //: The index of the channel
+                    //% "Channel #%1"
+                    text: qsTrId("edit_pattern.channel").arg(modelData)
+                    //% "Note that channel 0 will always be used even if you disable, the Inari Blue does not light up any channels if the channel #0 is not also present."
+                    description: modelData === 0 ? qsTrId("edit_pattern.channel_0_required") : ''
+                    enabled: !allChannelsSwitch.checked
+                    checked: pattern.channels ? pattern.channels.indexOf(modelData) > -1 : false
+                    onCheckedChanged: {
+                        if (checked) {
+                            if (pattern.channels.indexOf(modelData) === -1) {
+                                pattern.channels.push(modelData);
+                            }
+                        } else {
+                            pattern.channels = pattern.channels.filter(function(channelNo) {
+                                return channelNo !== modelData;
+                            });
+                        }
+
+                        // do not remove, this needs to be here
+                        pattern = pattern
+                    }
+                }
+            }
+
             ListItem {
                 id: previewItem
                 width: parent.width
@@ -167,6 +218,13 @@ Dialog {
     Component.onCompleted: {
         if (pattern.name) {
             originalName = pattern.name;
+        }
+        if (typeof pattern.channels === 'undefined') {
+            pattern.channels = [];
+        }
+        // needs to be here to prevent parameter binding
+        if (pattern.channels.length === 0) {
+            allChannelsSwitch.checked = true;
         }
     }
 }
