@@ -162,8 +162,30 @@
         <source>Brightness</source>
         <translation>Brightness</translation>
     </message>
+    <message id="edit_pattern.channels">
+        <location filename="../qml/pages/EditPatternPage.qml" line="129"/>
+        <source>Channels</source>
+        <extracomment>The LED channels that will be used in the pattern</extracomment>
+        <translation>Channels</translation>
+    </message>
+    <message id="edit_pattern.all_channels">
+        <location filename="../qml/pages/EditPatternPage.qml" line="135"/>
+        <source>All channels</source>
+        <translation>All channels</translation>
+    </message>
+    <message id="edit_pattern.channel">
+        <location filename="../qml/pages/EditPatternPage.qml" line="155"/>
+        <source>Channel #%1</source>
+        <extracomment>The index of the channel</extracomment>
+        <translation>Channel #%1</translation>
+    </message>
+    <message id="edit_pattern.channel_0_required">
+        <location filename="../qml/pages/EditPatternPage.qml" line="157"/>
+        <source>Note that channel 0 will always be used even if you disable, the Inari Blue does not light up any channels if the channel #0 is not also present.</source>
+        <translation>Note that channel 0 will always be used even if you disable, the Inari Blue does not light up any channels if the channel #0 is not also present.</translation>
+    </message>
     <message id="edit_pattern.preview">
-        <location filename="../qml/pages/EditPatternPage.qml" line="149"/>
+        <location filename="../qml/pages/EditPatternPage.qml" line="201"/>
         <source>Preview</source>
         <translation>Preview</translation>
     </message>
