@@ -144,7 +144,7 @@ Page {
                             text: qsTrId("patterns.remove")
                             onClicked: {
                                 remorseDelete(function() {
-                                    const patterns = appSettings.storedPatterns;
+                                    var patterns = appSettings.storedPatterns;
                                     patterns = patterns.filter(function(pattern) {
                                         return pattern.name !== modelData.name;
                                     });
