@@ -14,6 +14,19 @@ Page {
         anchors.fill: parent
         contentHeight: column.height
 
+        PullDownMenu {
+            MenuItem {
+                //% "Add a pattern"
+                text: qsTrId("patterns.add")
+                onClicked: {
+                    const dialog = pageStack.push("EditPatternPage.qml");
+                    dialog.accepted.connect(function() {
+                        appSettings.updatePattern(dialog.pattern);
+                    });
+                }
+            }
+        }
+
         Column {
             id: column
             spacing: Theme.paddingLarge
@@ -112,12 +125,34 @@ Page {
                         }
                     }
 
-                    /*menu: ContextMenu {
+                    menu: ContextMenu {
                         MenuItem {
-                            //% "Edit"
-                            text: qsTrId("patterns.edit")
+                            //% "Edit pattern"
+                            text: qsTrId("edit_pattern.title")
+                            onClicked: {
+                                const dialog = pageStack.push("EditPatternPage.qml", {
+                                    pattern: modelData
+                                });
+                                dialog.accepted.connect(function() {
+                                    appSettings.updatePattern(dialog.pattern, modelData.name);
+                                });
+                            }
                         }
-                    }*/
+
+                        MenuItem {
+                            //% "Remove"
+                            text: qsTrId("patterns.remove")
+                            onClicked: {
+                                remorseDelete(function() {
+                                    var patterns = appSettings.storedPatterns;
+                                    patterns = patterns.filter(function(pattern) {
+                                        return pattern.name !== modelData.name;
+                                    });
+                                    appSettings.storedPatterns = patterns;
+                                });
+                            }
+                        }
+                    }
                 }
             }
         }

@@ -20,9 +20,12 @@ SOURCES += src/harbour-inari-blue-notifier.cpp \
     src/daemoncontroller.cpp
 
 DISTFILES += qml/harbour-inari-blue-notifier.qml \
+    qml/components/DurationInput.qml \
     qml/components/ServiceRestartNotice.qml \
     qml/components/StandardLabel.qml \
     qml/cover/CoverPage.qml \
+    qml/js/colors.js \
+    qml/pages/EditPatternPage.qml \
     qml/pages/MainPage.qml \
     qml/pages/PatternSelectorPage.qml \
     qml/pages/PatternsPage.qml \
