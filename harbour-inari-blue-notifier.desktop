@@ -8,4 +8,4 @@ Name=Inari Blue Notifier
 [X-Sailjail]
 OrganizationName=dev.rikudou
 ApplicationName=inari-blue-notifier
-Permissions=AppLaunch
+Permissions=AppLaunch;InariBlueNotifier

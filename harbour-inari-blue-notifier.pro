@@ -26,6 +26,7 @@ DISTFILES += qml/harbour-inari-blue-notifier.qml \
     qml/pages/MainPage.qml \
     qml/pages/PatternSelectorPage.qml \
     qml/pages/PatternsPage.qml \
+    rpm/InariBlueNotifier.permission \
     rpm/harbour-inari-blue-notifier.changes.in \
     rpm/harbour-inari-blue-notifier.changes.run.in \
     rpm/harbour-inari-blue-notifier.spec \

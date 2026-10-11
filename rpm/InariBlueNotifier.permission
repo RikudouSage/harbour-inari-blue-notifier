@@ -1,0 +1,6 @@
+# x-sailjail-description = Control Inari Blue Notifier
+# x-sailjail-long-description = Allow controlling the Inari Blue Notifier daemon.
+
+dbus-user.talk dev.rikudou.InariBlueNotifier
+dbus-user.call dev.rikudou.InariBlueNotifier=dev.rikudou.InariBlueNotifier.PlayPattern@/dev/rikudou/InariBlueNotifier
+dbus-user.call dev.rikudou.InariBlueNotifier=dev.rikudou.InariBlueNotifier.Stop@/dev/rikudou/InariBlueNotifier
