@@ -25,6 +25,9 @@ Dialog {
                 && offField.acceptableInput
                 && delayField.acceptableInput
 
+    onRejected: daemon.stopPlaying();
+    onAccepted: daemon.stopPlaying();
+
     SilicaFlickable {
         id: flickable
         anchors.fill: parent
@@ -118,6 +121,45 @@ Dialog {
                 value: Math.round((pattern.brightness / 255) * 100);
                 valueText: value + "%"
                 onValueChanged: pattern.brightness = Math.round(Math.max(0, Math.min(100, value)) / 100 * 255);
+            }
+
+            ListItem {
+                id: previewItem
+                width: parent.width
+                contentHeight: Theme.itemSizeMedium
+                property bool playing: false
+
+                function togglePlayback() {
+                    playing = !playing
+
+                    if (playing) {
+                        daemon.playPattern(pattern)
+                    } else {
+                        daemon.stopPlaying()
+                    }
+                }
+
+                Row {
+                    anchors.centerIn: parent
+                    spacing: Theme.paddingMedium
+
+                    Label {
+                        anchors.verticalCenter: parent.verticalCenter
+                        //% "Preview"
+                        text: qsTrId("edit_pattern.preview")
+                        font.pixelSize: Theme.fontSizeLarge
+                    }
+
+                    IconButton {
+                        id: previewButton
+                        icon.source: previewItem.playing
+                                     ? "image://theme/icon-m-stop"
+                                     : "image://theme/icon-m-play"
+                        onClicked: previewItem.togglePlayback()
+                    }
+                }
+
+                onClicked: togglePlayback()
             }
         }
     }

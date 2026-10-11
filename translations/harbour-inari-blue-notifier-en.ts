@@ -113,54 +113,59 @@
         <translation>Edit pattern</translation>
     </message>
     <message id="app.save">
-        <location filename="../qml/pages/EditPatternPage.qml" line="40"/>
+        <location filename="../qml/pages/EditPatternPage.qml" line="43"/>
         <source>Save</source>
         <translation>Save</translation>
     </message>
     <message id="edit_pattern.name">
-        <location filename="../qml/pages/EditPatternPage.qml" line="46"/>
+        <location filename="../qml/pages/EditPatternPage.qml" line="49"/>
         <source>Name</source>
         <translation>Name</translation>
     </message>
     <message id="edit_pattern.warning_name">
-        <location filename="../qml/pages/EditPatternPage.qml" line="53"/>
+        <location filename="../qml/pages/EditPatternPage.qml" line="56"/>
         <source>Warning: A pattern with that name already exists, if you save it you will overwrite the existing pattern.</source>
         <translation>Warning: A pattern with that name already exists, if you save it you will overwrite the existing pattern.</translation>
     </message>
     <message id="edit_pattern.rise">
-        <location filename="../qml/pages/EditPatternPage.qml" line="60"/>
+        <location filename="../qml/pages/EditPatternPage.qml" line="63"/>
         <source>Fade-in duration (ms)</source>
         <translation>Fade-in duration (ms)</translation>
     </message>
     <message id="edit_pattern.hold">
-        <location filename="../qml/pages/EditPatternPage.qml" line="68"/>
+        <location filename="../qml/pages/EditPatternPage.qml" line="71"/>
         <source>On duration (ms)</source>
         <translation>On duration (ms)</translation>
     </message>
     <message id="edit_pattern.decay">
-        <location filename="../qml/pages/EditPatternPage.qml" line="76"/>
+        <location filename="../qml/pages/EditPatternPage.qml" line="79"/>
         <source>Fade-out duration (ms)</source>
         <translation>Fade-out duration (ms)</translation>
     </message>
     <message id="edit_pattern.off">
-        <location filename="../qml/pages/EditPatternPage.qml" line="84"/>
+        <location filename="../qml/pages/EditPatternPage.qml" line="87"/>
         <source>Off duration (ms)</source>
         <translation>Off duration (ms)</translation>
     </message>
     <message id="edit_pattern.delay">
-        <location filename="../qml/pages/EditPatternPage.qml" line="92"/>
+        <location filename="../qml/pages/EditPatternPage.qml" line="95"/>
         <source>Start delay (ms)</source>
         <translation>Start delay (ms)</translation>
     </message>
     <message id="edit_pattern.repeat">
-        <location filename="../qml/pages/EditPatternPage.qml" line="100"/>
+        <location filename="../qml/pages/EditPatternPage.qml" line="103"/>
         <source>Repeat count</source>
         <translation>Repeat count</translation>
     </message>
     <message id="edit_pattern.brightness">
-        <location filename="../qml/pages/EditPatternPage.qml" line="113"/>
+        <location filename="../qml/pages/EditPatternPage.qml" line="116"/>
         <source>Brightness</source>
         <translation>Brightness</translation>
+    </message>
+    <message id="edit_pattern.preview">
+        <location filename="../qml/pages/EditPatternPage.qml" line="149"/>
+        <source>Preview</source>
+        <translation>Preview</translation>
     </message>
 </context>
 </TS>
