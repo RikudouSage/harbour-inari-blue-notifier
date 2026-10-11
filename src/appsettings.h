@@ -23,6 +23,7 @@ public:
     void setCallPattern(const QJsonObject &value);
 
     Q_INVOKABLE QJsonObject patternByName(const QString &name);
+    Q_INVOKABLE void updatePattern(const QJsonObject &value, const QString &oldName = "");
 
 signals:
     void storedPatternsChanged();

@@ -134,3 +134,38 @@ QJsonObject AppSettings::patternByName(const QString &name)
 
     return QJsonObject();
 }
+
+void AppSettings::updatePattern(const QJsonObject &value, const QString &oldName)
+{
+    auto patterns = storedPatterns();
+    if (oldName != "" && value["name"].toString() != oldName) {
+        for (auto i = 0; i < patterns.size(); ++i) {
+            const auto pattern = patterns.at(i);
+            if (pattern.toObject()["name"].toString() == oldName) {
+                patterns.removeAt(i);
+                break;
+            }
+        }
+    }
+
+    auto existing = false;
+    for (auto i = 0; i < patterns.size(); ++i) {
+        const auto stored = patterns.at(i);
+        if (stored.toObject()["name"].toString() != value["name"].toString()) {
+            continue;
+        }
+        if (stored.toObject() == value) {
+            return;
+        }
+
+        existing = true;
+        patterns.replace(i, value);
+        break;
+    }
+
+    if (!existing) {
+        patterns.append(value);
+    }
+
+    setStoredPatterns(patterns);
+}

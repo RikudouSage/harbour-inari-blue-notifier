@@ -1,0 +1,130 @@
+import QtQuick 2.0
+import Sailfish.Silica 1.0
+
+import "../components"
+import "../js/colors.js" as Colors
+
+Dialog {
+    readonly property var existingNames: appSettings.storedPatterns.map(function(pattern) {
+        return pattern.name;
+    }).filter(function(name) {
+        return name !== originalName;
+    });
+    property string originalName
+    property var pattern: ({name: '', rise: 0, hold: 0, decay: 0, off: 0, delay: 0, repeat: 0, brightness: 255})
+    id: page
+
+    function convertToMs(value) {
+        return value / 1000000;
+    }
+
+    canAccept: nameField.text !== ''
+                && riseField.acceptableInput
+                && holdField.acceptableInput
+                && decayField.acceptableInput
+                && offField.acceptableInput
+                && delayField.acceptableInput
+
+    SilicaFlickable {
+        id: flickable
+        anchors.fill: parent
+        contentHeight: column.height
+
+        Column {
+            id: column
+            spacing: Theme.paddingLarge
+            width: page.width
+
+            DialogHeader {
+                //% "Save"
+                acceptText: qsTrId("app.save")
+            }
+
+            TextField {
+                id: nameField
+                //% "Name"
+                label: qsTrId("edit_pattern.name") + "*"
+                text: pattern.name
+                onTextChanged: pattern.name = text
+            }
+            StandardLabel {
+                visible: existingNames.indexOf(nameField.text) > -1
+                //% "Warning: A pattern with that name already exists, if you save it you will overwrite the existing pattern."
+                text: qsTrId("edit_pattern.warning_name")
+                color: Theme.errorColor
+            }
+
+            DurationInput {
+                id: riseField
+                //% "Fade-in duration (ms)"
+                label: qsTrId("edit_pattern.rise")
+                text: convertToMs(pattern.rise)
+                onValidValueChanged: pattern.rise = value
+            }
+
+            DurationInput {
+                id: holdField
+                //% "On duration (ms)"
+                label: qsTrId("edit_pattern.hold")
+                text: convertToMs(pattern.hold)
+                onValidValueChanged: pattern.hold = value
+            }
+
+            DurationInput {
+                id: decayField
+                //% "Fade-out duration (ms)"
+                label: qsTrId("edit_pattern.decay")
+                text: convertToMs(pattern.decay)
+                onValidValueChanged: pattern.decay = value
+            }
+
+            DurationInput {
+                id: offField
+                //% "Off duration (ms)"
+                label: qsTrId("edit_pattern.off")
+                text: convertToMs(pattern.off)
+                onValidValueChanged: pattern.off = value
+            }
+
+            DurationInput {
+                id: delayField
+                //% "Start delay (ms)"
+                label: qsTrId("edit_pattern.delay")
+                text: convertToMs(pattern.delay)
+                onValidValueChanged: pattern.delay = value
+            }
+
+            Slider {
+                id: repeatField
+                //% "Repeat count"
+                label: qsTrId("edit_pattern.repeat")
+                width: parent.width
+                minimumValue: 0
+                maximumValue: 15
+                stepSize: 1
+                value: pattern.repeat
+                valueText: value === 0 ? '∞' : value + "×"
+                onValueChanged: pattern.repeat = value
+            }
+
+            Slider {
+                id: brightnessField
+                //% "Brightness"
+                label: qsTrId("edit_pattern.brightness")
+                width: parent.width
+                minimumValue: 0
+                maximumValue: 100
+                stepSize: 1
+                value: Math.round((pattern.brightness / 255) * 100);
+                valueText: value + "%"
+                onValueChanged: pattern.brightness = Math.round(Math.max(0, Math.min(100, value)) / 100 * 255);
+            }
+        }
+    }
+
+    Component.onCompleted: {
+        if (pattern.name) {
+            originalName = pattern.name;
+        }
+    }
+}

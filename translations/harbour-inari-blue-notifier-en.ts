@@ -32,7 +32,7 @@
     </message>
     <message id="patterns.title">
         <location filename="../qml/pages/MainPage.qml" line="37"/>
-        <location filename="../qml/pages/PatternsPage.qml" line="24"/>
+        <location filename="../qml/pages/PatternsPage.qml" line="37"/>
         <source>Patterns</source>
         <translation>Patterns</translation>
     </message>
@@ -62,25 +62,35 @@
         <source>Right now the app is rather simple, but no worries, more is coming!</source>
         <translation>Right now the app is rather simple, but no worries, more is coming!</translation>
     </message>
+    <message id="patterns.add">
+        <location filename="../qml/pages/PatternsPage.qml" line="20"/>
+        <source>Add a pattern</source>
+        <translation>Add a pattern</translation>
+    </message>
     <message id="patterns.active">
-        <location filename="../qml/pages/PatternsPage.qml" line="33"/>
+        <location filename="../qml/pages/PatternsPage.qml" line="46"/>
         <source>Active patterns</source>
         <translation>Active patterns</translation>
     </message>
     <message id="patterns.active.call">
-        <location filename="../qml/pages/PatternsPage.qml" line="38"/>
+        <location filename="../qml/pages/PatternsPage.qml" line="51"/>
         <source>Active call pattern</source>
         <translation>Active call pattern</translation>
     </message>
     <message id="patterns.not_found">
-        <location filename="../qml/pages/PatternsPage.qml" line="49"/>
+        <location filename="../qml/pages/PatternsPage.qml" line="62"/>
         <source>A pattern with the name &apos;%1&apos; was not found.</source>
         <translation>A pattern with the name &apos;%1&apos; was not found.</translation>
     </message>
     <message id="patterns.stored">
-        <location filename="../qml/pages/PatternsPage.qml" line="67"/>
+        <location filename="../qml/pages/PatternsPage.qml" line="80"/>
         <source>All patterns</source>
         <translation>All patterns</translation>
+    </message>
+    <message id="patterns.remove">
+        <location filename="../qml/pages/PatternsPage.qml" line="144"/>
+        <source>Remove</source>
+        <translation>Remove</translation>
     </message>
     <message id="pattern_selector.title">
         <location filename="../qml/pages/PatternSelectorPage.qml" line="15"/>
@@ -96,6 +106,61 @@
         <location filename="../qml/components/ServiceRestartNotice.qml" line="10"/>
         <source>Restart the service to apply your changes.</source>
         <translation>Restart the service to apply your changes.</translation>
+    </message>
+    <message id="edit_pattern.title">
+        <location filename="../qml/pages/PatternsPage.qml" line="131"/>
+        <source>Edit pattern</source>
+        <translation>Edit pattern</translation>
+    </message>
+    <message id="app.save">
+        <location filename="../qml/pages/EditPatternPage.qml" line="40"/>
+        <source>Save</source>
+        <translation>Save</translation>
+    </message>
+    <message id="edit_pattern.name">
+        <location filename="../qml/pages/EditPatternPage.qml" line="46"/>
+        <source>Name</source>
+        <translation>Name</translation>
+    </message>
+    <message id="edit_pattern.warning_name">
+        <location filename="../qml/pages/EditPatternPage.qml" line="53"/>
+        <source>Warning: A pattern with that name already exists, if you save it you will overwrite the existing pattern.</source>
+        <translation>Warning: A pattern with that name already exists, if you save it you will overwrite the existing pattern.</translation>
+    </message>
+    <message id="edit_pattern.rise">
+        <location filename="../qml/pages/EditPatternPage.qml" line="60"/>
+        <source>Fade-in duration (ms)</source>
+        <translation>Fade-in duration (ms)</translation>
+    </message>
+    <message id="edit_pattern.hold">
+        <location filename="../qml/pages/EditPatternPage.qml" line="68"/>
+        <source>On duration (ms)</source>
+        <translation>On duration (ms)</translation>
+    </message>
+    <message id="edit_pattern.decay">
+        <location filename="../qml/pages/EditPatternPage.qml" line="76"/>
+        <source>Fade-out duration (ms)</source>
+        <translation>Fade-out duration (ms)</translation>
+    </message>
+    <message id="edit_pattern.off">
+        <location filename="../qml/pages/EditPatternPage.qml" line="84"/>
+        <source>Off duration (ms)</source>
+        <translation>Off duration (ms)</translation>
+    </message>
+    <message id="edit_pattern.delay">
+        <location filename="../qml/pages/EditPatternPage.qml" line="92"/>
+        <source>Start delay (ms)</source>
+        <translation>Start delay (ms)</translation>
+    </message>
+    <message id="edit_pattern.repeat">
+        <location filename="../qml/pages/EditPatternPage.qml" line="100"/>
+        <source>Repeat count</source>
+        <translation>Repeat count</translation>
+    </message>
+    <message id="edit_pattern.brightness">
+        <location filename="../qml/pages/EditPatternPage.qml" line="113"/>
+        <source>Brightness</source>
+        <translation>Brightness</translation>
     </message>
 </context>
 </TS>

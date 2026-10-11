@@ -1,9 +1,11 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="cs">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="cs">
 <context>
-    <name/>
+    <name></name>
     <message id="app.name">
         <source>Inari Blue Notifier</source>
-        <extracomment>The app name, you may or may not translate it, it's up to you.</extracomment>
+        <extracomment>The app name, you may or may not translate it, it&apos;s up to you.</extracomment>
         <translation>Inari Blue Notifier</translation>
     </message>
     <message id="main.intro">
@@ -74,6 +76,58 @@
     <message id="patterns.stored">
         <source>All patterns</source>
         <translation>Všechny vzory</translation>
+    </message>
+    <message id="edit_pattern.title">
+        <source>Edit pattern</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="edit_pattern.name">
+        <source>Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="app.save">
+        <source>Save</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="edit_pattern.rise">
+        <source>Fade-in duration (ms)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="edit_pattern.hold">
+        <source>On duration (ms)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="edit_pattern.decay">
+        <source>Fade-out duration (ms)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="edit_pattern.off">
+        <source>Off duration (ms)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="edit_pattern.delay">
+        <source>Start delay (ms)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="edit_pattern.repeat">
+        <source>Repeat count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="edit_pattern.brightness">
+        <source>Brightness</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="edit_pattern.warning_name">
+        <source>Warning: A pattern with that name already exists, if you save it you will overwrite the existing pattern.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="patterns.add">
+        <source>Add a pattern</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="patterns.remove">
+        <source>Remove</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
