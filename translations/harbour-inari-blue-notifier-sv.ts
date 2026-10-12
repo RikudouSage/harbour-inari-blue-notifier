@@ -52,7 +52,8 @@
         <translation>Aktiva mönster</translation>
     </message>
     <message id="patterns.active.call">
-        <source>Active call pattern</source>
+        <source>Incoming call</source>
+        <oldsource>Active call pattern</oldsource>
         <translation>Aktivt samtalsmönster</translation>
     </message>
     <message id="pattern_selector.title">
@@ -70,6 +71,105 @@
     <message id="service_restart_notice.message">
         <source>Restart the service to apply your changes.</source>
         <translation>Starta om tjänsten för att tillämpa dina ändringar.</translation>
+    </message>
+    <message id="patterns.stored">
+        <source>All patterns</source>
+        <translation>Alla mönster</translation>
+    </message>
+    <message id="edit_pattern.title">
+        <source>Edit pattern</source>
+        <translation>Redigera mönstere</translation>
+    </message>
+    <message id="edit_pattern.name">
+        <source>Name</source>
+        <translation>Namn</translation>
+    </message>
+    <message id="app.save">
+        <source>Save</source>
+        <translation>Spara</translation>
+    </message>
+    <message id="edit_pattern.rise">
+        <source>Fade-in duration (ms)</source>
+        <translation>Intoningstid (ms)</translation>
+    </message>
+    <message id="edit_pattern.hold">
+        <source>On duration (ms)</source>
+        <translation>På-varaktighet (ms)</translation>
+    </message>
+    <message id="edit_pattern.decay">
+        <source>Fade-out duration (ms)</source>
+        <translation>Uttoningstid (ms)</translation>
+    </message>
+    <message id="edit_pattern.off">
+        <source>Off duration (ms)</source>
+        <translation>Av-varaktighet (ms)</translation>
+    </message>
+    <message id="edit_pattern.delay">
+        <source>Start delay (ms)</source>
+        <translation>Startfördröjning (ms)</translation>
+    </message>
+    <message id="edit_pattern.repeat">
+        <source>Repeat count</source>
+        <translation>Antal repetitioner</translation>
+    </message>
+    <message id="edit_pattern.brightness">
+        <source>Brightness</source>
+        <translation>Ljusstyrka</translation>
+    </message>
+    <message id="edit_pattern.warning_name">
+        <source>Warning: A pattern with that name already exists, if you save it you will overwrite the existing pattern.</source>
+        <translation>Varning! Ett mönster med det namnet finns redan, om du sparar det kommer du skriva över det befintliga mönstret.</translation>
+    </message>
+    <message id="patterns.add">
+        <source>Add a pattern</source>
+        <translation>Lägg till ett mönster</translation>
+    </message>
+    <message id="patterns.remove">
+        <source>Remove</source>
+        <translation>Ta bort</translation>
+    </message>
+    <message id="edit_pattern.preview">
+        <source>Preview</source>
+        <translation>Förhandsgransning</translation>
+    </message>
+    <message id="edit_pattern.channels">
+        <source>Channels</source>
+        <extracomment>The LED channels that will be used in the pattern</extracomment>
+        <translation>Kanaler</translation>
+    </message>
+    <message id="edit_pattern.all_channels">
+        <source>All channels</source>
+        <translation>Alla kanaler</translation>
+    </message>
+    <message id="edit_pattern.channel">
+        <source>Channel #%1</source>
+        <extracomment>The index of the channel</extracomment>
+        <translation>Kanal #%1</translation>
+    </message>
+    <message id="edit_pattern.channel_0_required">
+        <source>Note that channel 0 will always be used even if you disable, the Inari Blue does not light up any channels if the channel #0 is not also present.</source>
+        <translation>Observera att kanal 0 alltid kommer att användas även om du avaktiverar den, Inari Blue lyser inte upp några kanaler om kanal #0 inte också är närvarande.</translation>
+    </message>
+    <message id="app.accept">
+        <source>Accept</source>
+        <translation>Acceptera</translation>
+    </message>
+    <message id="enable_contacts.description">
+        <source>By accepting this dialog, you will give this app access to your contacts which is needed to check whether an incoming call is from a favourite contact. Note that if this is the first time you&apos;re enabling this, a system dialog will be shown asking you to grant the permission.</source>
+        <translation>Genom att acceptera denna dialog kommer du att ge den här appen tillgång till dina kontakter, vilket behövs för att kolla om ett inkommande samtal är från en favoritkontakt. Observera att om det är första gången du aktiverar detta, kommer en systemdialog att visas som ber dig att ge tillstånd.</translation>
+    </message>
+    <message id="patterns.disable_contacts">
+        <source>Disable contacts access</source>
+        <translation>Avaktivera åtkomst till kontakter</translation>
+    </message>
+    <message id="patterns.enable_contacts">
+        <source>Enable contacts access</source>
+        <translation>Aktivera åtkomst till kontakter</translation>
+    </message>
+    <message id="patterns.active.favourite_call">
+        <source>Incoming call from favorites</source>
+        <oldsource>Active call from favourite contact pattern</oldsource>
+        <translation>Inkommande samtal från favoriter</translation>
     </message>
 </context>
 </TS>
