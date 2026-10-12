@@ -171,7 +171,7 @@ void AppSettings::setFavoriteCallPattern(const QJsonObject &value)
         settings.sync();
     }
 
-    emit callPatternChanged();
+    emit favoriteCallPatternChanged();
 }
 
 QJsonObject AppSettings::patternByName(const QString &name)
