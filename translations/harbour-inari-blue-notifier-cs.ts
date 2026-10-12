@@ -1,11 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="cs">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="cs">
 <context>
-    <name></name>
+    <name/>
     <message id="app.name">
         <source>Inari Blue Notifier</source>
-        <extracomment>The app name, you may or may not translate it, it&apos;s up to you.</extracomment>
+        <extracomment>The app name, you may or may not translate it, it's up to you.</extracomment>
         <translation>Inari Blue Notifier</translation>
     </message>
     <message id="main.intro">
@@ -56,7 +54,7 @@
     <message id="patterns.active.call">
         <source>Incoming call</source>
         <oldsource>Active call pattern</oldsource>
-        <translation type="unfinished">Aktivní vzor pro volání</translation>
+        <translation>Aktivní vzor pro volání</translation>
     </message>
     <message id="pattern_selector.title">
         <source>Choose a pattern</source>
@@ -154,24 +152,24 @@
     </message>
     <message id="app.accept">
         <source>Accept</source>
-        <translation type="unfinished"></translation>
+        <translation>Přijmout</translation>
     </message>
     <message id="enable_contacts.description">
         <source>By accepting this dialog, you will give this app access to your contacts which is needed to check whether an incoming call is from a favourite contact. Note that if this is the first time you&apos;re enabling this, a system dialog will be shown asking you to grant the permission.</source>
-        <translation type="unfinished"></translation>
+        <translation>Přijmutím tohoto dialogu dáte aplikaci přístup k vašim kontaktům, což je potřeba, aby mohla aplikace zjistit, jestli volající kontakt patří mezi vaše oblíbené. Pokud tuto možnost povolujete poprvé, objeví se systémový dialog, ve kterém potvrdíte udělení oprávnění.</translation>
     </message>
     <message id="patterns.disable_contacts">
         <source>Disable contacts access</source>
-        <translation type="unfinished"></translation>
+        <translation>Zakázat přístup ke kontaktům</translation>
     </message>
     <message id="patterns.enable_contacts">
         <source>Enable contacts access</source>
-        <translation type="unfinished"></translation>
+        <translation>Povolit přístup ke kontaktům</translation>
     </message>
     <message id="patterns.active.favourite_call">
         <source>Incoming call from favorites</source>
         <oldsource>Active call from favourite contact pattern</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Příchozí hovory od oblíbených</translation>
     </message>
 </context>
 </TS>
