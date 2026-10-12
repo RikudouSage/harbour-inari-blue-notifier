@@ -1,11 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="cs">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="cs">
 <context>
-    <name></name>
+    <name/>
     <message id="app.name">
         <source>Inari Blue Notifier</source>
-        <extracomment>The app name, you may or may not translate it, it&apos;s up to you.</extracomment>
+        <extracomment>The app name, you may or may not translate it, it's up to you.</extracomment>
         <translation>Inari Blue Notifier</translation>
     </message>
     <message id="main.intro">
@@ -167,47 +165,47 @@
     <message id="patterns.active.favourite_call">
         <source>Incoming call from favourites</source>
         <oldsource>Incoming call from favorites</oldsource>
-        <translation type="unfinished">Příchozí hovory od oblíbených</translation>
+        <translation>Příchozí hovory od oblíbených</translation>
     </message>
     <message id="main.restart">
         <source>Restart notifier</source>
-        <translation type="unfinished"></translation>
+        <translation>Restartovat proces</translation>
     </message>
     <message id="main.contacts_enabled">
         <source>Contacts access status: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Přístup ke kontaktům: %1</translation>
     </message>
     <message id="settings.title">
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavení</translation>
     </message>
     <message id="settings.pull_down_hint">
         <source>Configure the patterns using the pull down menu.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavte vzory pomocí stahovacího menu.</translation>
     </message>
     <message id="settings.events">
         <source>Events</source>
-        <translation type="unfinished"></translation>
+        <translation>Události</translation>
     </message>
     <message id="settings.events.description">
         <source>Configure whether the Inari Blue TOH reacts to the following events.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavte, jestli Inari Blue TOH reaguje na následující události.</translation>
     </message>
     <message id="settings.events.calls">
         <source>Incoming calls</source>
-        <translation type="unfinished"></translation>
+        <translation>Příchozí hovory</translation>
     </message>
     <message id="settings.events.favorite_calls">
         <source>Incoming calls from favourite contacts</source>
-        <translation type="unfinished"></translation>
+        <translation>Příchozí hovory od oblíbených</translation>
     </message>
     <message id="settings.events.notifications">
         <source>Active notifications</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktivní notifikace</translation>
     </message>
     <message id="patterns.active.notifications">
         <source>Notifications</source>
-        <translation type="unfinished"></translation>
+        <translation>Notifikace</translation>
     </message>
 </context>
 </TS>
