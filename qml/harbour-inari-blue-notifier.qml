@@ -5,6 +5,7 @@ import "pages"
 
 ApplicationWindow {
     property string unitActiveState
+    property string contactsUnitActiveState
     property bool serviceNeedsRestart: false
 
     id: app
@@ -27,6 +28,11 @@ ApplicationWindow {
                      ["inari-blue-notifier-daemon.service"],
                      function(unitPath) {
                          unit.path = unitPath
+                     });
+                call("GetUnit",
+                     ["inari-blue-notifier-daemon-contacts.service"],
+                     function(unitPath) {
+                         contactsUnit.path = unitPath
                      })
             })
         }
@@ -46,6 +52,23 @@ ApplicationWindow {
         onActiveStateChanged: {
             unitActiveState = activeState
             console.log("Service state:", activeState)
+        }
+    }
+
+    DBusInterface {
+        id: contactsUnit
+
+        bus: DBus.SessionBus
+        service: "org.freedesktop.systemd1"
+        iface: "org.freedesktop.systemd1.Unit"
+
+        propertiesEnabled: true
+
+        property string activeState
+
+        onActiveStateChanged: {
+            contactsUnitActiveState = activeState
+            console.log("Contacts service state:", activeState)
         }
     }
 }
