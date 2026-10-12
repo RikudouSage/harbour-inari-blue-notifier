@@ -107,7 +107,7 @@ Page {
             }
 
             ValueButton {
-                //% "Incoming call from favorites"
+                //% "Incoming call from favourites"
                 label: qsTrId("patterns.active.favourite_call")
                 value: typeof appSettings.favoriteCallPattern.name !== 'undefined' ? appSettings.favoriteCallPattern.name : ''
                 enabled: app.contactsUnitActiveState === 'active'
@@ -125,6 +125,29 @@ Page {
                         }
 
                         appSettings.favoriteCallPattern = found;
+                        app.serviceNeedsRestart = true;
+                    });
+                }
+            }
+
+            ValueButton {
+                //% "Notifications"
+                label: qsTrId("patterns.active.notifications")
+                value: typeof appSettings.notificationsPattern.name !== 'undefined' ? appSettings.notificationsPattern.name : ''
+
+                onClicked: {
+                    const dialog = pageStack.push("PatternSelectorPage.qml", {
+                        patterns: appSettings.storedPatterns,
+                    });
+                    dialog.itemSelected.connect(function(name) {
+                        const found = appSettings.patternByName(name);
+                        if (!found.name) {
+                            //% "A pattern with the name '%1' was not found.
+                            errorText = qsTrId("patterns.not_found").arg(name)
+                            return;
+                        }
+
+                        appSettings.notificationsPattern = found;
                         app.serviceNeedsRestart = true;
                     });
                 }

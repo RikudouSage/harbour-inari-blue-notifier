@@ -7,8 +7,11 @@
 
 constexpr auto activePatternsSection = "activePatterns";
 constexpr auto storedPatternsSection = "storedPatterns";
+constexpr auto eventsSection = "events";
+
 constexpr auto callPatternKey = "call";
 constexpr auto favoriteCallPatternKey = "favoriteCall";
+constexpr auto notificationPatternKey = "notification";
 
 AppSettings::AppSettings(QObject *parent) : QObject(parent)
 {
@@ -82,6 +85,59 @@ QJsonObject AppSettings::favoriteCallPattern()
     }
 
     return document.object();
+}
+
+QJsonObject AppSettings::notificationsPattern()
+{
+    settings.sync();
+    settings.beginGroup(activePatternsSection);
+    defer({
+        settings.endGroup();
+    });
+
+    const auto encoded = settings.value(notificationPatternKey).toByteArray();
+    const auto rawJson = QByteArray::fromBase64(encoded, QByteArray::Base64Option::Base64Encoding);
+    QJsonParseError error;
+    const auto document = QJsonDocument::fromJson(rawJson, &error);
+    if (error.error != QJsonParseError::NoError) {
+        qWarning() << "Error parsing JSON: " << error.errorString();
+        return QJsonObject();
+    }
+
+    return document.object();
+}
+
+bool AppSettings::callsEnabled()
+{
+    settings.sync();
+    settings.beginGroup(eventsSection);
+    defer({
+        settings.endGroup();
+    });
+
+    return settings.value(callPatternKey, true).toBool();
+}
+
+bool AppSettings::favoriteCallsEnabled()
+{
+    settings.sync();
+    settings.beginGroup(eventsSection);
+    defer({
+        settings.endGroup();
+    });
+
+    return settings.value(favoriteCallPatternKey, true).toBool();
+}
+
+bool AppSettings::notificationsEnabled()
+{
+    settings.sync();
+    settings.beginGroup(eventsSection);
+    defer({
+        settings.endGroup();
+    });
+
+    return settings.value(notificationPatternKey, false).toBool();
 }
 
 void AppSettings::setStoredPatterns(const QJsonArray &value)
@@ -172,6 +228,95 @@ void AppSettings::setFavoriteCallPattern(const QJsonObject &value)
     }
 
     emit favoriteCallPatternChanged();
+}
+
+void AppSettings::setNotificationsPattern(const QJsonObject &value)
+{
+    const auto current = notificationsPattern();
+    if (value == current) {
+        return;
+    }
+
+    {
+        settings.beginGroup(activePatternsSection);
+        defer({
+            settings.endGroup();
+        });
+
+        const auto name = value["name"].toString();
+        if (name.isNull() || name.isEmpty()) {
+            return;
+        }
+
+        const auto document = QJsonDocument(value);
+        const auto rawJson = document.toJson(QJsonDocument::JsonFormat::Compact);
+        const auto encoded = rawJson.toBase64(QByteArray::Base64Option::Base64Encoding | QByteArray::Base64Option::OmitTrailingEquals);
+        settings.setValue(notificationPatternKey, QString::fromLatin1(encoded));
+
+        settings.sync();
+    }
+
+    emit notificationsPatternChanged();
+}
+
+void AppSettings::setCallsEnabled(bool value)
+{
+    const auto current = callsEnabled();
+    if (value == current) {
+        return;
+    }
+
+    {
+        settings.beginGroup(eventsSection);
+        defer({
+            settings.endGroup();
+        });
+
+        settings.setValue(callPatternKey, value);
+        settings.sync();
+    }
+
+    emit callsEnabledChanged();
+}
+
+void AppSettings::setFavoriteCallsEnabled(bool value)
+{
+    const auto current = favoriteCallsEnabled();
+    if (value == current) {
+        return;
+    }
+
+    {
+        settings.beginGroup(eventsSection);
+        defer({
+            settings.endGroup();
+        });
+
+        settings.setValue(favoriteCallPatternKey, value);
+        settings.sync();
+    }
+
+    emit favoriteCallsEnabledChanged();
+}
+
+void AppSettings::setNotificationsEnabled(bool value)
+{
+    const auto current = notificationsEnabled();
+    if (value == current) {
+        return;
+    }
+
+    {
+        settings.beginGroup(eventsSection);
+        defer({
+            settings.endGroup();
+        });
+
+        settings.setValue(notificationPatternKey, value);
+        settings.sync();
+    }
+
+    emit notificationsEnabledChanged();
 }
 
 QJsonObject AppSettings::patternByName(const QString &name)

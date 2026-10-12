@@ -25,21 +25,35 @@ Page {
         }
     }
 
+    function stopUnit() {
+        systemd.call("StopUnit", [
+            "inari-blue-notifier-daemon.service",
+            "replace"
+        ]);
+        app.serviceNeedsRestart = false;
+    }
+
+    function startUnit() {
+        systemd.call("StartUnit", [
+            "inari-blue-notifier-daemon.service",
+            "replace"
+        ]);
+    }
+
+    function restartUnit() {
+        systemd.call("RestartUnit", [
+            "inari-blue-notifier-daemon.service",
+            "replace"
+        ]);
+        app.serviceNeedsRestart = false;
+    }
+
     SilicaFlickable {
         id: flickable
         anchors.fill: parent
         contentHeight: column.height
 
         PullDownMenu {
-
-            MenuItem {
-                //% "Patterns"
-                text: qsTrId("patterns.title")
-                onClicked: {
-                    pageStack.push("PatternsPage.qml")
-                }
-            }
-
             MenuItem {
                 visible: unitActiveState == "active" || unitActiveState == "inactive"
                 text: unitActiveState == "active"
@@ -50,22 +64,31 @@ Page {
 
                 onClicked: {
                     if (unitActiveState == "active") {
-                        systemd.call("StopUnit", [
-                            "inari-blue-notifier-daemon.service",
-                            "replace"
-                        ]);
-                        app.serviceNeedsRestart = false;
+                        stopUnit();
                         return;
                     }
 
                     if (unitActiveState == "inactive") {
-                        systemd.call("StartUnit", [
-                            "inari-blue-notifier-daemon.service",
-                            "replace"
-                        ]);
+                        startUnit();
                         return;
                     }
                 }
+            }
+
+            MenuItem {
+                visible: unitActiveState == "active"
+                //% "Restart notifier"
+                text: qsTrId("main.restart")
+
+                onClicked: {
+                    restartUnit();
+                }
+            }
+
+            MenuItem {
+                //% "Settings"
+                text: qsTrId("settings.title")
+                onClicked: pageStack.push("SettingsPage.qml");
             }
         }
 
@@ -93,11 +116,10 @@ Page {
                 text: qsTrId("main.current_status").arg(getStatusLabel(unitActiveState))
                 color: unitActiveState === "failed" ? Theme.errorColor : Theme.highlightColor
             }
-
             StandardLabel {
-                //% "Right now the app is rather simple, but no worries, more is coming!"
-                text: qsTrId("main.more_coming")
-                color: Theme.secondaryColor
+                //% "Contacts access status: %1"
+                text: qsTrId("main.contacts_enabled").arg(getStatusLabel(contactsUnitActiveState))
+                color: contactsUnitActiveState === "failed" ? Theme.errorColor : Theme.highlightColor
             }
         }
     }
