@@ -1,9 +1,11 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="cs">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="cs">
 <context>
-    <name/>
+    <name></name>
     <message id="app.name">
         <source>Inari Blue Notifier</source>
-        <extracomment>The app name, you may or may not translate it, it's up to you.</extracomment>
+        <extracomment>The app name, you may or may not translate it, it&apos;s up to you.</extracomment>
         <translation>Inari Blue Notifier</translation>
     </message>
     <message id="main.intro">
@@ -52,8 +54,9 @@
         <translation>Aktivní vzory</translation>
     </message>
     <message id="patterns.active.call">
-        <source>Active call pattern</source>
-        <translation>Aktivní vzor pro volání</translation>
+        <source>Incoming call</source>
+        <oldsource>Active call pattern</oldsource>
+        <translation type="unfinished">Aktivní vzor pro volání</translation>
     </message>
     <message id="pattern_selector.title">
         <source>Choose a pattern</source>
@@ -148,6 +151,27 @@
     <message id="edit_pattern.channel_0_required">
         <source>Note that channel 0 will always be used even if you disable, the Inari Blue does not light up any channels if the channel #0 is not also present.</source>
         <translation>Kanál 0 bude povolen i když jej vypnete, Inari Blue nerozsvítí ani jeden kanál, pokud se nezapne i kanál 0.</translation>
+    </message>
+    <message id="app.accept">
+        <source>Accept</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="enable_contacts.description">
+        <source>By accepting this dialog, you will give this app access to your contacts which is needed to check whether an incoming call is from a favourite contact. Note that if this is the first time you&apos;re enabling this, a system dialog will be shown asking you to grant the permission.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="patterns.disable_contacts">
+        <source>Disable contacts access</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="patterns.enable_contacts">
+        <source>Enable contacts access</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="patterns.active.favourite_call">
+        <source>Incoming call from favorites</source>
+        <oldsource>Active call from favourite contact pattern</oldsource>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

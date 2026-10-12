@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import Nemo.DBus 2.0
 
 import "../components"
 
@@ -25,6 +26,42 @@ Page {
                     });
                 }
             }
+
+            MenuItem {
+                text: app.contactsUnitActiveState === 'active'
+                      //% "Disable contacts access"
+                      ? qsTrId("patterns.disable_contacts")
+                      //% "Enable contacts access"
+                      : qsTrId("patterns.enable_contacts")
+                onClicked: {
+                    const serviceName = "inari-blue-notifier-daemon-contacts.service";
+
+                    if (app.contactsUnitActiveState === 'active') {
+                        systemd.call("DisableUnitFiles", [
+                            [serviceName],
+                            false
+                        ]);
+                        systemd.call("StopUnit", [
+                            serviceName,
+                            "replace"
+                        ]);
+                        return;
+                    }
+
+                    const dialog = pageStack.push("EnableContactsPage.qml");
+                    dialog.accepted.connect(function() {
+                        systemd.call("EnableUnitFiles", [
+                            [serviceName],
+                            false,
+                            false
+                        ]);
+                        systemd.call("StartUnit", [
+                            serviceName,
+                            "replace"
+                        ]);
+                    });
+                }
+            }
         }
 
         Column {
@@ -47,7 +84,7 @@ Page {
             }
 
             ValueButton {
-                //% "Active call pattern"
+                //% "Incoming call"
                 label: qsTrId("patterns.active.call")
                 value: typeof appSettings.callPattern.name !== 'undefined' ? appSettings.callPattern.name : ''
 
@@ -64,6 +101,30 @@ Page {
                         }
 
                         appSettings.callPattern = found;
+                        app.serviceNeedsRestart = true;
+                    });
+                }
+            }
+
+            ValueButton {
+                //% "Incoming call from favorites"
+                label: qsTrId("patterns.active.favourite_call")
+                value: typeof appSettings.favoriteCallPattern.name !== 'undefined' ? appSettings.favoriteCallPattern.name : ''
+                enabled: app.contactsUnitActiveState === 'active'
+
+                onClicked: {
+                    const dialog = pageStack.push("PatternSelectorPage.qml", {
+                        patterns: appSettings.storedPatterns,
+                    });
+                    dialog.itemSelected.connect(function(name) {
+                        const found = appSettings.patternByName(name);
+                        if (!found.name) {
+                            //% "A pattern with the name '%1' was not found.
+                            errorText = qsTrId("patterns.not_found").arg(name)
+                            return;
+                        }
+
+                        appSettings.favoriteCallPattern = found;
                         app.serviceNeedsRestart = true;
                     });
                 }

@@ -8,6 +8,7 @@
 constexpr auto activePatternsSection = "activePatterns";
 constexpr auto storedPatternsSection = "storedPatterns";
 constexpr auto callPatternKey = "call";
+constexpr auto favoriteCallPatternKey = "favoriteCall";
 
 AppSettings::AppSettings(QObject *parent) : QObject(parent)
 {
@@ -52,6 +53,26 @@ QJsonObject AppSettings::callPattern()
     });
 
     const auto encoded = settings.value(callPatternKey).toByteArray();
+    const auto rawJson = QByteArray::fromBase64(encoded, QByteArray::Base64Option::Base64Encoding);
+    QJsonParseError error;
+    const auto document = QJsonDocument::fromJson(rawJson, &error);
+    if (error.error != QJsonParseError::NoError) {
+        qWarning() << "Error parsing JSON: " << error.errorString();
+        return QJsonObject();
+    }
+
+    return document.object();
+}
+
+QJsonObject AppSettings::favoriteCallPattern()
+{
+    settings.sync();
+    settings.beginGroup(activePatternsSection);
+    defer({
+        settings.endGroup();
+    });
+
+    const auto encoded = settings.value(favoriteCallPatternKey).toByteArray();
     const auto rawJson = QByteArray::fromBase64(encoded, QByteArray::Base64Option::Base64Encoding);
     QJsonParseError error;
     const auto document = QJsonDocument::fromJson(rawJson, &error);
@@ -122,6 +143,35 @@ void AppSettings::setCallPattern(const QJsonObject &value)
     }
 
     emit callPatternChanged();
+}
+
+void AppSettings::setFavoriteCallPattern(const QJsonObject &value)
+{
+    const auto current = favoriteCallPattern();
+    if (value == current) {
+        return;
+    }
+
+    {
+        settings.beginGroup(activePatternsSection);
+        defer({
+            settings.endGroup();
+        });
+
+        const auto name = value["name"].toString();
+        if (name.isNull() || name.isEmpty()) {
+            return;
+        }
+
+        const auto document = QJsonDocument(value);
+        const auto rawJson = document.toJson(QJsonDocument::JsonFormat::Compact);
+        const auto encoded = rawJson.toBase64(QByteArray::Base64Option::Base64Encoding | QByteArray::Base64Option::OmitTrailingEquals);
+        settings.setValue(favoriteCallPatternKey, QString::fromLatin1(encoded));
+
+        settings.sync();
+    }
+
+    emit favoriteCallPatternChanged();
 }
 
 QJsonObject AppSettings::patternByName(const QString &name)

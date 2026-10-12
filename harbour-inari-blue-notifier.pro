@@ -26,6 +26,7 @@ DISTFILES += qml/harbour-inari-blue-notifier.qml \
     qml/cover/CoverPage.qml \
     qml/js/colors.js \
     qml/pages/EditPatternPage.qml \
+    qml/pages/EnableContactsPage.qml \
     qml/pages/MainPage.qml \
     qml/pages/PatternSelectorPage.qml \
     qml/pages/PatternsPage.qml \

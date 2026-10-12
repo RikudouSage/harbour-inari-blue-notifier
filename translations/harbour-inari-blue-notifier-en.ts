@@ -32,7 +32,7 @@
     </message>
     <message id="patterns.title">
         <location filename="../qml/pages/MainPage.qml" line="37"/>
-        <location filename="../qml/pages/PatternsPage.qml" line="37"/>
+        <location filename="../qml/pages/PatternsPage.qml" line="74"/>
         <source>Patterns</source>
         <translation>Patterns</translation>
     </message>
@@ -63,32 +63,50 @@
         <translation>Right now the app is rather simple, but no worries, more is coming!</translation>
     </message>
     <message id="patterns.add">
-        <location filename="../qml/pages/PatternsPage.qml" line="20"/>
+        <location filename="../qml/pages/PatternsPage.qml" line="21"/>
         <source>Add a pattern</source>
         <translation>Add a pattern</translation>
     </message>
+    <message id="patterns.disable_contacts">
+        <location filename="../qml/pages/PatternsPage.qml" line="33"/>
+        <source>Disable contacts access</source>
+        <translation>Disable contacts access</translation>
+    </message>
+    <message id="patterns.enable_contacts">
+        <location filename="../qml/pages/PatternsPage.qml" line="35"/>
+        <source>Enable contacts access</source>
+        <translation>Enable contacts access</translation>
+    </message>
     <message id="patterns.active">
-        <location filename="../qml/pages/PatternsPage.qml" line="46"/>
+        <location filename="../qml/pages/PatternsPage.qml" line="83"/>
         <source>Active patterns</source>
         <translation>Active patterns</translation>
     </message>
     <message id="patterns.active.call">
-        <location filename="../qml/pages/PatternsPage.qml" line="51"/>
-        <source>Active call pattern</source>
-        <translation>Active call pattern</translation>
+        <location filename="../qml/pages/PatternsPage.qml" line="88"/>
+        <source>Incoming call</source>
+        <oldsource>Active call pattern</oldsource>
+        <translation>Incoming call</translation>
     </message>
     <message id="patterns.not_found">
-        <location filename="../qml/pages/PatternsPage.qml" line="62"/>
+        <location filename="../qml/pages/PatternsPage.qml" line="99"/>
+        <location filename="../qml/pages/PatternsPage.qml" line="123"/>
         <source>A pattern with the name &apos;%1&apos; was not found.</source>
         <translation>A pattern with the name &apos;%1&apos; was not found.</translation>
     </message>
+    <message id="patterns.active.favourite_call">
+        <location filename="../qml/pages/PatternsPage.qml" line="111"/>
+        <source>Incoming call from favorites</source>
+        <oldsource>Active call from favourite contact pattern</oldsource>
+        <translation>Incoming call from favorites</translation>
+    </message>
     <message id="patterns.stored">
-        <location filename="../qml/pages/PatternsPage.qml" line="80"/>
+        <location filename="../qml/pages/PatternsPage.qml" line="141"/>
         <source>All patterns</source>
         <translation>All patterns</translation>
     </message>
     <message id="patterns.remove">
-        <location filename="../qml/pages/PatternsPage.qml" line="144"/>
+        <location filename="../qml/pages/PatternsPage.qml" line="205"/>
         <source>Remove</source>
         <translation>Remove</translation>
     </message>
@@ -108,7 +126,7 @@
         <translation>Restart the service to apply your changes.</translation>
     </message>
     <message id="edit_pattern.title">
-        <location filename="../qml/pages/PatternsPage.qml" line="131"/>
+        <location filename="../qml/pages/PatternsPage.qml" line="192"/>
         <source>Edit pattern</source>
         <translation>Edit pattern</translation>
     </message>
@@ -185,9 +203,19 @@
         <translation>Note that channel 0 will always be used even if you disable, the Inari Blue does not light up any channels if the channel #0 is not also present.</translation>
     </message>
     <message id="edit_pattern.preview">
-        <location filename="../qml/pages/EditPatternPage.qml" line="201"/>
+        <location filename="../qml/pages/EditPatternPage.qml" line="200"/>
         <source>Preview</source>
         <translation>Preview</translation>
+    </message>
+    <message id="app.accept">
+        <location filename="../qml/pages/EnableContactsPage.qml" line="19"/>
+        <source>Accept</source>
+        <translation>Accept</translation>
+    </message>
+    <message id="enable_contacts.description">
+        <location filename="../qml/pages/EnableContactsPage.qml" line="24"/>
+        <source>By accepting this dialog, you will give this app access to your contacts which is needed to check whether an incoming call is from a favourite contact. Note that if this is the first time you&apos;re enabling this, a system dialog will be shown asking you to grant the permission.</source>
+        <translation>By accepting this dialog, you will give this app access to your contacts which is needed to check whether an incoming call is from a favourite contact. Note that if this is the first time you&apos;re enabling this, a system dialog will be shown asking you to grant the permission.</translation>
     </message>
 </context>
 </TS>
