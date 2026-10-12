@@ -5,7 +5,7 @@
     <name></name>
     <message id="app.name">
         <location filename="../qml/cover/CoverPage.qml" line="10"/>
-        <location filename="../qml/pages/MainPage.qml" line="79"/>
+        <location filename="../qml/pages/MainPage.qml" line="102"/>
         <source>Inari Blue Notifier</source>
         <extracomment>The app name, you may or may not translate it, it&apos;s up to you.</extracomment>
         <translation>Inari Blue Notifier</translation>
@@ -30,37 +30,48 @@
         <source>Unknown</source>
         <translation>Unknown</translation>
     </message>
+    <message id="main.restart">
+        <location filename="../qml/pages/MainPage.qml" line="81"/>
+        <source>Restart notifier</source>
+        <translation>Restart notifier</translation>
+    </message>
     <message id="patterns.title">
-        <location filename="../qml/pages/MainPage.qml" line="37"/>
         <location filename="../qml/pages/PatternsPage.qml" line="74"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="27"/>
         <source>Patterns</source>
         <translation>Patterns</translation>
     </message>
+    <message id="main.contacts_enabled">
+        <location filename="../qml/pages/MainPage.qml" line="121"/>
+        <source>Contacts access status: %1</source>
+        <translation>Contacts access status: %1</translation>
+    </message>
     <message id="main.deactivate">
-        <location filename="../qml/pages/MainPage.qml" line="47"/>
+        <location filename="../qml/pages/MainPage.qml" line="61"/>
         <source>Stop notifier</source>
         <translation>Stop notifier</translation>
     </message>
     <message id="main.activate">
-        <location filename="../qml/pages/MainPage.qml" line="49"/>
+        <location filename="../qml/pages/MainPage.qml" line="63"/>
         <source>Start notifier</source>
         <translation>Start notifier</translation>
     </message>
+    <message id="settings.title">
+        <location filename="../qml/pages/MainPage.qml" line="90"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="41"/>
+        <source>Settings</source>
+        <translation>Settings</translation>
+    </message>
     <message id="main.intro">
-        <location filename="../qml/pages/MainPage.qml" line="88"/>
+        <location filename="../qml/pages/MainPage.qml" line="111"/>
         <source>Using the pull down menu app you can configure the patterns and control the active state of the background process.</source>
         <oldsource>Using the pull down menu app you can control whether the background process blinking your Inari Blue on events like incoming calls is running or not.</oldsource>
         <translation>Using the pull down menu app you can configure the patterns and control the active state of the background process.</translation>
     </message>
     <message id="main.current_status">
-        <location filename="../qml/pages/MainPage.qml" line="93"/>
+        <location filename="../qml/pages/MainPage.qml" line="116"/>
         <source>Current status: %1</source>
         <translation>Current status: %1</translation>
-    </message>
-    <message id="main.more_coming">
-        <location filename="../qml/pages/MainPage.qml" line="99"/>
-        <source>Right now the app is rather simple, but no worries, more is coming!</source>
-        <translation>Right now the app is rather simple, but no worries, more is coming!</translation>
     </message>
     <message id="patterns.add">
         <location filename="../qml/pages/PatternsPage.qml" line="21"/>
@@ -91,22 +102,28 @@
     <message id="patterns.not_found">
         <location filename="../qml/pages/PatternsPage.qml" line="99"/>
         <location filename="../qml/pages/PatternsPage.qml" line="123"/>
+        <location filename="../qml/pages/PatternsPage.qml" line="146"/>
         <source>A pattern with the name &apos;%1&apos; was not found.</source>
         <translation>A pattern with the name &apos;%1&apos; was not found.</translation>
     </message>
     <message id="patterns.active.favourite_call">
         <location filename="../qml/pages/PatternsPage.qml" line="111"/>
-        <source>Incoming call from favorites</source>
-        <oldsource>Active call from favourite contact pattern</oldsource>
-        <translation>Incoming call from favorites</translation>
+        <source>Incoming call from favourites</source>
+        <oldsource>Incoming call from favorites</oldsource>
+        <translation>Incoming call from favourites</translation>
+    </message>
+    <message id="patterns.active.notifications">
+        <location filename="../qml/pages/PatternsPage.qml" line="135"/>
+        <source>Notifications</source>
+        <translation>Notifications</translation>
     </message>
     <message id="patterns.stored">
-        <location filename="../qml/pages/PatternsPage.qml" line="141"/>
+        <location filename="../qml/pages/PatternsPage.qml" line="164"/>
         <source>All patterns</source>
         <translation>All patterns</translation>
     </message>
     <message id="patterns.remove">
-        <location filename="../qml/pages/PatternsPage.qml" line="205"/>
+        <location filename="../qml/pages/PatternsPage.qml" line="228"/>
         <source>Remove</source>
         <translation>Remove</translation>
     </message>
@@ -126,7 +143,7 @@
         <translation>Restart the service to apply your changes.</translation>
     </message>
     <message id="edit_pattern.title">
-        <location filename="../qml/pages/PatternsPage.qml" line="192"/>
+        <location filename="../qml/pages/PatternsPage.qml" line="215"/>
         <source>Edit pattern</source>
         <translation>Edit pattern</translation>
     </message>
@@ -216,6 +233,36 @@
         <location filename="../qml/pages/EnableContactsPage.qml" line="24"/>
         <source>By accepting this dialog, you will give this app access to your contacts which is needed to check whether an incoming call is from a favourite contact. Note that if this is the first time you&apos;re enabling this, a system dialog will be shown asking you to grant the permission.</source>
         <translation>By accepting this dialog, you will give this app access to your contacts which is needed to check whether an incoming call is from a favourite contact. Note that if this is the first time you&apos;re enabling this, a system dialog will be shown asking you to grant the permission.</translation>
+    </message>
+    <message id="settings.pull_down_hint">
+        <location filename="../qml/pages/SettingsPage.qml" line="50"/>
+        <source>Configure the patterns using the pull down menu.</source>
+        <translation>Configure the patterns using the pull down menu.</translation>
+    </message>
+    <message id="settings.events">
+        <location filename="../qml/pages/SettingsPage.qml" line="56"/>
+        <source>Events</source>
+        <translation>Events</translation>
+    </message>
+    <message id="settings.events.description">
+        <location filename="../qml/pages/SettingsPage.qml" line="61"/>
+        <source>Configure whether the Inari Blue TOH reacts to the following events.</source>
+        <translation>Configure whether the Inari Blue TOH reacts to the following events.</translation>
+    </message>
+    <message id="settings.events.calls">
+        <location filename="../qml/pages/SettingsPage.qml" line="67"/>
+        <source>Incoming calls</source>
+        <translation>Incoming calls</translation>
+    </message>
+    <message id="settings.events.favorite_calls">
+        <location filename="../qml/pages/SettingsPage.qml" line="76"/>
+        <source>Incoming calls from favourite contacts</source>
+        <translation>Incoming calls from favourite contacts</translation>
+    </message>
+    <message id="settings.events.notifications">
+        <location filename="../qml/pages/SettingsPage.qml" line="85"/>
+        <source>Active notifications</source>
+        <translation>Active notifications</translation>
     </message>
 </context>
 </TS>
