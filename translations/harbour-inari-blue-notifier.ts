@@ -1,11 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="en">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="en">
 <context>
-    <name></name>
+    <name/>
     <message id="app.name">
         <source>Inari Blue Notifier</source>
-        <extracomment>The app name, you may or may not translate it, it&apos;s up to you.</extracomment>
+        <extracomment>The app name, you may or may not translate it, it's up to you.</extracomment>
         <translation>Inari Blue Notifier</translation>
     </message>
     <message id="main.intro">
@@ -167,47 +165,47 @@
     <message id="patterns.active.favourite_call">
         <source>Incoming call from favourites</source>
         <oldsource>Incoming call from favorites</oldsource>
-        <translation type="unfinished">Incoming call from favorites</translation>
+        <translation>Incoming call from favorites</translation>
     </message>
     <message id="main.restart">
         <source>Restart notifier</source>
-        <translation type="unfinished"></translation>
+        <translation>Restart notifier</translation>
     </message>
     <message id="main.contacts_enabled">
         <source>Contacts access status: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Contacts access status: %1</translation>
     </message>
     <message id="settings.title">
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Settings</translation>
     </message>
     <message id="settings.pull_down_hint">
         <source>Configure the patterns using the pull down menu.</source>
-        <translation type="unfinished"></translation>
+        <translation>Configure the patterns using the pull down menu.</translation>
     </message>
     <message id="settings.events">
         <source>Events</source>
-        <translation type="unfinished"></translation>
+        <translation>Events</translation>
     </message>
     <message id="settings.events.description">
         <source>Configure whether the Inari Blue TOH reacts to the following events.</source>
-        <translation type="unfinished"></translation>
+        <translation>Configure whether the Inari Blue TOH reacts to the following events.</translation>
     </message>
     <message id="settings.events.calls">
         <source>Incoming calls</source>
-        <translation type="unfinished"></translation>
+        <translation>Incoming calls</translation>
     </message>
     <message id="settings.events.favorite_calls">
         <source>Incoming calls from favourite contacts</source>
-        <translation type="unfinished"></translation>
+        <translation>Incoming calls from favourite contacts</translation>
     </message>
     <message id="settings.events.notifications">
         <source>Active notifications</source>
-        <translation type="unfinished"></translation>
+        <translation>Active notifications</translation>
     </message>
     <message id="patterns.active.notifications">
         <source>Notifications</source>
-        <translation type="unfinished"></translation>
+        <translation>Notifications</translation>
     </message>
 </context>
 </TS>
