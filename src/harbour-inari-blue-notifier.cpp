@@ -9,11 +9,14 @@
 #include <QTextStream>
 #include <QtQml>
 #include <QQmlEngine>
+#include <QDBusConnection>
+#include <QDBusError>
 
 #include <sailfishapp.h>
 
 #include "appsettings.h"
 #include "daemoncontroller.h"
+#include "applicationactivation.h"
 
 constexpr auto TRANSLATION_INSTALL_DIR = "/usr/share/harbour-inari-blue-notifier/translations";
 
@@ -82,6 +85,20 @@ int main(int argc, char *argv[])
     QScopedPointer<QGuiApplication> app(SailfishApp::application(argc, argv));
     defaultMessageHandler = qInstallMessageHandler(messageHandler);
     QScopedPointer<QQuickView> v(SailfishApp::createView());
+    ApplicationActivation activation(v.data(), app.data());
+
+    auto bus = QDBusConnection::sessionBus();
+
+    if (!bus.registerObject(
+        "/dev/rikudou/InariBlueNotifier",
+        &activation,
+        QDBusConnection::ExportAllSlots
+    )) {
+        qWarning() << "Failed to register D-Bus object:" << bus.lastError().message();
+    }
+    if (!bus.registerService("dev.rikudou.inari-blue-notifier")) {
+        qWarning() << "Failed to register D-Bus service:" << bus.lastError().message();
+    }
 
     QTranslator *defaultLang = new QTranslator(app.data());
     if (!defaultLang->load("harbour-inari-blue-notifier-en", TRANSLATION_INSTALL_DIR)) {

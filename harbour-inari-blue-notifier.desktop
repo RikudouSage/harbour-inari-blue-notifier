@@ -9,3 +9,4 @@ Name=Inari Blue Notifier
 OrganizationName=dev.rikudou
 ApplicationName=inari-blue-notifier
 Permissions=AppLaunch;InariBlueNotifier
+ExecDBus=harbour-inari-blue-notifier
