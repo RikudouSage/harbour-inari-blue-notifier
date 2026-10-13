@@ -6,6 +6,7 @@
 #include <QStandardPaths>
 #include <QJsonObject>
 #include <QJsonArray>
+#include <QTime>
 
 class AppSettings : public QObject
 {
@@ -19,6 +20,9 @@ class AppSettings : public QObject
     Q_PROPERTY(bool favoriteCallsEnabled READ favoriteCallsEnabled WRITE setFavoriteCallsEnabled NOTIFY favoriteCallsEnabledChanged)
     Q_PROPERTY(bool notificationsEnabled READ notificationsEnabled WRITE setNotificationsEnabled NOTIFY notificationsEnabledChanged)
 
+    Q_PROPERTY(QTime startTime READ startTime WRITE setStartTime NOTIFY startTimeChanged)
+    Q_PROPERTY(QTime endTime READ endTime WRITE setEndTime NOTIFY endTimeChanged)
+
 public:
     explicit AppSettings(QObject *parent = nullptr);
     ~AppSettings();
@@ -30,6 +34,8 @@ public:
     bool callsEnabled();
     bool favoriteCallsEnabled();
     bool notificationsEnabled();
+    QTime startTime();
+    QTime endTime();
 
     void setStoredPatterns(const QJsonArray &value);
     void setCallPattern(const QJsonObject &value);
@@ -38,6 +44,8 @@ public:
     void setCallsEnabled(bool value);
     void setFavoriteCallsEnabled(bool value);
     void setNotificationsEnabled(bool value);
+    void setStartTime(const QTime &value);
+    void setEndTime(const QTime &value);
 
     Q_INVOKABLE QJsonObject patternByName(const QString &name);
     Q_INVOKABLE void updatePattern(const QJsonObject &value, const QString &oldName = "");
@@ -50,6 +58,8 @@ signals:
     void callsEnabledChanged();
     void favoriteCallsEnabledChanged();
     void notificationsEnabledChanged();
+    void startTimeChanged();
+    void endTimeChanged();
 
 private:
     QSettings settings = QSettings(

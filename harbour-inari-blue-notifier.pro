@@ -53,7 +53,9 @@ CONFIG += sailfishapp_i18n sailfishapp_i18n_idbased
 # following TRANSLATIONS line. And also do not forget to
 # modify the localized app name in the the .desktop file.
 TRANSLATIONS += translations/harbour-inari-blue-notifier-en.ts \
-                translations/harbour-inari-blue-notifier-cs.ts
+                translations/harbour-inari-blue-notifier-cs.ts \
+                translations/harbour-inari-blue-notifier-no.ts \
+                translations/harbour-inari-blue-notifier-sv.ts
 
 HEADERS += \
     src/appsettings.h \

@@ -37,7 +37,7 @@
     </message>
     <message id="patterns.title">
         <location filename="../qml/pages/PatternsPage.qml" line="74"/>
-        <location filename="../qml/pages/SettingsPage.qml" line="27"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="31"/>
         <source>Patterns</source>
         <translation>Patterns</translation>
     </message>
@@ -58,7 +58,7 @@
     </message>
     <message id="settings.title">
         <location filename="../qml/pages/MainPage.qml" line="90"/>
-        <location filename="../qml/pages/SettingsPage.qml" line="41"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="45"/>
         <source>Settings</source>
         <translation>Settings</translation>
     </message>
@@ -235,34 +235,54 @@
         <translation>By accepting this dialog, you will give this app access to your contacts which is needed to check whether an incoming call is from a favourite contact. Note that if this is the first time you&apos;re enabling this, a system dialog will be shown asking you to grant the permission.</translation>
     </message>
     <message id="settings.pull_down_hint">
-        <location filename="../qml/pages/SettingsPage.qml" line="50"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="54"/>
         <source>Configure the patterns using the pull down menu.</source>
         <translation>Configure the patterns using the pull down menu.</translation>
     </message>
     <message id="settings.events">
-        <location filename="../qml/pages/SettingsPage.qml" line="56"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="60"/>
         <source>Events</source>
         <translation>Events</translation>
     </message>
     <message id="settings.events.description">
-        <location filename="../qml/pages/SettingsPage.qml" line="61"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="65"/>
         <source>Configure whether the Inari Blue TOH reacts to the following events.</source>
         <translation>Configure whether the Inari Blue TOH reacts to the following events.</translation>
     </message>
     <message id="settings.events.calls">
-        <location filename="../qml/pages/SettingsPage.qml" line="67"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="71"/>
         <source>Incoming calls</source>
         <translation>Incoming calls</translation>
     </message>
     <message id="settings.events.favorite_calls">
-        <location filename="../qml/pages/SettingsPage.qml" line="76"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="80"/>
         <source>Incoming calls from favourite contacts</source>
         <translation>Incoming calls from favourite contacts</translation>
     </message>
     <message id="settings.events.notifications">
-        <location filename="../qml/pages/SettingsPage.qml" line="85"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="89"/>
         <source>Active notifications</source>
         <translation>Active notifications</translation>
+    </message>
+    <message id="settings.constraints">
+        <location filename="../qml/pages/SettingsPage.qml" line="98"/>
+        <source>Constraints</source>
+        <translation>Constraints</translation>
+    </message>
+    <message id="settings.enable_time_constraints">
+        <location filename="../qml/pages/SettingsPage.qml" line="104"/>
+        <source>Disable TOH at certain times</source>
+        <translation>Disable TOH at certain times</translation>
+    </message>
+    <message id="settings.start_time">
+        <location filename="../qml/pages/SettingsPage.qml" line="117"/>
+        <source>Start TOH at</source>
+        <translation>Start TOH at</translation>
+    </message>
+    <message id="settings.end_time">
+        <location filename="../qml/pages/SettingsPage.qml" line="134"/>
+        <source>Stop TOH at</source>
+        <translation>Stop TOH at</translation>
     </message>
 </context>
 </TS>
