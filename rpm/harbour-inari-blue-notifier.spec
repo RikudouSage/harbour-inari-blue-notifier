@@ -1,13 +1,13 @@
 Name:       harbour-inari-blue-notifier
 
 Summary:    Inari Blue Notifier
-Version:    1.6.1
+Version:    1.7.0
 Release:    1
 License:    MIT
 URL:        https://github.com/RikudouSage/harbour-inari-blue-notifier
 Source0:    %{name}-%{version}.tar.bz2
 Requires:   sailfishsilica-qt5 >= 0.10.9
-Requires:   inari-blue-notifier-daemon >= 1.6.0
+Requires:   inari-blue-notifier-daemon >= 1.7.0
 BuildRequires:  pkgconfig(sailfishapp) >= 1.0.2
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Qml)
