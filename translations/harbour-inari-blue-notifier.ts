@@ -1,11 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="en">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="en">
 <context>
-    <name></name>
+    <name/>
     <message id="app.name">
         <source>Inari Blue Notifier</source>
-        <extracomment>The app name, you may or may not translate it, it&apos;s up to you.</extracomment>
+        <extracomment>The app name, you may or may not translate it, it's up to you.</extracomment>
         <translation>Inari Blue Notifier</translation>
     </message>
     <message id="main.intro">
@@ -211,19 +209,19 @@
     </message>
     <message id="settings.constraints">
         <source>Constraints</source>
-        <translation type="unfinished"></translation>
+        <translation>Constraints</translation>
     </message>
     <message id="settings.enable_time_constraints">
         <source>Disable TOH at certain times</source>
-        <translation type="unfinished"></translation>
+        <translation>Disable TOH at certain times</translation>
     </message>
     <message id="settings.start_time">
         <source>Start TOH at</source>
-        <translation type="unfinished"></translation>
+        <translation>Start TOH at</translation>
     </message>
     <message id="settings.end_time">
         <source>Stop TOH at</source>
-        <translation type="unfinished"></translation>
+        <translation>Stop TOH at</translation>
     </message>
 </context>
 </TS>
