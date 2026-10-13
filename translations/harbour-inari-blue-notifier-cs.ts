@@ -225,48 +225,48 @@
     </message>
     <message id="pattern_select.default_calls">
         <source>Same as calls</source>
-        <translation type="unfinished"/>
+        <translation>Stejný jako hovory</translation>
     </message>
     <message id="pattern_select.default_notifications">
         <source>Same as notifications</source>
-        <translation type="unfinished"/>
+        <translation>Stejný jako notifikace</translation>
     </message>
     <message id="patterns.more">
         <source>More patterns</source>
-        <translation type="unfinished"/>
+        <translation>Více vzorů</translation>
     </message>
     <message id="patterns.active.default">
         <source>Default pattern</source>
-        <translation type="unfinished"/>
+        <translation>Výchozí vzor</translation>
     </message>
     <message id="patterns.active.sms">
         <source>SMS</source>
-        <translation type="unfinished"/>
+        <translation>SMS</translation>
     </message>
     <message id="patterns.active.email">
         <source>Email</source>
-        <translation type="unfinished"/>
+        <translation>E-mail</translation>
     </message>
     <message id="settings.events.more">
         <source>More events</source>
-        <translation type="unfinished"/>
+        <translation>Více událostí</translation>
     </message>
     <message id="settings.events.more.explanation">
         <source>Toggles in this section can override the behaviour of the parent ones. For example, if you disable calls but enable favourite calls, the TOH will only blink for calls from favourite callers.</source>
-        <translation type="unfinished"/>
+        <translation>V této sekci můžete přetížit nastavení výše. Pokud například zakážete hovory, ale povolíte oblíbené hovory, TOH bude blikat pouze v případě, že je hovor od oblíbeného kontaktu.</translation>
     </message>
     <message id="settings.events.more.explanation2">
         <source>And if you disable favourite calls but have normal calls enabled, the TOH will blink for favourite calls but it will use the pattern configured for calls, not the one configured for favourites.</source>
         <oldsource>And if you disable favourite calls but have normal calls enabled, you will still receive notifications for favourite calls but it will use the pattern configured for calls, not the one configured for favourites.</oldsource>
-        <translation type="unfinished"/>
+        <translation>A pokud zakážete oblíbené hovory, ale normální hovory jsou povoleny, TOH bude blikat i pro oblíbené hovory, ale použije vzor nastavený pro běžné hovory, ne ten, který je nastaven pro oblíbené.</translation>
     </message>
     <message id="settings.events.sms">
         <source>SMS</source>
-        <translation type="unfinished"/>
+        <translation>SMS</translation>
     </message>
     <message id="settings.events.email">
         <source>Emails</source>
-        <translation type="unfinished"/>
+        <translation>E-maily</translation>
     </message>
 </context>
 </TS>
