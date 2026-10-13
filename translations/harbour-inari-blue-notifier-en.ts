@@ -109,6 +109,12 @@
         <source>Email</source>
         <translation>Email</translation>
     </message>
+    <message id="patterns.active.signal">
+        <location filename="../qml/pages/PatternsPage.qml" line="110"/>
+        <source>Signal</source>
+        <extracomment>This is the Signal app, probably don&apos;t translate</extracomment>
+        <translation>Signal</translation>
+    </message>
     <message id="patterns.not_found">
         <location filename="../qml/components/PatternButton.qml" line="25"/>
         <source>A pattern with the name &apos;%1&apos; was not found.</source>
@@ -136,12 +142,12 @@
         <translation>Default pattern</translation>
     </message>
     <message id="patterns.stored">
-        <location filename="../qml/pages/PatternsPage.qml" line="118"/>
+        <location filename="../qml/pages/PatternsPage.qml" line="129"/>
         <source>All patterns</source>
         <translation>All patterns</translation>
     </message>
     <message id="patterns.remove">
-        <location filename="../qml/pages/PatternsPage.qml" line="182"/>
+        <location filename="../qml/pages/PatternsPage.qml" line="193"/>
         <source>Remove</source>
         <translation>Remove</translation>
     </message>
@@ -156,7 +162,7 @@
         <translation>Restart the service to apply your changes.</translation>
     </message>
     <message id="edit_pattern.title">
-        <location filename="../qml/pages/PatternsPage.qml" line="169"/>
+        <location filename="../qml/pages/PatternsPage.qml" line="180"/>
         <source>Edit pattern</source>
         <translation>Edit pattern</translation>
     </message>
@@ -303,23 +309,30 @@
         <source>Emails</source>
         <translation>Emails</translation>
     </message>
+    <message id="settings.events.signal">
+        <location filename="../qml/pages/SettingsPage.qml" line="172"/>
+        <source>Signal</source>
+        <oldsource>Signal Messenger</oldsource>
+        <extracomment>This is the Signal app, probably don&apos;t translate</extracomment>
+        <translation>Signal</translation>
+    </message>
     <message id="settings.constraints">
-        <location filename="../qml/pages/SettingsPage.qml" line="176"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="185"/>
         <source>Constraints</source>
         <translation>Constraints</translation>
     </message>
     <message id="settings.enable_time_constraints">
-        <location filename="../qml/pages/SettingsPage.qml" line="182"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="191"/>
         <source>Disable TOH at certain times</source>
         <translation>Disable TOH at certain times</translation>
     </message>
     <message id="settings.start_time">
-        <location filename="../qml/pages/SettingsPage.qml" line="195"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="204"/>
         <source>Start TOH at</source>
         <translation>Start TOH at</translation>
     </message>
     <message id="settings.end_time">
-        <location filename="../qml/pages/SettingsPage.qml" line="212"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="221"/>
         <source>Stop TOH at</source>
         <translation>Stop TOH at</translation>
     </message>

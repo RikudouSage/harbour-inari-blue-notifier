@@ -103,6 +103,17 @@ Page {
                             onPatternResolved: appSettings.emailPattern = pattern
                             onDefaultSelected: appSettings.emailPattern = {}
                         }
+
+                        PatternButton {
+                            //: This is the Signal app, probably don't translate
+                            //% "Signal"
+                            label: qsTrId("patterns.active.signal")
+                            defaultKind: 'notifications'
+                            pattern: appSettings.signalPattern
+                            onError: errorText = error
+                            onPatternResolved: appSettings.signalPattern = pattern
+                            onDefaultSelected: appSettings.signalPattern = {}
+                        }
                     }
                 }
             }

@@ -12,9 +12,10 @@ constexpr auto constraintsSection = "constraints";
 
 constexpr auto callPatternKey = "call";
 constexpr auto favoriteCallPatternKey = "favoriteCall";
-constexpr auto notificationPatternKey = "notification";
+constexpr auto notificationsPatternKey = "notification";
 constexpr auto smsPatternKey = "sms";
 constexpr auto emailPatternKey = "email";
+constexpr auto signalPatternKey = "signal";
 
 constexpr auto constraintStartTime = "startTime";
 constexpr auto constraintEndTime = "endTime";
@@ -22,6 +23,23 @@ constexpr auto constraintEndTime = "endTime";
 AppSettings::AppSettings(QObject *parent) : QObject(parent)
 {
 }
+
+implementPattern(callPattern, false)
+implementPattern(favoriteCallPattern, true)
+implementPattern(notificationsPattern, false)
+implementPattern(smsPattern, true)
+implementPattern(emailPattern, true)
+implementPattern(signalPattern, true)
+
+implementEnabled(callsEnabled, callPatternKey, true)
+implementEnabled(favoriteCallsEnabled, favoriteCallPatternKey, false)
+implementEnabled(notificationsEnabled, notificationsPatternKey, false)
+implementEnabled(smsEnabled, smsPatternKey, false)
+implementEnabled(emailEnabled, emailPatternKey, false)
+implementEnabled(signalEnabled, signalPatternKey, false)
+
+#undef implementEnabled
+#undef implementPattern
 
 AppSettings::~AppSettings()
 {
@@ -51,56 +69,6 @@ QJsonArray AppSettings::storedPatterns()
     }
 
     return result;
-}
-
-QJsonObject AppSettings::callPattern()
-{
-    return getPattern(callPatternKey, false);
-}
-
-QJsonObject AppSettings::favoriteCallPattern()
-{
-    return getPattern(favoriteCallPatternKey, true);
-}
-
-QJsonObject AppSettings::notificationsPattern()
-{
-    return getPattern(notificationPatternKey, false);
-}
-
-QJsonObject AppSettings::smsPattern()
-{
-    return getPattern(smsPatternKey, true);
-}
-
-QJsonObject AppSettings::emailPattern()
-{
-    return getPattern(emailPatternKey, true);
-}
-
-bool AppSettings::callsEnabled()
-{
-    return eventEnabled(callPatternKey, true);
-}
-
-bool AppSettings::favoriteCallsEnabled()
-{
-    return eventEnabled(favoriteCallPatternKey, false);
-}
-
-bool AppSettings::notificationsEnabled()
-{
-    return eventEnabled(notificationPatternKey, false);
-}
-
-bool AppSettings::smsEnabled()
-{
-    return eventEnabled(smsPatternKey, false);
-}
-
-bool AppSettings::emailEnabled()
-{
-    return eventEnabled(emailPatternKey, false);
 }
 
 QTime AppSettings::startTime()
@@ -159,86 +127,6 @@ void AppSettings::setStoredPatterns(const QJsonArray &value)
     }
 
     emit storedPatternsChanged();
-}
-
-void AppSettings::setCallPattern(const QJsonObject &value)
-{
-    setPattern(
-        callPatternKey,
-        value,
-        &AppSettings::callPattern,
-        &AppSettings::callPatternChanged,
-        false
-    );
-}
-
-void AppSettings::setFavoriteCallPattern(const QJsonObject &value)
-{
-    setPattern(
-        favoriteCallPatternKey,
-        value,
-        &AppSettings::favoriteCallPattern,
-        &AppSettings::favoriteCallPatternChanged,
-        true
-    );
-}
-
-void AppSettings::setNotificationsPattern(const QJsonObject &value)
-{
-    setPattern(
-        notificationPatternKey,
-        value,
-        &AppSettings::notificationsPattern,
-        &AppSettings::notificationsPatternChanged,
-        false
-    );
-}
-
-void AppSettings::setSmsPattern(const QJsonObject &value)
-{
-    setPattern(
-        smsPatternKey,
-        value,
-        &AppSettings::smsPattern,
-        &AppSettings::smsPatternChanged,
-        true
-    );
-}
-
-void AppSettings::setEmailPattern(const QJsonObject &value)
-{
-    setPattern(
-        emailPatternKey,
-        value,
-        &AppSettings::emailPattern,
-        &AppSettings::emailPatternChanged,
-        true
-    );
-}
-
-void AppSettings::setCallsEnabled(bool value)
-{
-    setEventEnabled(callPatternKey, value, &AppSettings::callsEnabled, &AppSettings::callsEnabledChanged);
-}
-
-void AppSettings::setFavoriteCallsEnabled(bool value)
-{
-    setEventEnabled(favoriteCallPatternKey, value, &AppSettings::favoriteCallsEnabled, &AppSettings::favoriteCallsEnabledChanged);
-}
-
-void AppSettings::setNotificationsEnabled(bool value)
-{
-    setEventEnabled(notificationPatternKey, value, &AppSettings::notificationsEnabled, &AppSettings::notificationsEnabledChanged);
-}
-
-void AppSettings::setSmsEnabled(bool value)
-{
-    setEventEnabled(smsPatternKey, value, &AppSettings::smsEnabled, &AppSettings::smsEnabledChanged);
-}
-
-void AppSettings::setEmailEnabled(bool value)
-{
-    setEventEnabled(emailPatternKey, value, &AppSettings::emailEnabled, &AppSettings::emailEnabledChanged);
 }
 
 void AppSettings::setStartTime(const QTime &value)

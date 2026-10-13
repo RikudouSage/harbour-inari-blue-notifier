@@ -63,5 +63,6 @@ TRANSLATIONS += translations/harbour-inari-blue-notifier-en.ts \
 HEADERS += \
     src/applicationactivation.h \
     src/appsettings.h \
+    src/appsettings_macros.h \
     src/daemoncontroller.h \
     src/defer.h
