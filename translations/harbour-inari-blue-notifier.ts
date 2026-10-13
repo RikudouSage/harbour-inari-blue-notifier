@@ -1,11 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="en">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="en">
 <context>
-    <name></name>
+    <name/>
     <message id="app.name">
         <source>Inari Blue Notifier</source>
-        <extracomment>The app name, you may or may not translate it, it&apos;s up to you.</extracomment>
+        <extracomment>The app name, you may or may not translate it, it's up to you.</extracomment>
         <translation>Inari Blue Notifier</translation>
     </message>
     <message id="main.intro">
@@ -272,14 +270,14 @@
     </message>
     <message id="patterns.active.signal">
         <source>Signal</source>
-        <extracomment>This is the Signal app, probably don&apos;t translate</extracomment>
-        <translation type="unfinished"></translation>
+        <extracomment>This is the Signal app, probably don't translate</extracomment>
+        <translation>Signal</translation>
     </message>
     <message id="settings.events.signal">
         <source>Signal</source>
         <oldsource>Signal Messenger</oldsource>
-        <extracomment>This is the Signal app, probably don&apos;t translate</extracomment>
-        <translation type="unfinished"></translation>
+        <extracomment>This is the Signal app, probably don't translate</extracomment>
+        <translation>Signal</translation>
     </message>
 </context>
 </TS>
