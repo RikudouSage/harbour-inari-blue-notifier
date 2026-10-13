@@ -1,11 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="cs">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="cs">
 <context>
-    <name></name>
+    <name/>
     <message id="app.name">
         <source>Inari Blue Notifier</source>
-        <extracomment>The app name, you may or may not translate it, it&apos;s up to you.</extracomment>
+        <extracomment>The app name, you may or may not translate it, it's up to you.</extracomment>
         <translation>Inari Blue Notifier</translation>
     </message>
     <message id="main.intro">
@@ -53,10 +51,6 @@
         <source>Incoming call</source>
         <oldsource>Active call pattern</oldsource>
         <translation>Aktivní vzor pro volání</translation>
-    </message>
-    <message id="pattern_selector.title">
-        <source>Choose a pattern</source>
-        <translation>Zvolte vzor</translation>
     </message>
     <message id="patterns.not_found">
         <source>A pattern with the name &apos;%1&apos; was not found.</source>
@@ -224,6 +218,55 @@
     <message id="settings.end_time">
         <source>Stop TOH at</source>
         <translation>Vypnout TOH v</translation>
+    </message>
+    <message id="pattern_selector.title">
+        <source>Choose a pattern</source>
+        <translation>Zvolte vzor</translation>
+    </message>
+    <message id="pattern_select.default_calls">
+        <source>Same as calls</source>
+        <translation type="unfinished"/>
+    </message>
+    <message id="pattern_select.default_notifications">
+        <source>Same as notifications</source>
+        <translation type="unfinished"/>
+    </message>
+    <message id="patterns.more">
+        <source>More patterns</source>
+        <translation type="unfinished"/>
+    </message>
+    <message id="patterns.active.default">
+        <source>Default pattern</source>
+        <translation type="unfinished"/>
+    </message>
+    <message id="patterns.active.sms">
+        <source>SMS</source>
+        <translation type="unfinished"/>
+    </message>
+    <message id="patterns.active.email">
+        <source>Email</source>
+        <translation type="unfinished"/>
+    </message>
+    <message id="settings.events.more">
+        <source>More events</source>
+        <translation type="unfinished"/>
+    </message>
+    <message id="settings.events.more.explanation">
+        <source>Toggles in this section can override the behaviour of the parent ones. For example, if you disable calls but enable favourite calls, the TOH will only blink for calls from favourite callers.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message id="settings.events.more.explanation2">
+        <source>And if you disable favourite calls but have normal calls enabled, the TOH will blink for favourite calls but it will use the pattern configured for calls, not the one configured for favourites.</source>
+        <oldsource>And if you disable favourite calls but have normal calls enabled, you will still receive notifications for favourite calls but it will use the pattern configured for calls, not the one configured for favourites.</oldsource>
+        <translation type="unfinished"/>
+    </message>
+    <message id="settings.events.sms">
+        <source>SMS</source>
+        <translation type="unfinished"/>
+    </message>
+    <message id="settings.events.email">
+        <source>Emails</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 </TS>
