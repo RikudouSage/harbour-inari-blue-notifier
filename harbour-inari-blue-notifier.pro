@@ -16,6 +16,7 @@ QT += dbus
 CONFIG += sailfishapp
 
 SOURCES += src/harbour-inari-blue-notifier.cpp \
+    src/applicationactivation.cpp \
     src/appsettings.cpp \
     src/daemoncontroller.cpp
 
@@ -58,6 +59,7 @@ TRANSLATIONS += translations/harbour-inari-blue-notifier-en.ts \
                 translations/harbour-inari-blue-notifier-sv.ts
 
 HEADERS += \
+    src/applicationactivation.h \
     src/appsettings.h \
     src/daemoncontroller.h \
     src/defer.h
