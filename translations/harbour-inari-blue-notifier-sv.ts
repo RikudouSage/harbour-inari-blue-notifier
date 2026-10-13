@@ -15,10 +15,6 @@
         <source>Current status: %1</source>
         <translation>Aktuell status: %1</translation>
     </message>
-    <message id="main.more_coming">
-        <source>Right now the app is rather simple, but no worries, more is coming!</source>
-        <translation>Just nu är appen ganska enkel, men oroa dig inte, det kommer snart mer!</translation>
-    </message>
     <message id="main.state.active">
         <source>Active</source>
         <translation>Aktiv</translation>
@@ -167,9 +163,49 @@
         <translation>Aktivera åtkomst till kontakter</translation>
     </message>
     <message id="patterns.active.favourite_call">
-        <source>Incoming call from favorites</source>
-        <oldsource>Active call from favourite contact pattern</oldsource>
+        <source>Incoming call from favourites</source>
+        <oldsource>Incoming call from favorites</oldsource>
         <translation>Inkommande samtal från favoriter</translation>
+    </message>
+    <message id="main.restart">
+        <source>Restart notifier</source>
+        <translation>Starta om avisering</translation>
+    </message>
+    <message id="main.contacts_enabled">
+        <source>Contacts access status: %1</source>
+        <translation>Åtkomststatus för kontakter: %1</translation>
+    </message>
+    <message id="settings.title">
+        <source>Settings</source>
+        <translation>Inställningar</translation>
+    </message>
+    <message id="settings.pull_down_hint">
+        <source>Configure the patterns using the pull down menu.</source>
+        <translation>Konfigurera mönster via toppmenyn.</translation>
+    </message>
+    <message id="settings.events">
+        <source>Events</source>
+        <translation>Händelser</translation>
+    </message>
+    <message id="settings.events.description">
+        <source>Configure whether the Inari Blue TOH reacts to the following events.</source>
+        <translation>Konfigurera om Inari Blue TOH skall reagera på följande händelser.</translation>
+    </message>
+    <message id="settings.events.calls">
+        <source>Incoming calls</source>
+        <translation>Inkommande samtal</translation>
+    </message>
+    <message id="settings.events.favorite_calls">
+        <source>Incoming calls from favourite contacts</source>
+        <translation>Inkommande samtal från favoritkontakter</translation>
+    </message>
+    <message id="settings.events.notifications">
+        <source>Active notifications</source>
+        <translation>Aktiva aviseringar</translation>
+    </message>
+    <message id="patterns.active.notifications">
+        <source>Notifications</source>
+        <translation>Aviseringar</translation>
     </message>
 </context>
 </TS>
