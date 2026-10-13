@@ -8,10 +8,14 @@
 constexpr auto activePatternsSection = "activePatterns";
 constexpr auto storedPatternsSection = "storedPatterns";
 constexpr auto eventsSection = "events";
+constexpr auto constraintsSection = "constraints";
 
 constexpr auto callPatternKey = "call";
 constexpr auto favoriteCallPatternKey = "favoriteCall";
 constexpr auto notificationPatternKey = "notification";
+
+constexpr auto constraintStartTime = "startTime";
+constexpr auto constraintEndTime = "endTime";
 
 AppSettings::AppSettings(QObject *parent) : QObject(parent)
 {
@@ -138,6 +142,32 @@ bool AppSettings::notificationsEnabled()
     });
 
     return settings.value(notificationPatternKey, false).toBool();
+}
+
+QTime AppSettings::startTime()
+{
+    settings.sync();
+    settings.beginGroup(constraintsSection);
+    defer({
+        settings.endGroup();
+    });
+
+    const auto value = settings.value(constraintStartTime, "00:00:00").toString();
+
+    return QTime::fromString(value, "hh:mm:ss");
+}
+
+QTime AppSettings::endTime()
+{
+    settings.sync();
+    settings.beginGroup(constraintsSection);
+    defer({
+        settings.endGroup();
+    });
+
+    const auto value = settings.value(constraintEndTime, "00:00:00").toString();
+
+    return QTime::fromString(value, "hh:mm:ss");
 }
 
 void AppSettings::setStoredPatterns(const QJsonArray &value)
@@ -317,6 +347,46 @@ void AppSettings::setNotificationsEnabled(bool value)
     }
 
     emit notificationsEnabledChanged();
+}
+
+void AppSettings::setStartTime(const QTime &value)
+{
+    const auto current = startTime();
+    if (value == current) {
+        return;
+    }
+
+    {
+        settings.beginGroup(constraintsSection);
+        defer({
+            settings.endGroup();
+        });
+
+        settings.setValue(constraintStartTime, value.toString("hh:mm:ss"));
+        settings.sync();
+    }
+
+    emit startTimeChanged();
+}
+
+void AppSettings::setEndTime(const QTime &value)
+{
+    const auto current = endTime();
+    if (value == current) {
+        return;
+    }
+
+    {
+        settings.beginGroup(constraintsSection);
+        defer({
+            settings.endGroup();
+        });
+
+        settings.setValue(constraintEndTime, value.toString("hh:mm:ss"));
+        settings.sync();
+    }
+
+    emit endTimeChanged();
 }
 
 QJsonObject AppSettings::patternByName(const QString &name)

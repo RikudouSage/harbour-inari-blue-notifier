@@ -16,6 +16,10 @@ Page {
         app.serviceNeedsRestart = true
     }
 
+    function timeIsZero(date) {
+        return date.getHours() === 0 && date.getMinutes() === 0 && date.getSeconds() === 0;
+    }
+
     SilicaFlickable {
         id: flickable
         anchors.fill: parent
@@ -87,6 +91,59 @@ Page {
                 onCheckedChanged: trackChange(function() {
                     appSettings.notificationsEnabled = checked;
                 })
+            }
+
+            SectionHeader {
+                //% "Constraints"
+                text: qsTrId("settings.constraints")
+            }
+
+            TextSwitch {
+                id: editDatesSwitch
+                //% "Disable TOH at certain times"
+                text: qsTrId("settings.enable_time_constraints")
+                checked: !timeIsZero(appSettings.startTime) || !timeIsZero(appSettings.endTime)
+                onCheckedChanged: {
+                    if (!checked) {
+                        appSettings.startTime = new Date(2000, 0, 1, 0, 0);
+                        appSettings.endTime = new Date(2000, 0, 1, 0, 0);
+                        app.serviceNeedsRestart = true;
+                    }
+                }
+            }
+
+            ValueButton {
+                //% "Start TOH at"
+                label: qsTrId("settings.start_time")
+                value: appSettings.startTime.toLocaleTimeString(undefined, Locale.ShortFormat)
+                enabled: editDatesSwitch.checked
+                onClicked: {
+                    const dialog = pageStack.push("Sailfish.Silica.TimePickerDialog", {
+                        hour: appSettings.startTime.getHours(),
+                        minute: appSettings.startTime.getMinutes(),
+                    });
+                    dialog.accepted.connect(function() {
+                        appSettings.startTime = dialog.time;
+                        app.serviceNeedsRestart = true;
+                    });
+                }
+            }
+
+            ValueButton {
+                //% "Stop TOH at"
+                label: qsTrId("settings.end_time")
+                value: appSettings.endTime.toLocaleTimeString(undefined, Locale.ShortFormat)
+                enabled: editDatesSwitch.checked
+                onClicked: {
+                    const dialog = pageStack.push("Sailfish.Silica.TimePickerDialog", {
+                        hour: appSettings.endTime.getHours(),
+                        minute: appSettings.endTime.getMinutes(),
+                    });
+                    dialog.accepted.connect(function() {
+                        appSettings.endTime = dialog.time;
+                        app.serviceNeedsRestart = true;
+                    });
+                }
             }
         }
     }
