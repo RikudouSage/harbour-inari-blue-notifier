@@ -1,11 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="no">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="no">
 <context>
-    <name></name>
+    <name/>
     <message id="app.name">
         <source>Inari Blue Notifier</source>
-        <extracomment>The app name, you may or may not translate it, it&apos;s up to you.</extracomment>
+        <extracomment>The app name, you may or may not translate it, it's up to you.</extracomment>
         <translation>Inari Blue Notifier</translation>
     </message>
     <message id="main.intro">
@@ -52,7 +50,7 @@
     <message id="patterns.active.call">
         <source>Incoming call</source>
         <oldsource>Active call pattern</oldsource>
-        <translation type="unfinished">Aktivt anropsmønster </translation>
+        <translation>Aktivt anropsmønster </translation>
     </message>
     <message id="pattern_selector.title">
         <source>Choose a pattern</source>
@@ -70,159 +68,160 @@
         <source>Restart the service to apply your changes.</source>
         <translation>Start tjenesten på nytt for å ta i bruk endringene.</translation>
     </message>
-    <message id="app.save">
-        <source>Save</source>
-        <translation type="unfinished"></translation>
+    <message id="patterns.stored">
+        <source>All patterns</source>
+        <translation>Alle mønstre</translation>
+    </message>
+    <message id="edit_pattern.title">
+        <source>Edit pattern</source>
+        <translation>Rediger mønster</translation>
     </message>
     <message id="edit_pattern.name">
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Navn</translation>
     </message>
-    <message id="edit_pattern.warning_name">
-        <source>Warning: A pattern with that name already exists, if you save it you will overwrite the existing pattern.</source>
-        <translation type="unfinished"></translation>
+    <message id="app.save">
+        <source>Save</source>
+        <translation>Lagre</translation>
     </message>
     <message id="edit_pattern.rise">
         <source>Fade-in duration (ms)</source>
-        <translation type="unfinished"></translation>
+        <translation>Fade-inn varighet (ms)</translation>
     </message>
     <message id="edit_pattern.hold">
         <source>On duration (ms)</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktiv tid (ms)</translation>
     </message>
     <message id="edit_pattern.decay">
         <source>Fade-out duration (ms)</source>
-        <translation type="unfinished"></translation>
+        <translation>Utoningstid (ms)</translation>
     </message>
     <message id="edit_pattern.off">
         <source>Off duration (ms)</source>
-        <translation type="unfinished"></translation>
+        <translation>Inaktiv tid (ms)</translation>
     </message>
     <message id="edit_pattern.delay">
         <source>Start delay (ms)</source>
-        <translation type="unfinished"></translation>
+        <translation>Start forsinkelse (ms)</translation>
     </message>
     <message id="edit_pattern.repeat">
         <source>Repeat count</source>
-        <translation type="unfinished"></translation>
+        <translation>Antall repetisjoner</translation>
     </message>
     <message id="edit_pattern.brightness">
         <source>Brightness</source>
-        <translation type="unfinished"></translation>
+        <translation>Lysstyrke</translation>
+    </message>
+    <message id="edit_pattern.warning_name">
+        <source>Warning: A pattern with that name already exists, if you save it you will overwrite the existing pattern.</source>
+        <translation>Advarsel: Et mønster med dette navnet finnes allerede. Hvis du lagrer, vil du overskrive det eksisterende mønsteret.</translation>
+    </message>
+    <message id="patterns.add">
+        <source>Add a pattern</source>
+        <translation>Legg til et mønster</translation>
+    </message>
+    <message id="patterns.remove">
+        <source>Remove</source>
+        <translation>Fjern</translation>
+    </message>
+    <message id="edit_pattern.preview">
+        <source>Preview</source>
+        <translation>Forhåndsvisning</translation>
     </message>
     <message id="edit_pattern.channels">
         <source>Channels</source>
         <extracomment>The LED channels that will be used in the pattern</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Kanaler</translation>
     </message>
     <message id="edit_pattern.all_channels">
         <source>All channels</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle kanaler</translation>
     </message>
     <message id="edit_pattern.channel">
         <source>Channel #%1</source>
         <extracomment>The index of the channel</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Kanal #%1</translation>
     </message>
     <message id="edit_pattern.channel_0_required">
         <source>Note that channel 0 will always be used even if you disable, the Inari Blue does not light up any channels if the channel #0 is not also present.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="edit_pattern.preview">
-        <source>Preview</source>
-        <translation type="unfinished"></translation>
+        <translation>Merk at kanal 0 alltid vil bli brukt selv om du deaktiverer den. Inari Blue lyser ikke opp noen kanaler hvis kanal #0 ikke også er til stede.</translation>
     </message>
     <message id="app.accept">
         <source>Accept</source>
-        <translation type="unfinished"></translation>
+        <translation>Godta</translation>
     </message>
     <message id="enable_contacts.description">
         <source>By accepting this dialog, you will give this app access to your contacts which is needed to check whether an incoming call is from a favourite contact. Note that if this is the first time you&apos;re enabling this, a system dialog will be shown asking you to grant the permission.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="main.restart">
-        <source>Restart notifier</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="settings.title">
-        <source>Settings</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="main.contacts_enabled">
-        <source>Contacts access status: %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="patterns.add">
-        <source>Add a pattern</source>
-        <translation type="unfinished"></translation>
+        <translation>Ved å godta denne dialogen gir du appen tilgang til kontaktene dine, noe som kreves for å sjekke om et innkommende anrop er fra en favorittkontakt. Merk at hvis det er første gang du aktiverer dette, vil det vises en systemdialog som ber deg om å gi tillatelsen.</translation>
     </message>
     <message id="patterns.disable_contacts">
         <source>Disable contacts access</source>
-        <translation type="unfinished"></translation>
+        <translation>Deaktiver tilgang til kontakter</translation>
     </message>
     <message id="patterns.enable_contacts">
         <source>Enable contacts access</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktiver kontakter</translation>
     </message>
     <message id="patterns.active.favourite_call">
         <source>Incoming call from favourites</source>
-        <translation type="unfinished"></translation>
+        <oldsource>Incoming call from favorites</oldsource>
+        <translation>innkommende anrop fra favoritter</translation>
     </message>
-    <message id="patterns.active.notifications">
-        <source>Notifications</source>
-        <translation type="unfinished"></translation>
+    <message id="main.restart">
+        <source>Restart notifier</source>
+        <translation>Start varsler på nytt</translation>
     </message>
-    <message id="patterns.stored">
-        <source>All patterns</source>
-        <translation type="unfinished"></translation>
+    <message id="main.contacts_enabled">
+        <source>Contacts access status: %1</source>
+        <translation>Status for kontakttilgang: %1</translation>
     </message>
-    <message id="edit_pattern.title">
-        <source>Edit pattern</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="patterns.remove">
-        <source>Remove</source>
-        <translation type="unfinished"></translation>
+    <message id="settings.title">
+        <source>Settings</source>
+        <translation>Innstillinger</translation>
     </message>
     <message id="settings.pull_down_hint">
         <source>Configure the patterns using the pull down menu.</source>
-        <translation type="unfinished"></translation>
+        <translation>Konfigurer mønstrene ved hjelp av nedtrekksmenyen.</translation>
     </message>
     <message id="settings.events">
         <source>Events</source>
-        <translation type="unfinished"></translation>
+        <translation>Hendelser</translation>
     </message>
     <message id="settings.events.description">
         <source>Configure whether the Inari Blue TOH reacts to the following events.</source>
-        <translation type="unfinished"></translation>
+        <translation>Konfigurer om Inari Blue TOH skal reagere på følgende hendelser.</translation>
     </message>
     <message id="settings.events.calls">
         <source>Incoming calls</source>
-        <translation type="unfinished"></translation>
+        <translation>Innkommende anrop</translation>
     </message>
     <message id="settings.events.favorite_calls">
         <source>Incoming calls from favourite contacts</source>
-        <translation type="unfinished"></translation>
+        <translation>Innkommende anrop fra dine favorittkontakter.</translation>
     </message>
     <message id="settings.events.notifications">
         <source>Active notifications</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktive varsler</translation>
+    </message>
+    <message id="patterns.active.notifications">
+        <source>Notifications</source>
+        <translation>Varsler</translation>
     </message>
     <message id="settings.constraints">
         <source>Constraints</source>
-        <translation type="unfinished"></translation>
+        <translation>Begrensninger</translation>
     </message>
     <message id="settings.enable_time_constraints">
         <source>Disable TOH at certain times</source>
-        <translation type="unfinished"></translation>
+        <translation>Deaktiver TOH til bestemte tider</translation>
     </message>
     <message id="settings.start_time">
         <source>Start TOH at</source>
-        <translation type="unfinished"></translation>
+        <translation>Start TOH</translation>
     </message>
     <message id="settings.end_time">
         <source>Stop TOH at</source>
-        <translation type="unfinished"></translation>
+        <translation>Stopp TOH</translation>
     </message>
 </context>
 </TS>
