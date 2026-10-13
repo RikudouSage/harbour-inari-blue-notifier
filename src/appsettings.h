@@ -1,6 +1,8 @@
 #ifndef APPSETTINGS_H
 #define APPSETTINGS_H
 
+#include <functional>
+
 #include <QObject>
 #include <QSettings>
 #include <QStandardPaths>
@@ -15,10 +17,14 @@ class AppSettings : public QObject
     Q_PROPERTY(QJsonObject callPattern READ callPattern WRITE setCallPattern NOTIFY callPatternChanged)
     Q_PROPERTY(QJsonObject favoriteCallPattern READ favoriteCallPattern WRITE setFavoriteCallPattern NOTIFY favoriteCallPatternChanged)
     Q_PROPERTY(QJsonObject notificationsPattern READ notificationsPattern WRITE setNotificationsPattern NOTIFY notificationsPatternChanged)
+    Q_PROPERTY(QJsonObject smsPattern READ smsPattern WRITE setSmsPattern NOTIFY smsPatternChanged)
+    Q_PROPERTY(QJsonObject emailPattern READ emailPattern WRITE setEmailPattern NOTIFY emailPatternChanged)
 
     Q_PROPERTY(bool callsEnabled READ callsEnabled WRITE setCallsEnabled NOTIFY callsEnabledChanged)
     Q_PROPERTY(bool favoriteCallsEnabled READ favoriteCallsEnabled WRITE setFavoriteCallsEnabled NOTIFY favoriteCallsEnabledChanged)
     Q_PROPERTY(bool notificationsEnabled READ notificationsEnabled WRITE setNotificationsEnabled NOTIFY notificationsEnabledChanged)
+    Q_PROPERTY(bool smsEnabled READ smsEnabled WRITE setSmsEnabled NOTIFY smsEnabledChanged)
+    Q_PROPERTY(bool emailEnabled READ emailEnabled WRITE setEmailEnabled NOTIFY emailEnabledChanged)
 
     Q_PROPERTY(QTime startTime READ startTime WRITE setStartTime NOTIFY startTimeChanged)
     Q_PROPERTY(QTime endTime READ endTime WRITE setEndTime NOTIFY endTimeChanged)
@@ -31,9 +37,15 @@ public:
     QJsonObject callPattern();
     QJsonObject favoriteCallPattern();
     QJsonObject notificationsPattern();
+    QJsonObject smsPattern();
+    QJsonObject emailPattern();
+
     bool callsEnabled();
     bool favoriteCallsEnabled();
     bool notificationsEnabled();
+    bool smsEnabled();
+    bool emailEnabled();
+
     QTime startTime();
     QTime endTime();
 
@@ -41,9 +53,15 @@ public:
     void setCallPattern(const QJsonObject &value);
     void setFavoriteCallPattern(const QJsonObject &value);
     void setNotificationsPattern(const QJsonObject &value);
+    void setSmsPattern(const QJsonObject &value);
+    void setEmailPattern(const QJsonObject &value);
+
     void setCallsEnabled(bool value);
     void setFavoriteCallsEnabled(bool value);
     void setNotificationsEnabled(bool value);
+    void setSmsEnabled(bool value);
+    void setEmailEnabled(bool value);
+
     void setStartTime(const QTime &value);
     void setEndTime(const QTime &value);
 
@@ -55,11 +73,34 @@ signals:
     void callPatternChanged();
     void favoriteCallPatternChanged();
     void notificationsPatternChanged();
+    void smsPatternChanged();
+    void emailPatternChanged();
+
     void callsEnabledChanged();
     void favoriteCallsEnabledChanged();
     void notificationsEnabledChanged();
+    void smsEnabledChanged();
+    void emailEnabledChanged();
+
     void startTimeChanged();
     void endTimeChanged();
+
+private:
+    QJsonObject getPattern(const QString &key, bool nullAllowed);
+    void setPattern(
+        const QString &key,
+        const QJsonObject &value,
+        QJsonObject (AppSettings::*currentValue)(),
+        void (AppSettings::*notify)(),
+        bool nullAllowed
+    );
+    bool eventEnabled(const QString &key, bool defaultValue);
+    void setEventEnabled(
+        const QString &key,
+        bool value,
+        bool (AppSettings::*currentValue)(),
+        void (AppSettings::*notify)()
+    );
 
 private:
     QSettings settings = QSettings(

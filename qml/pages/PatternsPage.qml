@@ -26,42 +26,6 @@ Page {
                     });
                 }
             }
-
-            MenuItem {
-                text: app.contactsUnitActiveState === 'active'
-                      //% "Disable contacts access"
-                      ? qsTrId("patterns.disable_contacts")
-                      //% "Enable contacts access"
-                      : qsTrId("patterns.enable_contacts")
-                onClicked: {
-                    const serviceName = "inari-blue-notifier-daemon-contacts.service";
-
-                    if (app.contactsUnitActiveState === 'active') {
-                        systemd.call("DisableUnitFiles", [
-                            [serviceName],
-                            false
-                        ]);
-                        systemd.call("StopUnit", [
-                            serviceName,
-                            "replace"
-                        ]);
-                        return;
-                    }
-
-                    const dialog = pageStack.push("EnableContactsPage.qml");
-                    dialog.accepted.connect(function() {
-                        systemd.call("EnableUnitFiles", [
-                            [serviceName],
-                            false,
-                            false
-                        ]);
-                        systemd.call("StartUnit", [
-                            serviceName,
-                            "replace"
-                        ]);
-                    });
-                }
-            }
         }
 
         Column {
@@ -83,73 +47,63 @@ Page {
                 text: qsTrId("patterns.active")
             }
 
-            ValueButton {
+            PatternButton {
                 //% "Incoming call"
                 label: qsTrId("patterns.active.call")
-                value: typeof appSettings.callPattern.name !== 'undefined' ? appSettings.callPattern.name : ''
-
-                onClicked: {
-                    const dialog = pageStack.push("PatternSelectorPage.qml", {
-                        patterns: appSettings.storedPatterns,
-                    });
-                    dialog.itemSelected.connect(function(name) {
-                        const found = appSettings.patternByName(name);
-                        if (!found.name) {
-                            //% "A pattern with the name '%1' was not found.
-                            errorText = qsTrId("patterns.not_found").arg(name)
-                            return;
-                        }
-
-                        appSettings.callPattern = found;
-                        app.serviceNeedsRestart = true;
-                    });
-                }
+                pattern: appSettings.callPattern
+                onError: errorText = error
+                onPatternResolved: appSettings.callPattern = pattern
             }
 
-            ValueButton {
-                //% "Incoming call from favourites"
-                label: qsTrId("patterns.active.favourite_call")
-                value: typeof appSettings.favoriteCallPattern.name !== 'undefined' ? appSettings.favoriteCallPattern.name : ''
-                enabled: app.contactsUnitActiveState === 'active'
-
-                onClicked: {
-                    const dialog = pageStack.push("PatternSelectorPage.qml", {
-                        patterns: appSettings.storedPatterns,
-                    });
-                    dialog.itemSelected.connect(function(name) {
-                        const found = appSettings.patternByName(name);
-                        if (!found.name) {
-                            //% "A pattern with the name '%1' was not found.
-                            errorText = qsTrId("patterns.not_found").arg(name)
-                            return;
-                        }
-
-                        appSettings.favoriteCallPattern = found;
-                        app.serviceNeedsRestart = true;
-                    });
-                }
-            }
-
-            ValueButton {
+            PatternButton {
                 //% "Notifications"
                 label: qsTrId("patterns.active.notifications")
-                value: typeof appSettings.notificationsPattern.name !== 'undefined' ? appSettings.notificationsPattern.name : ''
+                pattern: appSettings.notificationsPattern
+                onError: errorText = error
+                onPatternResolved: appSettings.notificationsPattern = pattern
+            }
 
-                onClicked: {
-                    const dialog = pageStack.push("PatternSelectorPage.qml", {
-                        patterns: appSettings.storedPatterns,
-                    });
-                    dialog.itemSelected.connect(function(name) {
-                        const found = appSettings.patternByName(name);
-                        if (!found.name) {
-                            //% "A pattern with the name '%1' was not found.
-                            errorText = qsTrId("patterns.not_found").arg(name)
-                            return;
+            ExpandingSectionGroup {
+                currentIndex: -1
+
+                ExpandingSection {
+                    //% "More patterns"
+                    title: qsTrId("patterns.more")
+
+                    content.sourceComponent: Column {
+                        width: parent.width
+                        spacing: Theme.paddingLarge
+
+                        PatternButton {
+                            //% "Incoming call from favourites"
+                            label: qsTrId("patterns.active.favourite_call")
+                            defaultKind: 'calls'
+                            pattern: appSettings.favoriteCallPattern
+                            onError: errorText = error
+                            onPatternResolved: appSettings.favoriteCallPattern = pattern
+                            onDefaultSelected: appSettings.favoriteCallPattern = {}
                         }
 
-                        appSettings.notificationsPattern = found;
-                        app.serviceNeedsRestart = true;
-                    });
+                        PatternButton {
+                            //% "SMS"
+                            label: qsTrId("patterns.active.sms")
+                            defaultKind: 'notifications'
+                            pattern: appSettings.smsPattern
+                            onError: errorText = error
+                            onPatternResolved: appSettings.smsPattern = pattern
+                            onDefaultSelected: appSettings.smsPattern = {}
+                        }
+
+                        PatternButton {
+                            //% "Email"
+                            label: qsTrId("patterns.active.email")
+                            defaultKind: 'notifications'
+                            pattern: appSettings.emailPattern
+                            onError: errorText = error
+                            onPatternResolved: appSettings.emailPattern = pattern
+                            onDefaultSelected: appSettings.emailPattern = {}
+                        }
+                    }
                 }
             }
 
