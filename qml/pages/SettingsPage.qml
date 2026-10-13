@@ -27,6 +27,42 @@ Page {
 
         PullDownMenu {
             MenuItem {
+                text: app.contactsUnitActiveState === 'active'
+                      //% "Disable contacts access"
+                      ? qsTrId("patterns.disable_contacts")
+                      //% "Enable contacts access"
+                      : qsTrId("patterns.enable_contacts")
+                onClicked: {
+                    const serviceName = "inari-blue-notifier-daemon-contacts.service";
+
+                    if (app.contactsUnitActiveState === 'active') {
+                        systemd.call("DisableUnitFiles", [
+                            [serviceName],
+                            false
+                        ]);
+                        systemd.call("StopUnit", [
+                            serviceName,
+                            "replace"
+                        ]);
+                        return;
+                    }
+
+                    const dialog = pageStack.push("EnableContactsPage.qml");
+                    dialog.accepted.connect(function() {
+                        systemd.call("EnableUnitFiles", [
+                            [serviceName],
+                            false,
+                            false
+                        ]);
+                        systemd.call("StartUnit", [
+                            serviceName,
+                            "replace"
+                        ]);
+                    });
+                }
+            }
+
+            MenuItem {
                 //% "Patterns"
                 text: qsTrId("patterns.title")
                 onClicked: {
@@ -76,21 +112,63 @@ Page {
             }
 
             TextSwitch {
-                //% "Incoming calls from favourite contacts"
-                text: qsTrId("settings.events.favorite_calls")
-                checked: appSettings.favoriteCallsEnabled
-                onCheckedChanged: trackChange(function() {
-                    appSettings.favoriteCallsEnabled = checked;
-                })
-            }
-
-            TextSwitch {
                 //% "Active notifications"
                 text: qsTrId("settings.events.notifications")
                 checked: appSettings.notificationsEnabled
                 onCheckedChanged: trackChange(function() {
                     appSettings.notificationsEnabled = checked;
                 })
+            }
+
+            ExpandingSectionGroup {
+                currentIndex: -1
+
+                ExpandingSection {
+                    //% "More events"
+                    title: qsTrId("settings.events.more")
+
+                    content.sourceComponent: Column {
+                        width: parent.width
+                        spacing: Theme.paddingLarge
+
+                        StandardLabel {
+                            //% "Toggles in this section can override the behaviour of the parent ones. For example, if you disable calls but enable favourite calls, the TOH will only blink for calls from favourite callers."
+                            text: qsTrId("settings.events.more.explanation")
+                            font.pixelSize: Theme.fontSizeExtraSmall
+                        }
+                        StandardLabel {
+                            //% "And if you disable favourite calls but have normal calls enabled, the TOH will blink for favourite calls but it will use the pattern configured for calls, not the one configured for favourites."
+                            text: qsTrId("settings.events.more.explanation2")
+                            font.pixelSize: Theme.fontSizeExtraSmall
+                        }
+
+                        TextSwitch {
+                            //% "Incoming calls from favourite contacts"
+                            text: qsTrId("settings.events.favorite_calls")
+                            checked: appSettings.favoriteCallsEnabled
+                            onCheckedChanged: trackChange(function() {
+                                appSettings.favoriteCallsEnabled = checked;
+                            })
+                        }
+                        TextSwitch {
+                            //% "SMS"
+                            text: qsTrId("settings.events.sms")
+                            checked: appSettings.smsEnabled
+                            onCheckedChanged: trackChange(function() {
+                                appSettings.smsEnabled = checked;
+                            })
+                        }
+                        TextSwitch {
+                            //% "Emails"
+                            text: qsTrId("settings.events.email")
+                            checked: appSettings.emailEnabled
+                            onCheckedChanged: trackChange(function() {
+                                appSettings.emailEnabled = checked;
+                            })
+                        }
+                    }
+                    content.active: true
+                }
             }
 
             SectionHeader {

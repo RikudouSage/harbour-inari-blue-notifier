@@ -22,6 +22,7 @@ SOURCES += src/harbour-inari-blue-notifier.cpp \
 
 DISTFILES += qml/harbour-inari-blue-notifier.qml \
     qml/components/DurationInput.qml \
+    qml/components/PatternButton.qml \
     qml/components/ServiceRestartNotice.qml \
     qml/components/StandardLabel.qml \
     qml/cover/CoverPage.qml \

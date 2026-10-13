@@ -13,6 +13,8 @@ constexpr auto constraintsSection = "constraints";
 constexpr auto callPatternKey = "call";
 constexpr auto favoriteCallPatternKey = "favoriteCall";
 constexpr auto notificationPatternKey = "notification";
+constexpr auto smsPatternKey = "sms";
+constexpr auto emailPatternKey = "email";
 
 constexpr auto constraintStartTime = "startTime";
 constexpr auto constraintEndTime = "endTime";
@@ -53,95 +55,52 @@ QJsonArray AppSettings::storedPatterns()
 
 QJsonObject AppSettings::callPattern()
 {
-    settings.sync();
-    settings.beginGroup(activePatternsSection);
-    defer({
-        settings.endGroup();
-    });
-
-    const auto encoded = settings.value(callPatternKey).toByteArray();
-    const auto rawJson = QByteArray::fromBase64(encoded, QByteArray::Base64Option::Base64Encoding);
-    QJsonParseError error;
-    const auto document = QJsonDocument::fromJson(rawJson, &error);
-    if (error.error != QJsonParseError::NoError) {
-        qWarning() << "Error parsing JSON: " << error.errorString();
-        return QJsonObject();
-    }
-
-    return document.object();
+    return getPattern(callPatternKey, false);
 }
 
 QJsonObject AppSettings::favoriteCallPattern()
 {
-    settings.sync();
-    settings.beginGroup(activePatternsSection);
-    defer({
-        settings.endGroup();
-    });
-
-    const auto encoded = settings.value(favoriteCallPatternKey).toByteArray();
-    const auto rawJson = QByteArray::fromBase64(encoded, QByteArray::Base64Option::Base64Encoding);
-    QJsonParseError error;
-    const auto document = QJsonDocument::fromJson(rawJson, &error);
-    if (error.error != QJsonParseError::NoError) {
-        qWarning() << "Error parsing JSON: " << error.errorString();
-        return QJsonObject();
-    }
-
-    return document.object();
+    return getPattern(favoriteCallPatternKey, true);
 }
 
 QJsonObject AppSettings::notificationsPattern()
 {
-    settings.sync();
-    settings.beginGroup(activePatternsSection);
-    defer({
-        settings.endGroup();
-    });
+    return getPattern(notificationPatternKey, false);
+}
 
-    const auto encoded = settings.value(notificationPatternKey).toByteArray();
-    const auto rawJson = QByteArray::fromBase64(encoded, QByteArray::Base64Option::Base64Encoding);
-    QJsonParseError error;
-    const auto document = QJsonDocument::fromJson(rawJson, &error);
-    if (error.error != QJsonParseError::NoError) {
-        qWarning() << "Error parsing JSON: " << error.errorString();
-        return QJsonObject();
-    }
+QJsonObject AppSettings::smsPattern()
+{
+    return getPattern(smsPatternKey, true);
+}
 
-    return document.object();
+QJsonObject AppSettings::emailPattern()
+{
+    return getPattern(emailPatternKey, true);
 }
 
 bool AppSettings::callsEnabled()
 {
-    settings.sync();
-    settings.beginGroup(eventsSection);
-    defer({
-        settings.endGroup();
-    });
-
-    return settings.value(callPatternKey, true).toBool();
+    return eventEnabled(callPatternKey, true);
 }
 
 bool AppSettings::favoriteCallsEnabled()
 {
-    settings.sync();
-    settings.beginGroup(eventsSection);
-    defer({
-        settings.endGroup();
-    });
-
-    return settings.value(favoriteCallPatternKey, true).toBool();
+    return eventEnabled(favoriteCallPatternKey, false);
 }
 
 bool AppSettings::notificationsEnabled()
 {
-    settings.sync();
-    settings.beginGroup(eventsSection);
-    defer({
-        settings.endGroup();
-    });
+    return eventEnabled(notificationPatternKey, false);
+}
 
-    return settings.value(notificationPatternKey, false).toBool();
+bool AppSettings::smsEnabled()
+{
+    return eventEnabled(smsPatternKey, false);
+}
+
+bool AppSettings::emailEnabled()
+{
+    return eventEnabled(emailPatternKey, false);
 }
 
 QTime AppSettings::startTime()
@@ -204,149 +163,82 @@ void AppSettings::setStoredPatterns(const QJsonArray &value)
 
 void AppSettings::setCallPattern(const QJsonObject &value)
 {
-    const auto current = callPattern();
-    if (value == current) {
-        return;
-    }
-
-    {
-        settings.beginGroup(activePatternsSection);
-        defer({
-            settings.endGroup();
-        });
-
-        const auto name = value["name"].toString();
-        if (name.isNull() || name.isEmpty()) {
-            return;
-        }
-
-        const auto document = QJsonDocument(value);
-        const auto rawJson = document.toJson(QJsonDocument::JsonFormat::Compact);
-        const auto encoded = rawJson.toBase64(QByteArray::Base64Option::Base64Encoding | QByteArray::Base64Option::OmitTrailingEquals);
-        settings.setValue(callPatternKey, QString::fromLatin1(encoded));
-
-        settings.sync();
-    }
-
-    emit callPatternChanged();
+    setPattern(
+        callPatternKey,
+        value,
+        &AppSettings::callPattern,
+        &AppSettings::callPatternChanged,
+        false
+    );
 }
 
 void AppSettings::setFavoriteCallPattern(const QJsonObject &value)
 {
-    const auto current = favoriteCallPattern();
-    if (value == current) {
-        return;
-    }
-
-    {
-        settings.beginGroup(activePatternsSection);
-        defer({
-            settings.endGroup();
-        });
-
-        const auto name = value["name"].toString();
-        if (name.isNull() || name.isEmpty()) {
-            return;
-        }
-
-        const auto document = QJsonDocument(value);
-        const auto rawJson = document.toJson(QJsonDocument::JsonFormat::Compact);
-        const auto encoded = rawJson.toBase64(QByteArray::Base64Option::Base64Encoding | QByteArray::Base64Option::OmitTrailingEquals);
-        settings.setValue(favoriteCallPatternKey, QString::fromLatin1(encoded));
-
-        settings.sync();
-    }
-
-    emit favoriteCallPatternChanged();
+    setPattern(
+        favoriteCallPatternKey,
+        value,
+        &AppSettings::favoriteCallPattern,
+        &AppSettings::favoriteCallPatternChanged,
+        true
+    );
 }
 
 void AppSettings::setNotificationsPattern(const QJsonObject &value)
 {
-    const auto current = notificationsPattern();
-    if (value == current) {
-        return;
-    }
+    setPattern(
+        notificationPatternKey,
+        value,
+        &AppSettings::notificationsPattern,
+        &AppSettings::notificationsPatternChanged,
+        false
+    );
+}
 
-    {
-        settings.beginGroup(activePatternsSection);
-        defer({
-            settings.endGroup();
-        });
+void AppSettings::setSmsPattern(const QJsonObject &value)
+{
+    setPattern(
+        smsPatternKey,
+        value,
+        &AppSettings::smsPattern,
+        &AppSettings::smsPatternChanged,
+        true
+    );
+}
 
-        const auto name = value["name"].toString();
-        if (name.isNull() || name.isEmpty()) {
-            return;
-        }
-
-        const auto document = QJsonDocument(value);
-        const auto rawJson = document.toJson(QJsonDocument::JsonFormat::Compact);
-        const auto encoded = rawJson.toBase64(QByteArray::Base64Option::Base64Encoding | QByteArray::Base64Option::OmitTrailingEquals);
-        settings.setValue(notificationPatternKey, QString::fromLatin1(encoded));
-
-        settings.sync();
-    }
-
-    emit notificationsPatternChanged();
+void AppSettings::setEmailPattern(const QJsonObject &value)
+{
+    setPattern(
+        emailPatternKey,
+        value,
+        &AppSettings::emailPattern,
+        &AppSettings::emailPatternChanged,
+        true
+    );
 }
 
 void AppSettings::setCallsEnabled(bool value)
 {
-    const auto current = callsEnabled();
-    if (value == current) {
-        return;
-    }
-
-    {
-        settings.beginGroup(eventsSection);
-        defer({
-            settings.endGroup();
-        });
-
-        settings.setValue(callPatternKey, value);
-        settings.sync();
-    }
-
-    emit callsEnabledChanged();
+    setEventEnabled(callPatternKey, value, &AppSettings::callsEnabled, &AppSettings::callsEnabledChanged);
 }
 
 void AppSettings::setFavoriteCallsEnabled(bool value)
 {
-    const auto current = favoriteCallsEnabled();
-    if (value == current) {
-        return;
-    }
-
-    {
-        settings.beginGroup(eventsSection);
-        defer({
-            settings.endGroup();
-        });
-
-        settings.setValue(favoriteCallPatternKey, value);
-        settings.sync();
-    }
-
-    emit favoriteCallsEnabledChanged();
+    setEventEnabled(favoriteCallPatternKey, value, &AppSettings::favoriteCallsEnabled, &AppSettings::favoriteCallsEnabledChanged);
 }
 
 void AppSettings::setNotificationsEnabled(bool value)
 {
-    const auto current = notificationsEnabled();
-    if (value == current) {
-        return;
-    }
+    setEventEnabled(notificationPatternKey, value, &AppSettings::notificationsEnabled, &AppSettings::notificationsEnabledChanged);
+}
 
-    {
-        settings.beginGroup(eventsSection);
-        defer({
-            settings.endGroup();
-        });
+void AppSettings::setSmsEnabled(bool value)
+{
+    setEventEnabled(smsPatternKey, value, &AppSettings::smsEnabled, &AppSettings::smsEnabledChanged);
+}
 
-        settings.setValue(notificationPatternKey, value);
-        settings.sync();
-    }
-
-    emit notificationsEnabledChanged();
+void AppSettings::setEmailEnabled(bool value)
+{
+    setEventEnabled(emailPatternKey, value, &AppSettings::emailEnabled, &AppSettings::emailEnabledChanged);
 }
 
 void AppSettings::setStartTime(const QTime &value)
@@ -433,4 +325,103 @@ void AppSettings::updatePattern(const QJsonObject &value, const QString &oldName
     }
 
     setStoredPatterns(patterns);
+}
+
+QJsonObject AppSettings::getPattern(const QString &key, bool nullAllowed)
+{
+    settings.sync();
+    settings.beginGroup(activePatternsSection);
+    defer({
+        settings.endGroup();
+    });
+
+    const auto encoded = settings.value(key).toByteArray();
+    if (nullAllowed && encoded.length() == 0) {
+        return QJsonObject();
+    }
+
+    const auto rawJson = QByteArray::fromBase64(encoded, QByteArray::Base64Option::Base64Encoding);
+    QJsonParseError error;
+    const auto document = QJsonDocument::fromJson(rawJson, &error);
+    if (error.error != QJsonParseError::NoError) {
+        qWarning() << "Error parsing JSON: " << error.errorString();
+        return QJsonObject();
+    }
+
+    return document.object();
+}
+
+void AppSettings::setPattern(
+    const QString &key,
+    const QJsonObject &value,
+    QJsonObject (AppSettings::*currentValue)(),
+    void (AppSettings::*notify)(),
+    bool nullAllowed
+) {
+    const auto current = (this->*currentValue)();
+    if (value == current) {
+        return;
+    }
+
+    {
+        settings.beginGroup(activePatternsSection);
+        defer({
+            settings.endGroup();
+        });
+
+        if (value.isEmpty() && nullAllowed) {
+            settings.remove(key);
+            emit (this->*notify)();
+            return;
+        }
+
+        const auto name = value["name"].toString();
+        if (name.isNull() || name.isEmpty()) {
+            return;
+        }
+
+        const auto document = QJsonDocument(value);
+        const auto rawJson = document.toJson(QJsonDocument::JsonFormat::Compact);
+        const auto encoded = rawJson.toBase64(QByteArray::Base64Option::Base64Encoding | QByteArray::Base64Option::OmitTrailingEquals);
+        settings.setValue(key, QString::fromLatin1(encoded));
+
+        settings.sync();
+    }
+
+    emit (this->*notify)();
+}
+
+bool AppSettings::eventEnabled(const QString &key, bool defaultValue)
+{
+    settings.sync();
+    settings.beginGroup(eventsSection);
+    defer({
+        settings.endGroup();
+    });
+
+    return settings.value(key, defaultValue).toBool();
+}
+
+void AppSettings::setEventEnabled(
+    const QString &key,
+    bool value,
+    bool (AppSettings::*currentValue)(),
+    void (AppSettings::*notify)()
+) {
+    const auto current = (this->*currentValue)();
+    if (value == current) {
+        return;
+    }
+
+    {
+        settings.beginGroup(eventsSection);
+        defer({
+            settings.endGroup();
+        });
+
+        settings.setValue(key, value);
+        settings.sync();
+    }
+
+    emit (this->*notify)();;
 }

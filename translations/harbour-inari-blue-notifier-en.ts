@@ -36,8 +36,8 @@
         <translation>Restart notifier</translation>
     </message>
     <message id="patterns.title">
-        <location filename="../qml/pages/PatternsPage.qml" line="74"/>
-        <location filename="../qml/pages/SettingsPage.qml" line="31"/>
+        <location filename="../qml/pages/PatternsPage.qml" line="38"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="67"/>
         <source>Patterns</source>
         <translation>Patterns</translation>
     </message>
@@ -58,7 +58,7 @@
     </message>
     <message id="settings.title">
         <location filename="../qml/pages/MainPage.qml" line="90"/>
-        <location filename="../qml/pages/SettingsPage.qml" line="45"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="81"/>
         <source>Settings</source>
         <translation>Settings</translation>
     </message>
@@ -79,58 +79,71 @@
         <translation>Add a pattern</translation>
     </message>
     <message id="patterns.disable_contacts">
-        <location filename="../qml/pages/PatternsPage.qml" line="33"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="32"/>
         <source>Disable contacts access</source>
         <translation>Disable contacts access</translation>
     </message>
     <message id="patterns.enable_contacts">
-        <location filename="../qml/pages/PatternsPage.qml" line="35"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="34"/>
         <source>Enable contacts access</source>
         <translation>Enable contacts access</translation>
     </message>
     <message id="patterns.active">
-        <location filename="../qml/pages/PatternsPage.qml" line="83"/>
+        <location filename="../qml/pages/PatternsPage.qml" line="47"/>
         <source>Active patterns</source>
         <translation>Active patterns</translation>
     </message>
     <message id="patterns.active.call">
-        <location filename="../qml/pages/PatternsPage.qml" line="88"/>
+        <location filename="../qml/pages/PatternsPage.qml" line="52"/>
         <source>Incoming call</source>
         <oldsource>Active call pattern</oldsource>
         <translation>Incoming call</translation>
     </message>
-    <message id="patterns.not_found">
+    <message id="patterns.active.sms">
+        <location filename="../qml/pages/PatternsPage.qml" line="89"/>
+        <source>SMS</source>
+        <translation>SMS</translation>
+    </message>
+    <message id="patterns.active.email">
         <location filename="../qml/pages/PatternsPage.qml" line="99"/>
-        <location filename="../qml/pages/PatternsPage.qml" line="123"/>
-        <location filename="../qml/pages/PatternsPage.qml" line="146"/>
+        <source>Email</source>
+        <translation>Email</translation>
+    </message>
+    <message id="patterns.not_found">
+        <location filename="../qml/components/PatternButton.qml" line="25"/>
         <source>A pattern with the name &apos;%1&apos; was not found.</source>
         <translation>A pattern with the name &apos;%1&apos; was not found.</translation>
     </message>
+    <message id="patterns.more">
+        <location filename="../qml/pages/PatternsPage.qml" line="71"/>
+        <source>More patterns</source>
+        <translation>More patterns</translation>
+    </message>
     <message id="patterns.active.favourite_call">
-        <location filename="../qml/pages/PatternsPage.qml" line="111"/>
+        <location filename="../qml/pages/PatternsPage.qml" line="79"/>
         <source>Incoming call from favourites</source>
         <oldsource>Incoming call from favorites</oldsource>
         <translation>Incoming call from favourites</translation>
     </message>
     <message id="patterns.active.notifications">
-        <location filename="../qml/pages/PatternsPage.qml" line="135"/>
+        <location filename="../qml/pages/PatternsPage.qml" line="60"/>
         <source>Notifications</source>
         <translation>Notifications</translation>
     </message>
+    <message id="patterns.active.default">
+        <location filename="../qml/components/PatternButton.qml" line="13"/>
+        <source>Default pattern</source>
+        <translation>Default pattern</translation>
+    </message>
     <message id="patterns.stored">
-        <location filename="../qml/pages/PatternsPage.qml" line="164"/>
+        <location filename="../qml/pages/PatternsPage.qml" line="118"/>
         <source>All patterns</source>
         <translation>All patterns</translation>
     </message>
     <message id="patterns.remove">
-        <location filename="../qml/pages/PatternsPage.qml" line="228"/>
+        <location filename="../qml/pages/PatternsPage.qml" line="182"/>
         <source>Remove</source>
         <translation>Remove</translation>
-    </message>
-    <message id="pattern_selector.title">
-        <location filename="../qml/pages/PatternSelectorPage.qml" line="15"/>
-        <source>Choose a pattern</source>
-        <translation>Choose a pattern</translation>
     </message>
     <message id="service_restart_notice.title">
         <location filename="../qml/components/ServiceRestartNotice.qml" line="8"/>
@@ -143,7 +156,7 @@
         <translation>Restart the service to apply your changes.</translation>
     </message>
     <message id="edit_pattern.title">
-        <location filename="../qml/pages/PatternsPage.qml" line="215"/>
+        <location filename="../qml/pages/PatternsPage.qml" line="169"/>
         <source>Edit pattern</source>
         <translation>Edit pattern</translation>
     </message>
@@ -235,54 +248,95 @@
         <translation>By accepting this dialog, you will give this app access to your contacts which is needed to check whether an incoming call is from a favourite contact. Note that if this is the first time you&apos;re enabling this, a system dialog will be shown asking you to grant the permission.</translation>
     </message>
     <message id="settings.pull_down_hint">
-        <location filename="../qml/pages/SettingsPage.qml" line="54"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="90"/>
         <source>Configure the patterns using the pull down menu.</source>
         <translation>Configure the patterns using the pull down menu.</translation>
     </message>
     <message id="settings.events">
-        <location filename="../qml/pages/SettingsPage.qml" line="60"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="96"/>
         <source>Events</source>
         <translation>Events</translation>
     </message>
     <message id="settings.events.description">
-        <location filename="../qml/pages/SettingsPage.qml" line="65"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="101"/>
         <source>Configure whether the Inari Blue TOH reacts to the following events.</source>
         <translation>Configure whether the Inari Blue TOH reacts to the following events.</translation>
     </message>
     <message id="settings.events.calls">
-        <location filename="../qml/pages/SettingsPage.qml" line="71"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="107"/>
         <source>Incoming calls</source>
         <translation>Incoming calls</translation>
     </message>
+    <message id="settings.events.more">
+        <location filename="../qml/pages/SettingsPage.qml" line="128"/>
+        <source>More events</source>
+        <translation>More events</translation>
+    </message>
+    <message id="settings.events.more.explanation">
+        <location filename="../qml/pages/SettingsPage.qml" line="136"/>
+        <source>Toggles in this section can override the behaviour of the parent ones. For example, if you disable calls but enable favourite calls, the TOH will only blink for calls from favourite callers.</source>
+        <translation>Toggles in this section can override the behaviour of the parent ones. For example, if you disable calls but enable favourite calls, the TOH will only blink for calls from favourite callers.</translation>
+    </message>
+    <message id="settings.events.more.explanation2">
+        <location filename="../qml/pages/SettingsPage.qml" line="141"/>
+        <source>And if you disable favourite calls but have normal calls enabled, the TOH will blink for favourite calls but it will use the pattern configured for calls, not the one configured for favourites.</source>
+        <oldsource>And if you disable favourite calls but have normal calls enabled, you will still receive notifications for favourite calls but it will use the pattern configured for calls, not the one configured for favourites.</oldsource>
+        <translation>And if you disable favourite calls but have normal calls enabled, the TOH will blink for favourite calls but it will use the pattern configured for calls, not the one configured for favourites.</translation>
+    </message>
     <message id="settings.events.favorite_calls">
-        <location filename="../qml/pages/SettingsPage.qml" line="80"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="147"/>
         <source>Incoming calls from favourite contacts</source>
         <translation>Incoming calls from favourite contacts</translation>
     </message>
     <message id="settings.events.notifications">
-        <location filename="../qml/pages/SettingsPage.qml" line="89"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="116"/>
         <source>Active notifications</source>
         <translation>Active notifications</translation>
     </message>
+    <message id="settings.events.sms">
+        <location filename="../qml/pages/SettingsPage.qml" line="155"/>
+        <source>SMS</source>
+        <translation>SMS</translation>
+    </message>
+    <message id="settings.events.email">
+        <location filename="../qml/pages/SettingsPage.qml" line="163"/>
+        <source>Emails</source>
+        <translation>Emails</translation>
+    </message>
     <message id="settings.constraints">
-        <location filename="../qml/pages/SettingsPage.qml" line="98"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="176"/>
         <source>Constraints</source>
         <translation>Constraints</translation>
     </message>
     <message id="settings.enable_time_constraints">
-        <location filename="../qml/pages/SettingsPage.qml" line="104"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="182"/>
         <source>Disable TOH at certain times</source>
         <translation>Disable TOH at certain times</translation>
     </message>
     <message id="settings.start_time">
-        <location filename="../qml/pages/SettingsPage.qml" line="117"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="195"/>
         <source>Start TOH at</source>
         <translation>Start TOH at</translation>
     </message>
     <message id="settings.end_time">
-        <location filename="../qml/pages/SettingsPage.qml" line="134"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="212"/>
         <source>Stop TOH at</source>
         <translation>Stop TOH at</translation>
+    </message>
+    <message id="pattern_selector.title">
+        <location filename="../qml/pages/PatternSelectorPage.qml" line="21"/>
+        <source>Choose a pattern</source>
+        <translation>Choose a pattern</translation>
+    </message>
+    <message id="pattern_select.default_calls">
+        <location filename="../qml/pages/PatternSelectorPage.qml" line="53"/>
+        <source>Same as calls</source>
+        <translation>Same as calls</translation>
+    </message>
+    <message id="pattern_select.default_notifications">
+        <location filename="../qml/pages/PatternSelectorPage.qml" line="49"/>
+        <source>Same as notifications</source>
+        <translation>Same as notifications</translation>
     </message>
 </context>
 </TS>
