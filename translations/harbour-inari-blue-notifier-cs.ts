@@ -268,5 +268,16 @@
         <source>Emails</source>
         <translation>E-maily</translation>
     </message>
+    <message id="patterns.active.signal">
+        <source>Signal</source>
+        <extracomment>This is the Signal app, probably don't translate</extracomment>
+        <translation>Signal</translation>
+    </message>
+    <message id="settings.events.signal">
+        <source>Signal</source>
+        <oldsource>Signal Messenger</oldsource>
+        <extracomment>This is the Signal app, probably don't translate</extracomment>
+        <translation>Signal</translation>
+    </message>
 </context>
 </TS>
