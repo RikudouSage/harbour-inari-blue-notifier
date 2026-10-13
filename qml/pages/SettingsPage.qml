@@ -166,6 +166,15 @@ Page {
                                 appSettings.emailEnabled = checked;
                             })
                         }
+                        TextSwitch {
+                            //: This is the Signal app, probably don't translate
+                            //% "Signal"
+                            text: qsTrId("settings.events.signal")
+                            checked: appSettings.signalEnabled
+                            onCheckedChanged: trackChange(function() {
+                                appSettings.signalEnabled = checked;
+                            })
+                        }
                     }
                     content.active: true
                 }

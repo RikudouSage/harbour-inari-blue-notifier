@@ -1,6 +1,8 @@
 #ifndef APPSETTINGS_H
 #define APPSETTINGS_H
 
+#include "appsettings_macros.h"
+
 #include <functional>
 
 #include <QObject>
@@ -14,53 +16,34 @@ class AppSettings : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(QJsonArray storedPatterns READ storedPatterns WRITE setStoredPatterns NOTIFY storedPatternsChanged)
-    Q_PROPERTY(QJsonObject callPattern READ callPattern WRITE setCallPattern NOTIFY callPatternChanged)
-    Q_PROPERTY(QJsonObject favoriteCallPattern READ favoriteCallPattern WRITE setFavoriteCallPattern NOTIFY favoriteCallPatternChanged)
-    Q_PROPERTY(QJsonObject notificationsPattern READ notificationsPattern WRITE setNotificationsPattern NOTIFY notificationsPatternChanged)
-    Q_PROPERTY(QJsonObject smsPattern READ smsPattern WRITE setSmsPattern NOTIFY smsPatternChanged)
-    Q_PROPERTY(QJsonObject emailPattern READ emailPattern WRITE setEmailPattern NOTIFY emailPatternChanged)
-
-    Q_PROPERTY(bool callsEnabled READ callsEnabled WRITE setCallsEnabled NOTIFY callsEnabledChanged)
-    Q_PROPERTY(bool favoriteCallsEnabled READ favoriteCallsEnabled WRITE setFavoriteCallsEnabled NOTIFY favoriteCallsEnabledChanged)
-    Q_PROPERTY(bool notificationsEnabled READ notificationsEnabled WRITE setNotificationsEnabled NOTIFY notificationsEnabledChanged)
-    Q_PROPERTY(bool smsEnabled READ smsEnabled WRITE setSmsEnabled NOTIFY smsEnabledChanged)
-    Q_PROPERTY(bool emailEnabled READ emailEnabled WRITE setEmailEnabled NOTIFY emailEnabledChanged)
 
     Q_PROPERTY(QTime startTime READ startTime WRITE setStartTime NOTIFY startTimeChanged)
     Q_PROPERTY(QTime endTime READ endTime WRITE setEndTime NOTIFY endTimeChanged)
+
+    declarePattern(callPattern)
+    declarePattern(favoriteCallPattern)
+    declarePattern(notificationsPattern)
+    declarePattern(smsPattern)
+    declarePattern(emailPattern)
+    declarePattern(signalPattern)
+
+    declareEnabled(callsEnabled)
+    declareEnabled(favoriteCallsEnabled)
+    declareEnabled(notificationsEnabled)
+    declareEnabled(smsEnabled)
+    declareEnabled(emailEnabled)
+    declareEnabled(signalEnabled)
 
 public:
     explicit AppSettings(QObject *parent = nullptr);
     ~AppSettings();
 
     QJsonArray storedPatterns();
-    QJsonObject callPattern();
-    QJsonObject favoriteCallPattern();
-    QJsonObject notificationsPattern();
-    QJsonObject smsPattern();
-    QJsonObject emailPattern();
-
-    bool callsEnabled();
-    bool favoriteCallsEnabled();
-    bool notificationsEnabled();
-    bool smsEnabled();
-    bool emailEnabled();
 
     QTime startTime();
     QTime endTime();
 
     void setStoredPatterns(const QJsonArray &value);
-    void setCallPattern(const QJsonObject &value);
-    void setFavoriteCallPattern(const QJsonObject &value);
-    void setNotificationsPattern(const QJsonObject &value);
-    void setSmsPattern(const QJsonObject &value);
-    void setEmailPattern(const QJsonObject &value);
-
-    void setCallsEnabled(bool value);
-    void setFavoriteCallsEnabled(bool value);
-    void setNotificationsEnabled(bool value);
-    void setSmsEnabled(bool value);
-    void setEmailEnabled(bool value);
 
     void setStartTime(const QTime &value);
     void setEndTime(const QTime &value);
@@ -75,12 +58,14 @@ signals:
     void notificationsPatternChanged();
     void smsPatternChanged();
     void emailPatternChanged();
+    void signalPatternChanged();
 
     void callsEnabledChanged();
     void favoriteCallsEnabledChanged();
     void notificationsEnabledChanged();
     void smsEnabledChanged();
     void emailEnabledChanged();
+    void signalEnabledChanged();
 
     void startTimeChanged();
     void endTimeChanged();
@@ -108,5 +93,8 @@ private:
         QSettings::Format::IniFormat
     );
 };
+
+#undef declarePattern
+#undef declareEnabled
 
 #endif // APPSETTINGS_H
