@@ -114,6 +114,17 @@ Page {
                             onPatternResolved: appSettings.signalPattern = pattern
                             onDefaultSelected: appSettings.signalPattern = {}
                         }
+
+                        PatternButton {
+                            //: This is the Matrix protocol, probably don't translate
+                            //% "Matrix"
+                            label: qsTrId("patterns.active.matrix")
+                            defaultKind: 'notifications'
+                            pattern: appSettings.matrixPattern
+                            onError: errorText = error
+                            onPatternResolved: appSettings.matrixPattern = pattern
+                            onDefaultSelected: appSettings.matrixPattern = {}
+                        }
                     }
                 }
             }

@@ -16,6 +16,7 @@ constexpr auto notificationsPatternKey = "notification";
 constexpr auto smsPatternKey = "sms";
 constexpr auto emailPatternKey = "email";
 constexpr auto signalPatternKey = "signal";
+constexpr auto matrixPatternKey = "matrix";
 
 constexpr auto constraintStartTime = "startTime";
 constexpr auto constraintEndTime = "endTime";
@@ -30,6 +31,7 @@ implementPattern(notificationsPattern, false)
 implementPattern(smsPattern, true)
 implementPattern(emailPattern, true)
 implementPattern(signalPattern, true)
+implementPattern(matrixPattern, true)
 
 implementEnabled(callsEnabled, callPatternKey, true)
 implementEnabled(favoriteCallsEnabled, favoriteCallPatternKey, false)
@@ -37,6 +39,7 @@ implementEnabled(notificationsEnabled, notificationsPatternKey, false)
 implementEnabled(smsEnabled, smsPatternKey, false)
 implementEnabled(emailEnabled, emailPatternKey, false)
 implementEnabled(signalEnabled, signalPatternKey, false)
+implementEnabled(matrixEnabled, matrixPatternKey, false)
 
 #undef implementEnabled
 #undef implementPattern

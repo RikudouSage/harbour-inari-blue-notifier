@@ -115,6 +115,12 @@
         <extracomment>This is the Signal app, probably don&apos;t translate</extracomment>
         <translation>Signal</translation>
     </message>
+    <message id="patterns.active.matrix">
+        <location filename="../qml/pages/PatternsPage.qml" line="121"/>
+        <source>Matrix</source>
+        <extracomment>This is the Matrix protocol, probably don&apos;t translate</extracomment>
+        <translation>Matrix</translation>
+    </message>
     <message id="patterns.not_found">
         <location filename="../qml/components/PatternButton.qml" line="25"/>
         <source>A pattern with the name &apos;%1&apos; was not found.</source>
@@ -142,12 +148,12 @@
         <translation>Default pattern</translation>
     </message>
     <message id="patterns.stored">
-        <location filename="../qml/pages/PatternsPage.qml" line="129"/>
+        <location filename="../qml/pages/PatternsPage.qml" line="140"/>
         <source>All patterns</source>
         <translation>All patterns</translation>
     </message>
     <message id="patterns.remove">
-        <location filename="../qml/pages/PatternsPage.qml" line="193"/>
+        <location filename="../qml/pages/PatternsPage.qml" line="204"/>
         <source>Remove</source>
         <translation>Remove</translation>
     </message>
@@ -162,7 +168,7 @@
         <translation>Restart the service to apply your changes.</translation>
     </message>
     <message id="edit_pattern.title">
-        <location filename="../qml/pages/PatternsPage.qml" line="180"/>
+        <location filename="../qml/pages/PatternsPage.qml" line="191"/>
         <source>Edit pattern</source>
         <translation>Edit pattern</translation>
     </message>
@@ -316,23 +322,29 @@
         <extracomment>This is the Signal app, probably don&apos;t translate</extracomment>
         <translation>Signal</translation>
     </message>
+    <message id="settings.events.matrix">
+        <location filename="../qml/pages/SettingsPage.qml" line="181"/>
+        <source>Matrix</source>
+        <extracomment>This is the Matrix protocol, probably don&apos;t translate</extracomment>
+        <translation>Matrix</translation>
+    </message>
     <message id="settings.constraints">
-        <location filename="../qml/pages/SettingsPage.qml" line="185"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="194"/>
         <source>Constraints</source>
         <translation>Constraints</translation>
     </message>
     <message id="settings.enable_time_constraints">
-        <location filename="../qml/pages/SettingsPage.qml" line="191"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="200"/>
         <source>Disable TOH at certain times</source>
         <translation>Disable TOH at certain times</translation>
     </message>
     <message id="settings.start_time">
-        <location filename="../qml/pages/SettingsPage.qml" line="204"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="213"/>
         <source>Start TOH at</source>
         <translation>Start TOH at</translation>
     </message>
     <message id="settings.end_time">
-        <location filename="../qml/pages/SettingsPage.qml" line="221"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="230"/>
         <source>Stop TOH at</source>
         <translation>Stop TOH at</translation>
     </message>
