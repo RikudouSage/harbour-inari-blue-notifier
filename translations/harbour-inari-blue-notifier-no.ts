@@ -138,10 +138,6 @@
         <extracomment>The index of the channel</extracomment>
         <translation>Kanal #%1</translation>
     </message>
-    <message id="edit_pattern.channel_0_required">
-        <source>Note that channel 0 will always be used even if you disable, the Inari Blue does not light up any channels if the channel #0 is not also present.</source>
-        <translation>Merk at kanal 0 alltid vil bli brukt selv om du deaktiverer den. Inari Blue lyser ikke opp noen kanaler hvis kanal #0 ikke også er til stede.</translation>
-    </message>
     <message id="app.accept">
         <source>Accept</source>
         <translation>Godta</translation>
@@ -225,48 +221,69 @@
     </message>
     <message id="pattern_select.default_calls">
         <source>Same as calls</source>
-        <translation type="unfinished"/>
+        <translation>Samme som for anrop</translation>
     </message>
     <message id="pattern_select.default_notifications">
         <source>Same as notifications</source>
-        <translation type="unfinished"/>
+        <translation>Samme for varsler</translation>
     </message>
     <message id="patterns.more">
         <source>More patterns</source>
-        <translation type="unfinished"/>
+        <translation>Flere mønstre</translation>
     </message>
     <message id="patterns.active.default">
         <source>Default pattern</source>
-        <translation type="unfinished"/>
+        <translation>Standard mønster</translation>
     </message>
     <message id="patterns.active.sms">
         <source>SMS</source>
-        <translation type="unfinished"/>
+        <translation>SMS</translation>
     </message>
     <message id="patterns.active.email">
         <source>Email</source>
-        <translation type="unfinished"/>
+        <translation>E-post</translation>
     </message>
     <message id="settings.events.more">
         <source>More events</source>
-        <translation type="unfinished"/>
+        <translation>Flere hendelser</translation>
     </message>
     <message id="settings.events.more.explanation">
         <source>Toggles in this section can override the behaviour of the parent ones. For example, if you disable calls but enable favourite calls, the TOH will only blink for calls from favourite callers.</source>
-        <translation type="unfinished"/>
+        <translation>Bryterne i denne seksjonen kan overstyre valgene ovenfor. Hvis du for eksempel slår av anrop, men slår på favorittanrop, vil TOH bare blinke ved anrop fra favorittkontakter.</translation>
     </message>
     <message id="settings.events.more.explanation2">
         <source>And if you disable favourite calls but have normal calls enabled, the TOH will blink for favourite calls but it will use the pattern configured for calls, not the one configured for favourites.</source>
         <oldsource>And if you disable favourite calls but have normal calls enabled, you will still receive notifications for favourite calls but it will use the pattern configured for calls, not the one configured for favourites.</oldsource>
-        <translation type="unfinished"/>
+        <translation>Og hvis du slår av favorittanrop, men har vanlige anrop slått på, vil TOH blinke for favorittanrop, men bruke mønsteret som er konfigurert for anrop, ikke det som er lagt inn for favoritter.</translation>
     </message>
     <message id="settings.events.sms">
         <source>SMS</source>
-        <translation type="unfinished"/>
+        <translation>SMS</translation>
     </message>
     <message id="settings.events.email">
         <source>Emails</source>
-        <translation type="unfinished"/>
+        <translation>E-post</translation>
+    </message>
+    <message id="patterns.active.signal">
+        <source>Signal</source>
+        <extracomment>This is the Signal app, probably don't translate</extracomment>
+        <translation>Signal</translation>
+    </message>
+    <message id="settings.events.signal">
+        <source>Signal</source>
+        <oldsource>Signal Messenger</oldsource>
+        <extracomment>This is the Signal app, probably don't translate</extracomment>
+        <translation>Signal</translation>
+    </message>
+    <message id="patterns.active.matrix">
+        <source>Matrix</source>
+        <extracomment>This is the Matrix protocol, probably don't translate</extracomment>
+        <translation>Matrix</translation>
+    </message>
+    <message id="settings.events.matrix">
+        <source>Matrix</source>
+        <extracomment>This is the Matrix protocol, probably don't translate</extracomment>
+        <translation>Matrix</translation>
     </message>
 </context>
 </TS>
