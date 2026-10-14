@@ -9,6 +9,40 @@
 
 #include "defer.h"
 
+namespace {
+
+QString processNameFromExec(const QString &exec)
+{
+    QString command;
+    bool quoted = false;
+    bool escaped = false;
+
+    for (const QChar character : exec) {
+        if (escaped) {
+            command.append(character);
+            escaped = false;
+        } else if (character == QLatin1Char('\\')) {
+            escaped = true;
+        } else if (character == QLatin1Char('"')) {
+            quoted = !quoted;
+        } else if (character.isSpace() && !quoted) {
+            if (!command.isEmpty()) {
+                break;
+            }
+        } else {
+            command.append(character);
+        }
+    }
+
+    if (escaped) {
+        command.append(QLatin1Char('\\'));
+    }
+
+    return QFileInfo(command).fileName();
+}
+
+}
+
 AppManager::AppManager(QObject *parent) : QObject(parent)
 {
 
@@ -77,6 +111,8 @@ QList<AppManager::App> AppManager::fetchApps()
             const auto hidden = desktopFile.value("Hidden", false).toBool() || desktopFile.value("NoDisplay", false).toBool();
             const auto name = desktopFile.value("Name").toString();
             const auto icon = findIcon(desktopFile.value("Icon").toString());
+            const auto notificationOwner = desktopFile.value("X-Nemo-Owner").toString();
+            const auto processName = processNameFromExec(desktopFile.value("Exec").toString());
 
             if (hidden || name.isEmpty() || icon.isEmpty()) {
                 continue;
@@ -87,17 +123,28 @@ QList<AppManager::App> AppManager::fetchApps()
 
             desktopFile.beginGroup("X-Sailjail");
             const auto sailjailApplicationName = desktopFile.value("ApplicationName").toString();
+            const auto sandboxingDisabled = desktopFile.value("Sandboxing").toString().compare(
+                "Disabled", Qt::CaseInsensitive
+            ) == 0;
             desktopFile.endGroup();
 
-            if (sailjailApplicationName.isEmpty() && androidPackageName.isEmpty()) {
+            if (androidPackageName.isEmpty() && notificationOwner.isEmpty() && (sandboxingDisabled || sailjailApplicationName.isEmpty()) && processName.isEmpty()) {
                 continue;
             }
 
+            QString nativeNotificationOwner;
+            if (!notificationOwner.isEmpty()) {
+                nativeNotificationOwner = notificationOwner;
+            } else if (!sandboxingDisabled && !sailjailApplicationName.isEmpty()) {
+                nativeNotificationOwner = sailjailApplicationName;
+            } else {
+                nativeNotificationOwner = processName;
+            }
             App app = {
                 .name = name,
                 .iconPath = icon,
-                .packageId = !sailjailApplicationName.isEmpty() ? sailjailApplicationName : androidPackageName,
-                .type = !sailjailApplicationName.isEmpty() ? AppType::Native : AppType::Android,
+                .packageId = !androidPackageName.isEmpty() ? androidPackageName : nativeNotificationOwner,
+                .type = !androidPackageName.isEmpty() ? AppType::Android : AppType::Native,
             };
             result.append(app);
         }
