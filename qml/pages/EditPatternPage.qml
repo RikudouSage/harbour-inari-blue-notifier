@@ -153,8 +153,6 @@ Dialog {
                     //: The index of the channel
                     //% "Channel #%1"
                     text: qsTrId("edit_pattern.channel").arg(modelData)
-                    //% "Note that channel 0 will always be used even if you disable, the Inari Blue does not light up any channels if the channel #0 is not also present."
-                    description: modelData === 0 ? qsTrId("edit_pattern.channel_0_required") : ''
                     enabled: !allChannelsSwitch.checked
                     checked: pattern.channels ? pattern.channels.indexOf(modelData) > -1 : false
                     onCheckedChanged: {
