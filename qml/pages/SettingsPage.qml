@@ -175,6 +175,15 @@ Page {
                                 appSettings.signalEnabled = checked;
                             })
                         }
+                        TextSwitch {
+                            //: This is the Matrix protocol, probably don't translate
+                            //% "Matrix"
+                            text: qsTrId("settings.events.matrix")
+                            checked: appSettings.matrixEnabled
+                            onCheckedChanged: trackChange(function() {
+                                appSettings.matrixEnabled = checked;
+                            })
+                        }
                     }
                     content.active: true
                 }

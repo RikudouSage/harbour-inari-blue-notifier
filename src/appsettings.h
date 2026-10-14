@@ -26,6 +26,7 @@ class AppSettings : public QObject
     declarePattern(smsPattern)
     declarePattern(emailPattern)
     declarePattern(signalPattern)
+    declarePattern(matrixPattern)
 
     declareEnabled(callsEnabled)
     declareEnabled(favoriteCallsEnabled)
@@ -33,6 +34,7 @@ class AppSettings : public QObject
     declareEnabled(smsEnabled)
     declareEnabled(emailEnabled)
     declareEnabled(signalEnabled)
+    declareEnabled(matrixEnabled)
 
 public:
     explicit AppSettings(QObject *parent = nullptr);
@@ -59,6 +61,7 @@ signals:
     void smsPatternChanged();
     void emailPatternChanged();
     void signalPatternChanged();
+    void matrixPatternChanged();
 
     void callsEnabledChanged();
     void favoriteCallsEnabledChanged();
@@ -66,6 +69,7 @@ signals:
     void smsEnabledChanged();
     void emailEnabledChanged();
     void signalEnabledChanged();
+    void matrixEnabledChanged();
 
     void startTimeChanged();
     void endTimeChanged();
