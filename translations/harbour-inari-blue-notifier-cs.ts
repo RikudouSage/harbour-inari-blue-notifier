@@ -279,5 +279,15 @@
         <extracomment>This is the Signal app, probably don't translate</extracomment>
         <translation>Signal</translation>
     </message>
+    <message id="patterns.active.matrix">
+        <source>Matrix</source>
+        <extracomment>This is the Matrix protocol, probably don't translate</extracomment>
+        <translation>Matrix</translation>
+    </message>
+    <message id="settings.events.matrix">
+        <source>Matrix</source>
+        <extracomment>This is the Matrix protocol, probably don't translate</extracomment>
+        <translation>Matrix</translation>
+    </message>
 </context>
 </TS>
