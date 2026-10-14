@@ -138,10 +138,6 @@
         <extracomment>The index of the channel</extracomment>
         <translation>Kanál %1</translation>
     </message>
-    <message id="edit_pattern.channel_0_required">
-        <source>Note that channel 0 will always be used even if you disable, the Inari Blue does not light up any channels if the channel #0 is not also present.</source>
-        <translation>Kanál 0 bude povolen i když jej vypnete, Inari Blue nerozsvítí ani jeden kanál, pokud se nezapne i kanál 0.</translation>
-    </message>
     <message id="app.accept">
         <source>Accept</source>
         <translation>Přijmout</translation>
