@@ -285,5 +285,63 @@
         <extracomment>This is the Matrix protocol, probably don't translate</extracomment>
         <translation>Matrix</translation>
     </message>
+    <message id="filters.title">
+        <source>Notification filters</source>
+        <oldsource>Filters</oldsource>
+        <translation>Filtry notifikací</translation>
+    </message>
+    <message id="filters.add">
+        <source>Create a filter</source>
+        <translation>Vytvořit filtr</translation>
+    </message>
+    <message id="filters.none_available">
+        <source>There are no custom notification filters created yet. Use the pull down menu to create one.</source>
+        <translation>Zatím žádné vlastní filtry notifikací nemáte. Použijte stahovací menu a nějaký vytvořte.</translation>
+    </message>
+    <message id="app.loading">
+        <source>Loading...</source>
+        <translation>Načítání...</translation>
+    </message>
+    <message id="filter.android_packages">
+        <source>Android apps</source>
+        <translation>Android aplikace</translation>
+    </message>
+    <message id="select_app.title">
+        <source>Select an app</source>
+        <translation>Zvolte aplikaci</translation>
+    </message>
+    <message id="edit_filter.info">
+        <source>This filter will match if any of the apps selected below sends a notification.</source>
+        <translation>Tento filtr bude aktivní, pokud kterákoli aplikace ze seznamu níže odešle notifikaci.</translation>
+    </message>
+    <message id="edit_filter.name">
+        <source>Name</source>
+        <extracomment>A notification filter name</extracomment>
+        <translation>Název</translation>
+    </message>
+    <message id="filters.remove">
+        <source>Remove</source>
+        <translation>Odstranit</translation>
+    </message>
+    <message id="filter.native_packages">
+        <source>Native apps</source>
+        <translation>Nativní aplikace</translation>
+    </message>
+    <message id="create_filter.no_native_apps">
+        <source>No native apps currently selected.</source>
+        <translation>Žádné nativní aplikace nebyly zvoleny.</translation>
+    </message>
+    <message id="create_filter.no_android_apps">
+        <source>No Android apps currently selected.</source>
+        <translation>Žádné Android aplikace nebyly zvoleny.</translation>
+    </message>
+    <message id="app.enabled">
+        <source>Enabled</source>
+        <translation>Povoleno</translation>
+    </message>
+    <message id="settings.events.custom">
+        <source>Custom events</source>
+        <translation>Vlastní události</translation>
+    </message>
 </context>
 </TS>
