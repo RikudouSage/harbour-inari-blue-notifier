@@ -1,9 +1,11 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="en">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="en">
 <context>
-    <name/>
+    <name></name>
     <message id="app.name">
         <source>Inari Blue Notifier</source>
-        <extracomment>The app name, you may or may not translate it, it's up to you.</extracomment>
+        <extracomment>The app name, you may or may not translate it, it&apos;s up to you.</extracomment>
         <translation>Inari Blue Notifier</translation>
     </message>
     <message id="main.intro">
@@ -138,10 +140,6 @@
         <extracomment>The index of the channel</extracomment>
         <translation>Channel #%1</translation>
     </message>
-    <message id="edit_pattern.channel_0_required">
-        <source>Note that channel 0 will always be used even if you disable, the Inari Blue does not light up any channels if the channel #0 is not also present.</source>
-        <translation>Note that channel 0 will always be used even if you disable, the Inari Blue does not light up any channels if the channel #0 is not also present.</translation>
-    </message>
     <message id="app.accept">
         <source>Accept</source>
         <translation>Accept</translation>
@@ -270,13 +268,13 @@
     </message>
     <message id="patterns.active.signal">
         <source>Signal</source>
-        <extracomment>This is the Signal app, probably don't translate</extracomment>
+        <extracomment>This is the Signal app, probably don&apos;t translate</extracomment>
         <translation>Signal</translation>
     </message>
     <message id="settings.events.signal">
         <source>Signal</source>
         <oldsource>Signal Messenger</oldsource>
-        <extracomment>This is the Signal app, probably don't translate</extracomment>
+        <extracomment>This is the Signal app, probably don&apos;t translate</extracomment>
         <translation>Signal</translation>
     </message>
     <message id="patterns.active.matrix">

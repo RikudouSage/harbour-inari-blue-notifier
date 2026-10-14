@@ -239,13 +239,8 @@
         <extracomment>The index of the channel</extracomment>
         <translation>Channel #%1</translation>
     </message>
-    <message id="edit_pattern.channel_0_required">
-        <location filename="../qml/pages/EditPatternPage.qml" line="157"/>
-        <source>Note that channel 0 will always be used even if you disable, the Inari Blue does not light up any channels if the channel #0 is not also present.</source>
-        <translation>Note that channel 0 will always be used even if you disable, the Inari Blue does not light up any channels if the channel #0 is not also present.</translation>
-    </message>
     <message id="edit_pattern.preview">
-        <location filename="../qml/pages/EditPatternPage.qml" line="200"/>
+        <location filename="../qml/pages/EditPatternPage.qml" line="198"/>
         <source>Preview</source>
         <translation>Preview</translation>
     </message>
