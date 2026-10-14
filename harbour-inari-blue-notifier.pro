@@ -11,12 +11,13 @@
 
 # The name of your application
 TARGET = harbour-inari-blue-notifier
-QT += dbus
+QT += dbus concurrent
 
 CONFIG += sailfishapp
 
 SOURCES += src/harbour-inari-blue-notifier.cpp \
     src/applicationactivation.cpp \
+    src/appmanager.cpp \
     src/appsettings.cpp \
     src/daemoncontroller.cpp
 
@@ -27,11 +28,14 @@ DISTFILES += qml/harbour-inari-blue-notifier.qml \
     qml/components/StandardLabel.qml \
     qml/cover/CoverPage.qml \
     qml/js/colors.js \
+    qml/pages/EditFilterPage.qml \
     qml/pages/EditPatternPage.qml \
     qml/pages/EnableContactsPage.qml \
+    qml/pages/FiltersPage.qml \
     qml/pages/MainPage.qml \
     qml/pages/PatternSelectorPage.qml \
     qml/pages/PatternsPage.qml \
+    qml/pages/SelectAppPage.qml \
     qml/pages/SettingsPage.qml \
     rpm/InariBlueNotifier.permission \
     rpm/harbour-inari-blue-notifier.changes.in \
@@ -62,6 +66,7 @@ TRANSLATIONS += translations/harbour-inari-blue-notifier-en.ts \
 
 HEADERS += \
     src/applicationactivation.h \
+    src/appmanager.h \
     src/appsettings.h \
     src/appsettings_macros.h \
     src/daemoncontroller.h \
