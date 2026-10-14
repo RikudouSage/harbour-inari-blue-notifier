@@ -37,7 +37,7 @@
     </message>
     <message id="patterns.title">
         <location filename="../qml/pages/PatternsPage.qml" line="38"/>
-        <location filename="../qml/pages/SettingsPage.qml" line="67"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="75"/>
         <source>Patterns</source>
         <translation>Patterns</translation>
     </message>
@@ -58,7 +58,7 @@
     </message>
     <message id="settings.title">
         <location filename="../qml/pages/MainPage.qml" line="90"/>
-        <location filename="../qml/pages/SettingsPage.qml" line="81"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="89"/>
         <source>Settings</source>
         <translation>Settings</translation>
     </message>
@@ -172,10 +172,52 @@
         <source>Edit pattern</source>
         <translation>Edit pattern</translation>
     </message>
+    <message id="app.loading">
+        <location filename="../qml/pages/EditFilterPage.qml" line="63"/>
+        <source>Loading...</source>
+        <translation>Loading...</translation>
+    </message>
     <message id="app.save">
+        <location filename="../qml/pages/EditFilterPage.qml" line="79"/>
         <location filename="../qml/pages/EditPatternPage.qml" line="43"/>
         <source>Save</source>
         <translation>Save</translation>
+    </message>
+    <message id="edit_filter.info">
+        <location filename="../qml/pages/EditFilterPage.qml" line="84"/>
+        <source>This filter will match if any of the apps selected below sends a notification.</source>
+        <translation>This filter will match if any of the apps selected below sends a notification.</translation>
+    </message>
+    <message id="edit_filter.name">
+        <location filename="../qml/pages/EditFilterPage.qml" line="92"/>
+        <source>Name</source>
+        <extracomment>A notification filter name</extracomment>
+        <translation>Name</translation>
+    </message>
+    <message id="app.enabled">
+        <location filename="../qml/pages/EditFilterPage.qml" line="102"/>
+        <source>Enabled</source>
+        <translation>Enabled</translation>
+    </message>
+    <message id="filter.native_packages">
+        <location filename="../qml/pages/EditFilterPage.qml" line="109"/>
+        <source>Native apps</source>
+        <translation>Native apps</translation>
+    </message>
+    <message id="create_filter.no_native_apps">
+        <location filename="../qml/pages/EditFilterPage.qml" line="114"/>
+        <source>No native apps currently selected.</source>
+        <translation>No native apps currently selected.</translation>
+    </message>
+    <message id="filter.android_packages">
+        <location filename="../qml/pages/EditFilterPage.qml" line="177"/>
+        <source>Android apps</source>
+        <translation>Android apps</translation>
+    </message>
+    <message id="create_filter.no_android_apps">
+        <location filename="../qml/pages/EditFilterPage.qml" line="182"/>
+        <source>No Android apps currently selected.</source>
+        <translation>No Android apps currently selected.</translation>
     </message>
     <message id="edit_pattern.name">
         <location filename="../qml/pages/EditPatternPage.qml" line="49"/>
@@ -255,91 +297,118 @@
         <translation>By accepting this dialog, you will give this app access to your contacts which is needed to check whether an incoming call is from a favourite contact. Note that if this is the first time you&apos;re enabling this, a system dialog will be shown asking you to grant the permission.</translation>
     </message>
     <message id="settings.pull_down_hint">
-        <location filename="../qml/pages/SettingsPage.qml" line="90"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="98"/>
         <source>Configure the patterns using the pull down menu.</source>
         <translation>Configure the patterns using the pull down menu.</translation>
     </message>
     <message id="settings.events">
-        <location filename="../qml/pages/SettingsPage.qml" line="96"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="104"/>
         <source>Events</source>
         <translation>Events</translation>
     </message>
     <message id="settings.events.description">
-        <location filename="../qml/pages/SettingsPage.qml" line="101"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="109"/>
         <source>Configure whether the Inari Blue TOH reacts to the following events.</source>
         <translation>Configure whether the Inari Blue TOH reacts to the following events.</translation>
     </message>
     <message id="settings.events.calls">
-        <location filename="../qml/pages/SettingsPage.qml" line="107"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="115"/>
         <source>Incoming calls</source>
         <translation>Incoming calls</translation>
     </message>
     <message id="settings.events.more">
-        <location filename="../qml/pages/SettingsPage.qml" line="128"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="136"/>
         <source>More events</source>
         <translation>More events</translation>
     </message>
     <message id="settings.events.more.explanation">
-        <location filename="../qml/pages/SettingsPage.qml" line="136"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="144"/>
         <source>Toggles in this section can override the behaviour of the parent ones. For example, if you disable calls but enable favourite calls, the TOH will only blink for calls from favourite callers.</source>
         <translation>Toggles in this section can override the behaviour of the parent ones. For example, if you disable calls but enable favourite calls, the TOH will only blink for calls from favourite callers.</translation>
     </message>
     <message id="settings.events.more.explanation2">
-        <location filename="../qml/pages/SettingsPage.qml" line="141"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="149"/>
         <source>And if you disable favourite calls but have normal calls enabled, the TOH will blink for favourite calls but it will use the pattern configured for calls, not the one configured for favourites.</source>
         <oldsource>And if you disable favourite calls but have normal calls enabled, you will still receive notifications for favourite calls but it will use the pattern configured for calls, not the one configured for favourites.</oldsource>
         <translation>And if you disable favourite calls but have normal calls enabled, the TOH will blink for favourite calls but it will use the pattern configured for calls, not the one configured for favourites.</translation>
     </message>
     <message id="settings.events.favorite_calls">
-        <location filename="../qml/pages/SettingsPage.qml" line="147"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="155"/>
         <source>Incoming calls from favourite contacts</source>
         <translation>Incoming calls from favourite contacts</translation>
     </message>
     <message id="settings.events.notifications">
-        <location filename="../qml/pages/SettingsPage.qml" line="116"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="124"/>
         <source>Active notifications</source>
         <translation>Active notifications</translation>
     </message>
+    <message id="filters.add">
+        <location filename="../qml/pages/FiltersPage.qml" line="21"/>
+        <source>Create a filter</source>
+        <translation>Create a filter</translation>
+    </message>
+    <message id="filters.title">
+        <location filename="../qml/pages/FiltersPage.qml" line="39"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="67"/>
+        <source>Notification filters</source>
+        <oldsource>Filters</oldsource>
+        <translation>Notification filters</translation>
+    </message>
+    <message id="filters.none_available">
+        <location filename="../qml/pages/FiltersPage.qml" line="48"/>
+        <source>There are no custom notification filters created yet. Use the pull down menu to create one.</source>
+        <translation>There are no custom notification filters created yet. Use the pull down menu to create one.</translation>
+    </message>
+    <message id="filters.remove">
+        <location filename="../qml/pages/FiltersPage.qml" line="60"/>
+        <source>Remove</source>
+        <translation>Remove</translation>
+    </message>
     <message id="settings.events.sms">
-        <location filename="../qml/pages/SettingsPage.qml" line="155"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="163"/>
         <source>SMS</source>
         <translation>SMS</translation>
     </message>
     <message id="settings.events.email">
-        <location filename="../qml/pages/SettingsPage.qml" line="163"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="171"/>
         <source>Emails</source>
         <translation>Emails</translation>
     </message>
     <message id="settings.events.signal">
-        <location filename="../qml/pages/SettingsPage.qml" line="172"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="180"/>
         <source>Signal</source>
         <oldsource>Signal Messenger</oldsource>
         <extracomment>This is the Signal app, probably don&apos;t translate</extracomment>
         <translation>Signal</translation>
     </message>
     <message id="settings.events.matrix">
-        <location filename="../qml/pages/SettingsPage.qml" line="181"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="189"/>
         <source>Matrix</source>
         <extracomment>This is the Matrix protocol, probably don&apos;t translate</extracomment>
         <translation>Matrix</translation>
     </message>
+    <message id="settings.events.custom">
+        <location filename="../qml/pages/SettingsPage.qml" line="202"/>
+        <source>Custom events</source>
+        <translation>Custom events</translation>
+    </message>
     <message id="settings.constraints">
-        <location filename="../qml/pages/SettingsPage.qml" line="194"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="228"/>
         <source>Constraints</source>
         <translation>Constraints</translation>
     </message>
     <message id="settings.enable_time_constraints">
-        <location filename="../qml/pages/SettingsPage.qml" line="200"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="234"/>
         <source>Disable TOH at certain times</source>
         <translation>Disable TOH at certain times</translation>
     </message>
     <message id="settings.start_time">
-        <location filename="../qml/pages/SettingsPage.qml" line="213"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="247"/>
         <source>Start TOH at</source>
         <translation>Start TOH at</translation>
     </message>
     <message id="settings.end_time">
-        <location filename="../qml/pages/SettingsPage.qml" line="230"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="264"/>
         <source>Stop TOH at</source>
         <translation>Stop TOH at</translation>
     </message>
@@ -357,6 +426,11 @@
         <location filename="../qml/pages/PatternSelectorPage.qml" line="49"/>
         <source>Same as notifications</source>
         <translation>Same as notifications</translation>
+    </message>
+    <message id="select_app.title">
+        <location filename="../qml/pages/SelectAppPage.qml" line="22"/>
+        <source>Select an app</source>
+        <translation>Select an app</translation>
     </message>
 </context>
 </TS>

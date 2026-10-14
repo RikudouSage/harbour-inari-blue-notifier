@@ -16,6 +16,7 @@ class AppSettings : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(QJsonArray storedPatterns READ storedPatterns WRITE setStoredPatterns NOTIFY storedPatternsChanged)
+    Q_PROPERTY(QJsonArray notificationFilters READ notificationFilters WRITE setNotificationFilters NOTIFY notificationFiltersChanged)
 
     Q_PROPERTY(QTime startTime READ startTime WRITE setStartTime NOTIFY startTimeChanged)
     Q_PROPERTY(QTime endTime READ endTime WRITE setEndTime NOTIFY endTimeChanged)
@@ -41,20 +42,25 @@ public:
     ~AppSettings();
 
     QJsonArray storedPatterns();
+    QJsonArray notificationFilters();
 
     QTime startTime();
     QTime endTime();
 
     void setStoredPatterns(const QJsonArray &value);
+    void setNotificationFilters(const QJsonArray &value);
 
     void setStartTime(const QTime &value);
     void setEndTime(const QTime &value);
 
     Q_INVOKABLE QJsonObject patternByName(const QString &name);
     Q_INVOKABLE void updatePattern(const QJsonObject &value, const QString &oldName = "");
+    Q_INVOKABLE void updateFilter(const QJsonObject &value, const QString &oldName = "");
 
 signals:
     void storedPatternsChanged();
+    void notificationFiltersChanged();
+
     void callPatternChanged();
     void favoriteCallPatternChanged();
     void notificationsPatternChanged();

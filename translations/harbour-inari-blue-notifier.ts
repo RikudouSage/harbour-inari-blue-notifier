@@ -279,13 +279,71 @@
     </message>
     <message id="patterns.active.matrix">
         <source>Matrix</source>
-        <extracomment>This is the Matrix protocol, probably don't translate</extracomment>
+        <extracomment>This is the Matrix protocol, probably don&apos;t translate</extracomment>
         <translation>Matrix</translation>
     </message>
     <message id="settings.events.matrix">
         <source>Matrix</source>
-        <extracomment>This is the Matrix protocol, probably don't translate</extracomment>
+        <extracomment>This is the Matrix protocol, probably don&apos;t translate</extracomment>
         <translation>Matrix</translation>
+    </message>
+    <message id="filters.title">
+        <source>Notification filters</source>
+        <oldsource>Filters</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="filters.add">
+        <source>Create a filter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="filters.none_available">
+        <source>There are no custom notification filters created yet. Use the pull down menu to create one.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="app.loading">
+        <source>Loading...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="filter.android_packages">
+        <source>Android apps</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="select_app.title">
+        <source>Select an app</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="edit_filter.info">
+        <source>This filter will match if any of the apps selected below sends a notification.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="edit_filter.name">
+        <source>Name</source>
+        <extracomment>A notification filter name</extracomment>
+        <translation type="unfinished">Name</translation>
+    </message>
+    <message id="filters.remove">
+        <source>Remove</source>
+        <translation type="unfinished">Remove</translation>
+    </message>
+    <message id="filter.native_packages">
+        <source>Native apps</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="create_filter.no_native_apps">
+        <source>No native apps currently selected.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="create_filter.no_android_apps">
+        <source>No Android apps currently selected.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="app.enabled">
+        <source>Enabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="settings.events.custom">
+        <source>Custom events</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

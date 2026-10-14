@@ -1,3 +1,7 @@
+#ifdef QT_QML_DEBUG
+#include <QtQuick>
+#endif
+
 #include <QQuickView>
 #include <QScopedPointer>
 #include <QGuiApplication>
@@ -17,6 +21,7 @@
 #include "appsettings.h"
 #include "daemoncontroller.h"
 #include "applicationactivation.h"
+#include "appmanager.h"
 
 constexpr auto TRANSLATION_INSTALL_DIR = "/usr/share/harbour-inari-blue-notifier/translations";
 
@@ -117,6 +122,8 @@ int main(int argc, char *argv[])
 
     v->rootContext()->setContextProperty("appSettings", appSettings);
     v->rootContext()->setContextProperty("daemon", controller);
+
+    qmlRegisterType<AppManager>("dev.rikudou", 1, 0, "AppManager");
 
     v->setSource(SailfishApp::pathToMainQml());
     v->show();

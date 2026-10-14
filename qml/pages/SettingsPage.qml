@@ -63,6 +63,14 @@ Page {
             }
 
             MenuItem {
+                //% "Notification filters"
+                text: qsTrId("filters.title")
+                onClicked: {
+                    pageStack.push("FiltersPage.qml")
+                }
+            }
+
+            MenuItem {
                 //% "Patterns"
                 text: qsTrId("patterns.title")
                 onClicked: {
@@ -183,6 +191,32 @@ Page {
                             onCheckedChanged: trackChange(function() {
                                 appSettings.matrixEnabled = checked;
                             })
+                        }
+                    }
+                    content.active: true
+                }
+
+                ExpandingSection {
+                    visible: appSettings.notificationFilters.length > 0
+                    //% "Custom events"
+                    title: qsTrId("settings.events.custom")
+
+                    content.sourceComponent: Column {
+                        width: parent.width
+                        spacing: Theme.paddingLarge
+
+                        Repeater {
+                            model: appSettings.notificationFilters
+
+                            TextSwitch {
+                                text: modelData.name
+                                checked: modelData.enabled
+                                onCheckedChanged: trackChange(function() {
+                                    const copy = modelData;
+                                    copy.enabled = checked;
+                                    appSettings.updateFilter(copy);
+                                })
+                            }
                         }
                     }
                     content.active: true
