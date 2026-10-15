@@ -138,10 +138,6 @@
         <extracomment>The index of the channel</extracomment>
         <translation>Kanal #%1</translation>
     </message>
-    <message id="edit_pattern.channel_0_required">
-        <source>Note that channel 0 will always be used even if you disable, the Inari Blue does not light up any channels if the channel #0 is not also present.</source>
-        <translation>Observera att kanal 0 alltid kommer att användas även om du avaktiverar den, Inari Blue lyser inte upp några kanaler om kanal #0 inte också är närvarande.</translation>
-    </message>
     <message id="app.accept">
         <source>Accept</source>
         <translation>Acceptera</translation>
@@ -278,6 +274,74 @@
         <oldsource>Signal Messenger</oldsource>
         <extracomment>This is the Signal app, probably don't translate</extracomment>
         <translation>Signal</translation>
+    </message>
+    <message id="patterns.active.matrix">
+        <source>Matrix</source>
+        <extracomment>This is the Matrix protocol, probably don't translate</extracomment>
+        <translation>Matrix</translation>
+    </message>
+    <message id="settings.events.matrix">
+        <source>Matrix</source>
+        <extracomment>This is the Matrix protocol, probably don't translate</extracomment>
+        <translation>Matrix</translation>
+    </message>
+    <message id="filters.title">
+        <source>Notification filters</source>
+        <oldsource>Filters</oldsource>
+        <translation>Aviseringsfilter</translation>
+    </message>
+    <message id="filters.add">
+        <source>Create a filter</source>
+        <translation>Skapa eyy filter</translation>
+    </message>
+    <message id="filters.none_available">
+        <source>There are no custom notification filters created yet. Use the pull down menu to create one.</source>
+        <translation>Det finns inget anpassat aviseringsfilter. Dra nedåt för att skapa ett via toppmenyn.</translation>
+    </message>
+    <message id="app.loading">
+        <source>Loading...</source>
+        <translation>Läser in...</translation>
+    </message>
+    <message id="filter.android_packages">
+        <source>Android apps</source>
+        <translation>Android-appar</translation>
+    </message>
+    <message id="select_app.title">
+        <source>Select an app</source>
+        <translation>Välj en app</translation>
+    </message>
+    <message id="edit_filter.info">
+        <source>This filter will match if any of the apps selected below sends a notification.</source>
+        <translation>Detta filter kommer att tillämpas om någon av de valda apparna nedan, skickar en avisering.</translation>
+    </message>
+    <message id="edit_filter.name">
+        <source>Name</source>
+        <extracomment>A notification filter name</extracomment>
+        <translation>Namn</translation>
+    </message>
+    <message id="filters.remove">
+        <source>Remove</source>
+        <translation>Ta bort</translation>
+    </message>
+    <message id="filter.native_packages">
+        <source>Native apps</source>
+        <translation>Sailfish-appar</translation>
+    </message>
+    <message id="create_filter.no_native_apps">
+        <source>No native apps currently selected.</source>
+        <translation>Inga Sailfish-appar valda</translation>
+    </message>
+    <message id="create_filter.no_android_apps">
+        <source>No Android apps currently selected.</source>
+        <translation>Inga Android-appar valda</translation>
+    </message>
+    <message id="app.enabled">
+        <source>Enabled</source>
+        <translation>Aktiverad</translation>
+    </message>
+    <message id="settings.events.custom">
+        <source>Custom events</source>
+        <translation>Anpassade händelser</translation>
     </message>
 </context>
 </TS>
