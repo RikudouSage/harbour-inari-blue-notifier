@@ -4,6 +4,7 @@
 #include <QDebug>
 #include <QJsonDocument>
 #include <QByteArray>
+#include <QSet>
 
 constexpr auto activePatternsSection = "activePatterns";
 constexpr auto storedPatternsSection = "storedPatterns";
@@ -18,6 +19,7 @@ constexpr auto smsPatternKey = "sms";
 constexpr auto emailPatternKey = "email";
 constexpr auto signalPatternKey = "signal";
 constexpr auto matrixPatternKey = "matrix";
+constexpr auto offPatternKey = "off";
 
 constexpr auto constraintStartTime = "startTime";
 constexpr auto constraintEndTime = "endTime";
@@ -33,6 +35,7 @@ implementPattern(smsPattern, true)
 implementPattern(emailPattern, true)
 implementPattern(signalPattern, true)
 implementPattern(matrixPattern, true)
+implementPattern(offPattern, false)
 
 implementEnabled(callsEnabled, callPatternKey, true)
 implementEnabled(favoriteCallsEnabled, favoriteCallPatternKey, false)
@@ -95,6 +98,24 @@ QJsonArray AppSettings::notificationFilters()
         }
 
         result.append(document.object());
+    }
+
+    return result;
+}
+
+QJsonArray AppSettings::customPatterns()
+{
+    QJsonArray result;
+    for (const auto &item : notificationFilters()) {
+        const auto filterName = item.toObject()["name"].toString();
+        if (filterName.isEmpty()) {
+            continue;
+        }
+
+        QJsonObject customPattern;
+        customPattern["name"] = filterName;
+        customPattern["pattern"] = getPattern(filterName, true);
+        result.append(customPattern);
     }
 
     return result;
@@ -187,7 +208,68 @@ void AppSettings::setNotificationFilters(const QJsonArray &value)
         settings.sync();
     }
 
+    QSet<QString> filterNames;
+    for (const auto &item : value) {
+        filterNames.insert(item.toObject()["name"].toString());
+    }
+
+    {
+        settings.beginGroup(activePatternsSection);
+        defer({
+            settings.endGroup();
+        });
+        for (const auto &item : current) {
+            const auto name = item.toObject()["name"].toString();
+            if (!name.isEmpty() && !filterNames.contains(name)) {
+                settings.remove(name);
+            }
+        }
+        settings.sync();
+    }
+
     emit notificationFiltersChanged();
+    emit customPatternsChanged();
+}
+
+void AppSettings::setCustomPatterns(const QJsonArray &value)
+{
+    const auto current = customPatterns();
+    if (value == current) {
+        return;
+    }
+
+    QSet<QString> filterNames;
+    for (const auto &item : notificationFilters()) {
+        filterNames.insert(item.toObject()["name"].toString());
+    }
+
+    {
+        settings.beginGroup(activePatternsSection);
+        defer({
+            settings.endGroup();
+        });
+
+        for (const auto &filterName : filterNames) {
+            settings.remove(filterName);
+        }
+
+        for (const auto &item : value) {
+            const auto customPattern = item.toObject();
+            const auto filterName = customPattern["name"].toString();
+            const auto pattern = customPattern["pattern"].toObject();
+            if (!filterNames.contains(filterName) || pattern["name"].toString().isEmpty()) {
+                continue;
+            }
+
+            const auto document = QJsonDocument(pattern);
+            const auto rawJson = document.toJson(QJsonDocument::JsonFormat::Compact);
+            const auto encoded = rawJson.toBase64(QByteArray::Base64Option::Base64Encoding | QByteArray::Base64Option::OmitTrailingEquals);
+            settings.setValue(filterName, QString::fromLatin1(encoded));
+        }
+        settings.sync();
+    }
+
+    emit customPatternsChanged();
 }
 
 void AppSettings::setStartTime(const QTime &value)
@@ -278,6 +360,17 @@ void AppSettings::updatePattern(const QJsonObject &value, const QString &oldName
 
 void AppSettings::updateFilter(const QJsonObject &value, const QString &oldName)
 {
+    QJsonObject previousCustomPattern;
+    if (!oldName.isEmpty() && value["name"].toString() != oldName) {
+        for (const auto &item : customPatterns()) {
+            const auto customPattern = item.toObject();
+            if (customPattern["name"].toString() == oldName) {
+                previousCustomPattern = customPattern["pattern"].toObject();
+                break;
+            }
+        }
+    }
+
     auto filters = notificationFilters();
     if (oldName != "" && value["name"].toString() != oldName) {
         for (auto i = 0; i < filters.size(); ++i) {
@@ -309,6 +402,33 @@ void AppSettings::updateFilter(const QJsonObject &value, const QString &oldName)
     }
 
     setNotificationFilters(filters);
+
+    if (!previousCustomPattern.isEmpty()) {
+        auto patterns = customPatterns();
+        for (auto i = 0; i < patterns.size(); ++i) {
+            auto pattern = patterns[i].toObject();
+            if (pattern["name"].toString() == value["name"].toString()) {
+                pattern["pattern"] = previousCustomPattern;
+                patterns.replace(i, pattern);
+                setCustomPatterns(patterns);
+                break;
+            }
+        }
+    }
+}
+
+void AppSettings::updateCustomPattern(const QJsonObject &value)
+{
+    auto patterns = customPatterns();
+    for (auto i = 0; i < patterns.size(); ++i) {
+        if (patterns[i].toObject()["name"].toString() != value["name"].toString()) {
+            continue;
+        }
+
+        patterns.replace(i, value);
+        setCustomPatterns(patterns);
+        return;
+    }
 }
 
 QJsonObject AppSettings::getPattern(const QString &key, bool nullAllowed)
@@ -355,21 +475,20 @@ void AppSettings::setPattern(
 
         if (value.isEmpty() && nullAllowed) {
             settings.remove(key);
-            emit (this->*notify)();
-            return;
+            settings.sync();
+        } else {
+            const auto name = value["name"].toString();
+            if (name.isNull() || name.isEmpty()) {
+                return;
+            }
+
+            const auto document = QJsonDocument(value);
+            const auto rawJson = document.toJson(QJsonDocument::JsonFormat::Compact);
+            const auto encoded = rawJson.toBase64(QByteArray::Base64Option::Base64Encoding | QByteArray::Base64Option::OmitTrailingEquals);
+            settings.setValue(key, QString::fromLatin1(encoded));
+
+            settings.sync();
         }
-
-        const auto name = value["name"].toString();
-        if (name.isNull() || name.isEmpty()) {
-            return;
-        }
-
-        const auto document = QJsonDocument(value);
-        const auto rawJson = document.toJson(QJsonDocument::JsonFormat::Compact);
-        const auto encoded = rawJson.toBase64(QByteArray::Base64Option::Base64Encoding | QByteArray::Base64Option::OmitTrailingEquals);
-        settings.setValue(key, QString::fromLatin1(encoded));
-
-        settings.sync();
     }
 
     emit (this->*notify)();

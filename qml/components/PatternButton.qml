@@ -2,6 +2,7 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 ValueButton {
+    property var appOverride
     property string defaultKind
     property var pattern
 
@@ -28,12 +29,18 @@ ValueButton {
             }
 
             patternResolved(found);
-            app.serviceNeedsRestart = true;
+            appOverride.serviceNeedsRestart = true;
         });
 
         dialog.defaultSelected.connect(function() {
             defaultSelected()
-            app.serviceNeedsRestart = true;
+            appOverride.serviceNeedsRestart = true;
         });
+    }
+
+    Component.onCompleted: {
+        if (!appOverride) {
+            appOverride = app;
+        }
     }
 }
