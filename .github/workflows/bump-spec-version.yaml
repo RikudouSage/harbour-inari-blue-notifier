@@ -7,6 +7,11 @@ on:
         description: Version to set in rpm/harbour-inari-blue-notifier.spec
         required: true
         type: string
+      create_tag:
+        description: Create and push the v<version> tag after updating the spec
+        required: true
+        default: false
+        type: boolean
 
 permissions:
   contents: write
@@ -43,3 +48,13 @@ jobs:
           branch: master
           files: rpm/harbour-inari-blue-notifier.spec
           message: 'Bump spec version to ${{ inputs.version }}'
+
+      - name: Create and push version tag
+        if: inputs.create_tag
+        env:
+          VERSION: ${{ inputs.version }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git tag --annotate "v$VERSION" --message "Release v$VERSION"
+          git push origin "v$VERSION"
