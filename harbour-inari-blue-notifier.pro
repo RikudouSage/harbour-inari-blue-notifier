@@ -62,7 +62,8 @@ TRANSLATIONS += translations/harbour-inari-blue-notifier-en.ts \
                 translations/harbour-inari-blue-notifier-cs.ts \
                 translations/harbour-inari-blue-notifier-no.ts \
                 translations/harbour-inari-blue-notifier-sv.ts \
-                translations/harbour-inari-blue-notifier-fr.ts
+                translations/harbour-inari-blue-notifier-fr.ts \
+                translations/harbour-inari-blue-notifier-it.ts
 
 HEADERS += \
     src/applicationactivation.h \
