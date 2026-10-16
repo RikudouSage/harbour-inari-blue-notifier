@@ -1,9 +1,11 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="fr">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="fr">
 <context>
-    <name/>
+    <name></name>
     <message id="app.name">
         <source>Inari Blue Notifier</source>
-        <extracomment>The app name, you may or may not translate it, it's up to you.</extracomment>
+        <extracomment>The app name, you may or may not translate it, it&apos;s up to you.</extracomment>
         <translation>Notificateur Inari Blue</translation>
     </message>
     <message id="main.intro">
@@ -138,10 +140,6 @@
         <extracomment>The index of the channel</extracomment>
         <translation>Canal #%1</translation>
     </message>
-    <message id="edit_pattern.channel_0_required">
-        <source>Note that channel 0 will always be used even if you disable, the Inari Blue does not light up any channels if the channel #0 is not also present.</source>
-        <translation>Notez que le canal 0 sera toujours utilisé, même si vous le désactivez : l&apos;Inari Blue n&apos;allume aucun canal si le canal n° 0 n&apos;est pas également présent.</translation>
-    </message>
     <message id="app.accept">
         <source>Accept</source>
         <translation>Accepter</translation>
@@ -225,48 +223,133 @@
     </message>
     <message id="pattern_select.default_calls">
         <source>Same as calls</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message id="pattern_select.default_notifications">
         <source>Same as notifications</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message id="patterns.more">
         <source>More patterns</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message id="patterns.active.default">
         <source>Default pattern</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message id="patterns.active.sms">
         <source>SMS</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message id="patterns.active.email">
         <source>Email</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message id="settings.events.more">
         <source>More events</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message id="settings.events.more.explanation">
         <source>Toggles in this section can override the behaviour of the parent ones. For example, if you disable calls but enable favourite calls, the TOH will only blink for calls from favourite callers.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message id="settings.events.more.explanation2">
         <source>And if you disable favourite calls but have normal calls enabled, the TOH will blink for favourite calls but it will use the pattern configured for calls, not the one configured for favourites.</source>
         <oldsource>And if you disable favourite calls but have normal calls enabled, you will still receive notifications for favourite calls but it will use the pattern configured for calls, not the one configured for favourites.</oldsource>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message id="settings.events.sms">
         <source>SMS</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message id="settings.events.email">
         <source>Emails</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="app.loading">
+        <source>Loading...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="edit_filter.info">
+        <source>This filter will match if any of the apps selected below sends a notification.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="edit_filter.name">
+        <source>Name</source>
+        <extracomment>A notification filter name</extracomment>
+        <translation type="unfinished">Nom</translation>
+    </message>
+    <message id="app.enabled">
+        <source>Enabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="filter.native_packages">
+        <source>Native apps</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="create_filter.no_native_apps">
+        <source>No native apps currently selected.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="filter.android_packages">
+        <source>Android apps</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="create_filter.no_android_apps">
+        <source>No Android apps currently selected.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="filters.add">
+        <source>Create a filter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="filters.title">
+        <source>Notification filters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="filters.none_available">
+        <source>There are no custom notification filters created yet. Use the pull down menu to create one.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="filters.remove">
+        <source>Remove</source>
+        <translation type="unfinished">Supprimer</translation>
+    </message>
+    <message id="patterns.active.signal">
+        <source>Signal</source>
+        <extracomment>This is the Signal app, probably don&apos;t translate</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="patterns.active.matrix">
+        <source>Matrix</source>
+        <extracomment>This is the Matrix protocol, probably don&apos;t translate</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="select_app.title">
+        <source>Select an app</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="settings.events.signal">
+        <source>Signal</source>
+        <extracomment>This is the Signal app, probably don&apos;t translate</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="settings.events.matrix">
+        <source>Matrix</source>
+        <extracomment>This is the Matrix protocol, probably don&apos;t translate</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="settings.events.custom">
+        <source>Custom events</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="patterns.active.off">
+        <source>Off</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="patterns.custom">
+        <source>Custom patterns</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

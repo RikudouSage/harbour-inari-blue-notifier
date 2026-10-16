@@ -36,7 +36,7 @@
         <translation>Restart notifier</translation>
     </message>
     <message id="patterns.title">
-        <location filename="../qml/pages/PatternsPage.qml" line="38"/>
+        <location filename="../qml/pages/PatternsPage.qml" line="39"/>
         <location filename="../qml/pages/SettingsPage.qml" line="75"/>
         <source>Patterns</source>
         <translation>Patterns</translation>
@@ -74,7 +74,7 @@
         <translation>Current status: %1</translation>
     </message>
     <message id="patterns.add">
-        <location filename="../qml/pages/PatternsPage.qml" line="21"/>
+        <location filename="../qml/pages/PatternsPage.qml" line="22"/>
         <source>Add a pattern</source>
         <translation>Add a pattern</translation>
     </message>
@@ -89,71 +89,81 @@
         <translation>Enable contacts access</translation>
     </message>
     <message id="patterns.active">
-        <location filename="../qml/pages/PatternsPage.qml" line="47"/>
+        <location filename="../qml/pages/PatternsPage.qml" line="48"/>
         <source>Active patterns</source>
         <translation>Active patterns</translation>
     </message>
     <message id="patterns.active.call">
-        <location filename="../qml/pages/PatternsPage.qml" line="52"/>
+        <location filename="../qml/pages/PatternsPage.qml" line="53"/>
         <source>Incoming call</source>
         <oldsource>Active call pattern</oldsource>
         <translation>Incoming call</translation>
     </message>
+    <message id="patterns.active.off">
+        <location filename="../qml/pages/PatternsPage.qml" line="69"/>
+        <source>Off</source>
+        <translation>Off</translation>
+    </message>
     <message id="patterns.active.sms">
-        <location filename="../qml/pages/PatternsPage.qml" line="89"/>
+        <location filename="../qml/pages/PatternsPage.qml" line="98"/>
         <source>SMS</source>
         <translation>SMS</translation>
     </message>
     <message id="patterns.active.email">
-        <location filename="../qml/pages/PatternsPage.qml" line="99"/>
+        <location filename="../qml/pages/PatternsPage.qml" line="108"/>
         <source>Email</source>
         <translation>Email</translation>
     </message>
     <message id="patterns.active.signal">
-        <location filename="../qml/pages/PatternsPage.qml" line="110"/>
+        <location filename="../qml/pages/PatternsPage.qml" line="119"/>
         <source>Signal</source>
         <extracomment>This is the Signal app, probably don&apos;t translate</extracomment>
         <translation>Signal</translation>
     </message>
     <message id="patterns.active.matrix">
-        <location filename="../qml/pages/PatternsPage.qml" line="121"/>
+        <location filename="../qml/pages/PatternsPage.qml" line="130"/>
         <source>Matrix</source>
         <extracomment>This is the Matrix protocol, probably don&apos;t translate</extracomment>
         <translation>Matrix</translation>
     </message>
+    <message id="patterns.custom">
+        <location filename="../qml/pages/PatternsPage.qml" line="144"/>
+        <source>Custom patterns</source>
+        <translation>Custom patterns</translation>
+    </message>
     <message id="patterns.not_found">
-        <location filename="../qml/components/PatternButton.qml" line="25"/>
+        <location filename="../qml/components/PatternButton.qml" line="26"/>
         <source>A pattern with the name &apos;%1&apos; was not found.</source>
         <translation>A pattern with the name &apos;%1&apos; was not found.</translation>
     </message>
     <message id="patterns.more">
-        <location filename="../qml/pages/PatternsPage.qml" line="71"/>
+        <location filename="../qml/pages/PatternsPage.qml" line="80"/>
         <source>More patterns</source>
         <translation>More patterns</translation>
     </message>
     <message id="patterns.active.favourite_call">
-        <location filename="../qml/pages/PatternsPage.qml" line="79"/>
+        <location filename="../qml/pages/PatternsPage.qml" line="88"/>
         <source>Incoming call from favourites</source>
         <oldsource>Incoming call from favorites</oldsource>
         <translation>Incoming call from favourites</translation>
     </message>
     <message id="patterns.active.notifications">
-        <location filename="../qml/pages/PatternsPage.qml" line="60"/>
+        <location filename="../qml/pages/PatternsPage.qml" line="61"/>
         <source>Notifications</source>
         <translation>Notifications</translation>
     </message>
     <message id="patterns.active.default">
-        <location filename="../qml/components/PatternButton.qml" line="13"/>
+        <location filename="../qml/components/PatternButton.qml" line="14"/>
         <source>Default pattern</source>
         <translation>Default pattern</translation>
     </message>
     <message id="patterns.stored">
-        <location filename="../qml/pages/PatternsPage.qml" line="140"/>
+        <location filename="../qml/pages/PatternsPage.qml" line="174"/>
         <source>All patterns</source>
         <translation>All patterns</translation>
     </message>
     <message id="patterns.remove">
-        <location filename="../qml/pages/PatternsPage.qml" line="204"/>
+        <location filename="../qml/pages/PatternsPage.qml" line="238"/>
         <source>Remove</source>
         <translation>Remove</translation>
     </message>
@@ -168,54 +178,54 @@
         <translation>Restart the service to apply your changes.</translation>
     </message>
     <message id="edit_pattern.title">
-        <location filename="../qml/pages/PatternsPage.qml" line="191"/>
+        <location filename="../qml/pages/PatternsPage.qml" line="225"/>
         <source>Edit pattern</source>
         <translation>Edit pattern</translation>
     </message>
     <message id="app.loading">
-        <location filename="../qml/pages/EditFilterPage.qml" line="63"/>
+        <location filename="../qml/pages/EditFilterPage.qml" line="65"/>
         <source>Loading...</source>
         <translation>Loading...</translation>
     </message>
     <message id="app.save">
-        <location filename="../qml/pages/EditFilterPage.qml" line="79"/>
+        <location filename="../qml/pages/EditFilterPage.qml" line="81"/>
         <location filename="../qml/pages/EditPatternPage.qml" line="43"/>
         <source>Save</source>
         <translation>Save</translation>
     </message>
     <message id="edit_filter.info">
-        <location filename="../qml/pages/EditFilterPage.qml" line="84"/>
+        <location filename="../qml/pages/EditFilterPage.qml" line="86"/>
         <source>This filter will match if any of the apps selected below sends a notification.</source>
         <translation>This filter will match if any of the apps selected below sends a notification.</translation>
     </message>
     <message id="edit_filter.name">
-        <location filename="../qml/pages/EditFilterPage.qml" line="92"/>
+        <location filename="../qml/pages/EditFilterPage.qml" line="94"/>
         <source>Name</source>
         <extracomment>A notification filter name</extracomment>
         <translation>Name</translation>
     </message>
     <message id="app.enabled">
-        <location filename="../qml/pages/EditFilterPage.qml" line="102"/>
+        <location filename="../qml/pages/EditFilterPage.qml" line="104"/>
         <source>Enabled</source>
         <translation>Enabled</translation>
     </message>
     <message id="filter.native_packages">
-        <location filename="../qml/pages/EditFilterPage.qml" line="109"/>
+        <location filename="../qml/pages/EditFilterPage.qml" line="111"/>
         <source>Native apps</source>
         <translation>Native apps</translation>
     </message>
     <message id="create_filter.no_native_apps">
-        <location filename="../qml/pages/EditFilterPage.qml" line="114"/>
+        <location filename="../qml/pages/EditFilterPage.qml" line="116"/>
         <source>No native apps currently selected.</source>
         <translation>No native apps currently selected.</translation>
     </message>
     <message id="filter.android_packages">
-        <location filename="../qml/pages/EditFilterPage.qml" line="177"/>
+        <location filename="../qml/pages/EditFilterPage.qml" line="179"/>
         <source>Android apps</source>
         <translation>Android apps</translation>
     </message>
     <message id="create_filter.no_android_apps">
-        <location filename="../qml/pages/EditFilterPage.qml" line="182"/>
+        <location filename="../qml/pages/EditFilterPage.qml" line="184"/>
         <source>No Android apps currently selected.</source>
         <translation>No Android apps currently selected.</translation>
     </message>

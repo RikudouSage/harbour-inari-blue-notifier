@@ -17,6 +17,7 @@ class AppSettings : public QObject
     Q_OBJECT
     Q_PROPERTY(QJsonArray storedPatterns READ storedPatterns WRITE setStoredPatterns NOTIFY storedPatternsChanged)
     Q_PROPERTY(QJsonArray notificationFilters READ notificationFilters WRITE setNotificationFilters NOTIFY notificationFiltersChanged)
+    Q_PROPERTY(QJsonArray customPatterns READ customPatterns WRITE setCustomPatterns NOTIFY customPatternsChanged)
 
     Q_PROPERTY(QTime startTime READ startTime WRITE setStartTime NOTIFY startTimeChanged)
     Q_PROPERTY(QTime endTime READ endTime WRITE setEndTime NOTIFY endTimeChanged)
@@ -28,6 +29,7 @@ class AppSettings : public QObject
     declarePattern(emailPattern)
     declarePattern(signalPattern)
     declarePattern(matrixPattern)
+    declarePattern(offPattern)
 
     declareEnabled(callsEnabled)
     declareEnabled(favoriteCallsEnabled)
@@ -43,12 +45,14 @@ public:
 
     QJsonArray storedPatterns();
     QJsonArray notificationFilters();
+    QJsonArray customPatterns();
 
     QTime startTime();
     QTime endTime();
 
     void setStoredPatterns(const QJsonArray &value);
     void setNotificationFilters(const QJsonArray &value);
+    void setCustomPatterns(const QJsonArray &value);
 
     void setStartTime(const QTime &value);
     void setEndTime(const QTime &value);
@@ -56,10 +60,12 @@ public:
     Q_INVOKABLE QJsonObject patternByName(const QString &name);
     Q_INVOKABLE void updatePattern(const QJsonObject &value, const QString &oldName = "");
     Q_INVOKABLE void updateFilter(const QJsonObject &value, const QString &oldName = "");
+    Q_INVOKABLE void updateCustomPattern(const QJsonObject &value);
 
 signals:
     void storedPatternsChanged();
     void notificationFiltersChanged();
+    void customPatternsChanged();
 
     void callPatternChanged();
     void favoriteCallPatternChanged();
@@ -68,6 +74,7 @@ signals:
     void emailPatternChanged();
     void signalPatternChanged();
     void matrixPatternChanged();
+    void offPatternChanged();
 
     void callsEnabledChanged();
     void favoriteCallsEnabledChanged();

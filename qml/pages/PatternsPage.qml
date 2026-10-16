@@ -7,6 +7,7 @@ import "../components"
 Page {
     property bool anyPlaying: false
     property string errorText
+    property var globalApp: app
 
     id: page
 
@@ -61,6 +62,14 @@ Page {
                 pattern: appSettings.notificationsPattern
                 onError: errorText = error
                 onPatternResolved: appSettings.notificationsPattern = pattern
+            }
+
+            PatternButton {
+                //% "Off"
+                label: qsTrId("patterns.active.off")
+                pattern: appSettings.offPattern
+                onError: errorText = error
+                onPatternResolved: appSettings.offPattern = pattern
             }
 
             ExpandingSectionGroup {
@@ -124,6 +133,31 @@ Page {
                             onError: errorText = error
                             onPatternResolved: appSettings.matrixPattern = pattern
                             onDefaultSelected: appSettings.matrixPattern = {}
+                        }
+                    }
+                }
+            }
+
+            ExpandingSection {
+                visible: appSettings.customPatterns.length > 0
+                //% "Custom patterns"
+                title: qsTrId("patterns.custom")
+
+                content.sourceComponent: Column {
+                    width: parent.width
+                    spacing: Theme.paddingLarge
+
+                    Repeater {
+                        model: appSettings.customPatterns
+
+                        PatternButton {
+                            appOverride: page.globalApp
+                            label: modelData.name
+                            defaultKind: 'notifications'
+                            pattern: modelData.pattern
+                            onError: errorText = error
+                            onPatternResolved: appSettings.updateCustomPattern({name: modelData.name, pattern: pattern})
+                            onDefaultSelected: appSettings.updateCustomPattern({name: modelData.name, pattern: {}})
                         }
                     }
                 }
