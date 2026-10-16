@@ -343,5 +343,13 @@
         <source>Custom events</source>
         <translation>Vlastní události</translation>
     </message>
+    <message id="patterns.active.off">
+        <source>Off</source>
+        <translation>Vypnuto</translation>
+    </message>
+    <message id="patterns.custom">
+        <source>Custom patterns</source>
+        <translation>Vlastní vzory</translation>
+    </message>
 </context>
 </TS>
