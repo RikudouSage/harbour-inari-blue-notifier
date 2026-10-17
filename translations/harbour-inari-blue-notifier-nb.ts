@@ -9,7 +9,7 @@
     <message id="main.intro">
         <source>Using the pull down menu app you can configure the patterns and control the active state of the background process.</source>
         <oldsource>Using the pull down menu app you can control whether the background process blinking your Inari Blue on events like incoming calls is running or not.</oldsource>
-        <translation> Ved å bruke nedtrekksmenyen kan du konfigurere mønstrene og styre den aktive tilstanden til bakgrunnsprosessen. </translation>
+        <translation>Ved å bruke nedtrekksmenyen kan du konfigurere mønstrene og styre den aktive tilstanden til bakgrunnsprosessen. </translation>
     </message>
     <message id="main.current_status">
         <source>Current status: %1</source>
