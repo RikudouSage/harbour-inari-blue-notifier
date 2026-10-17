@@ -1,0 +1,14 @@
+{
+    "entries": [
+        {
+            "path": "system_settings/look_and_feel/inari_blue_notifier",
+            "title": "Inari Blue Notifier",
+            "type": "custom",
+            "order": 10000,
+            "icon": "file:///usr/share/inari-blue-notifier-settings/icon-settings.png",
+            "params": {
+                "source": "/usr/share/inari-blue-notifier-settings/InariBlueNotifierSettingsItem.qml"
+            }
+        }
+    ]
+}
