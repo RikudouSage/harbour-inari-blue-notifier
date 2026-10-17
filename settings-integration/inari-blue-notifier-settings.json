@@ -4,6 +4,7 @@
             "path": "system_settings/look_and_feel/inari_blue_notifier",
             "title": "Inari Blue Notifier",
             "type": "custom",
+            "order": 10000,
             "icon": "file:///usr/share/icons/hicolor/86x86/apps/harbour-inari-blue-notifier.png",
             "params": {
                 "source": "/usr/share/inari-blue-notifier-settings/InariBlueNotifierSettingsItem.qml"
