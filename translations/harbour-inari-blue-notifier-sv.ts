@@ -343,5 +343,13 @@
         <source>Custom events</source>
         <translation>Anpassade händelser</translation>
     </message>
+    <message id="patterns.active.off">
+        <source>Off</source>
+        <translation>Av</translation>
+    </message>
+    <message id="patterns.custom">
+        <source>Custom patterns</source>
+        <translation>Anpassade mönster</translation>
+    </message>
 </context>
 </TS>
