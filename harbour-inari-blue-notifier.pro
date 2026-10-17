@@ -61,6 +61,7 @@ CONFIG += sailfishapp_i18n sailfishapp_i18n_idbased
 TRANSLATIONS += translations/harbour-inari-blue-notifier-en.ts \
                 translations/harbour-inari-blue-notifier-cs.ts \
                 translations/harbour-inari-blue-notifier-no.ts \
+                translations/harbour-inari-blue-notifier-nb.ts \
                 translations/harbour-inari-blue-notifier-sv.ts \
                 translations/harbour-inari-blue-notifier-fr.ts \
                 translations/harbour-inari-blue-notifier-it.ts
