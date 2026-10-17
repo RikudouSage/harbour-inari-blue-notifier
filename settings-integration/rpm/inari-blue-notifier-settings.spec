@@ -23,6 +23,7 @@ Adds Inari Blue Notifier to Sailfish OS settings and hides its launcher icon.
 %install
 install -D -m 644 inari-blue-notifier-settings.json %{buildroot}%{_datadir}/jolla-settings/entries/inari-blue-notifier-settings.json
 install -D -m 644 InariBlueNotifierSettingsItem.qml %{buildroot}%{_datadir}/inari-blue-notifier-settings/InariBlueNotifierSettingsItem.qml
+install -D -m 644 icons/icon-settings.png %{buildroot}%{_datadir}/inari-blue-notifier-settings/icon-settings.png
 install -D -m 644 /dev/null %{buildroot}%{_datadir}/inari-blue-notifier-settings/hide-launcher
 
 %posttrans

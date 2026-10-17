@@ -31,7 +31,9 @@ SettingItem {
         anchors.verticalCenter: parent.verticalCenter
         width: Theme.iconSizeMedium
         height: width
-        source: "file:///usr/share/icons/hicolor/86x86/apps/harbour-inari-blue-notifier.png"
+        source: "file:///usr/share/inari-blue-notifier-settings/icon-settings.png"
+        sourceSize.width: width
+        sourceSize.height: height
         fillMode: Image.PreserveAspectFit
     }
 

@@ -5,7 +5,7 @@
             "title": "Inari Blue Notifier",
             "type": "custom",
             "order": 10000,
-            "icon": "file:///usr/share/icons/hicolor/86x86/apps/harbour-inari-blue-notifier.png",
+            "icon": "file:///usr/share/inari-blue-notifier-settings/icon-settings.png",
             "params": {
                 "source": "/usr/share/inari-blue-notifier-settings/InariBlueNotifierSettingsItem.qml"
             }
