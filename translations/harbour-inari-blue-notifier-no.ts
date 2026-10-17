@@ -285,5 +285,71 @@
         <extracomment>This is the Matrix protocol, probably don't translate</extracomment>
         <translation>Matrix</translation>
     </message>
+    <message id="filters.title">
+        <source>Notification filters</source>
+        <oldsource>Filters</oldsource>
+        <translation>Varslingsfiltre</translation>
+    </message>
+    <message id="filters.add">
+        <source>Create a filter</source>
+        <translation>Opprett et filter</translation>
+    </message>
+    <message id="filters.none_available">
+        <source>There are no custom notification filters created yet. Use the pull down menu to create one.</source>
+        <translation>Det er ikke opprettet noen tilpassede varslingsfiltre ennå. Bruk nedtrekksmenyen for å opprette et.</translation>
+    </message>
+    <message id="app.loading">
+        <source>Loading...</source>
+        <translation>Laster inn...</translation>
+    </message>
+    <message id="filter.android_packages">
+        <source>Android apps</source>
+        <translation>Android apps</translation>
+    </message>
+    <message id="select_app.title">
+        <source>Select an app</source>
+        <translation>Velg en app</translation>
+    </message>
+    <message id="edit_filter.info">
+        <source>This filter will match if any of the apps selected below sends a notification.</source>
+        <translation>Dette filteret vil gjelde hvis noen av appene som er valgt nedenfor, sender et varsel.</translation>
+    </message>
+    <message id="edit_filter.name">
+        <source>Name</source>
+        <extracomment>A notification filter name</extracomment>
+        <translation>Navn</translation>
+    </message>
+    <message id="filters.remove">
+        <source>Remove</source>
+        <translation>Fjern</translation>
+    </message>
+    <message id="filter.native_packages">
+        <source>Native apps</source>
+        <translation>Native apper</translation>
+    </message>
+    <message id="create_filter.no_native_apps">
+        <source>No native apps currently selected.</source>
+        <translation>Ingen native apper er valgt.</translation>
+    </message>
+    <message id="create_filter.no_android_apps">
+        <source>No Android apps currently selected.</source>
+        <translation>Ingen Android apper er valgt.</translation>
+    </message>
+    <message id="app.enabled">
+        <source>Enabled</source>
+        <translation>Aktivert</translation>
+    </message>
+    <message id="settings.events.custom">
+        <source>Custom events</source>
+        <translation>Tilpassede hendelser</translation>
+    </message>
+    <message id="patterns.active.off">
+        <source>Off</source>
+        <translation>Av</translation>
+    </message>
+    <message id="patterns.custom">
+        <source>Custom patterns</source>
+        <translation>Tilpassede mønstre</translation>
+    </message>
 </context>
 </TS>
