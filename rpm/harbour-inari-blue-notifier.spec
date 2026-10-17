@@ -8,6 +8,7 @@ URL:        https://github.com/RikudouSage/harbour-inari-blue-notifier
 Source0:    %{name}-%{version}.tar.bz2
 Requires:   sailfishsilica-qt5 >= 0.10.9
 Requires:   inari-blue-notifier-daemon >= 1.10.1
+Requires(posttrans): desktop-file-utils
 BuildRequires:  pkgconfig(sailfishapp) >= 1.0.2
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Qml)
@@ -32,6 +33,12 @@ A controller for the Inari Blue Notifier
 %qmake5_install
 
 desktop-file-install --delete-original         --dir %{buildroot}%{_datadir}/applications                %{buildroot}%{_datadir}/applications/*.desktop
+
+%posttrans
+if [ -f "%{_datadir}/inari-blue-notifier-settings/hide-launcher" ] && \
+   [ -f "%{_datadir}/applications/%{name}.desktop" ]; then
+    desktop-file-edit --set-key=NoDisplay --set-value=true "%{_datadir}/applications/%{name}.desktop"
+fi
 
 %files
 %defattr(-,root,root,-)
