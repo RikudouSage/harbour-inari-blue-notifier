@@ -3,6 +3,7 @@ import Sailfish.Silica 1.0
 
 import "../components"
 import "../js/colors.js" as Colors
+import "../js/duration.js" as Duration
 
 Dialog {
     readonly property var existingNames: appSettings.storedPatterns.map(function(pattern) {
@@ -15,14 +16,6 @@ Dialog {
     property bool lightOnOnlyMode: pattern.hold === -1
 
     id: page
-
-    function convertToMs(value) {
-        return value / 1000000;
-    }
-
-    function convertToLocale(value) {
-        return String(value).replace(".", Qt.locale().decimalPoint);
-    }
 
     function enableLightOnOnlyMode() {
         const newPattern = {
@@ -106,7 +99,7 @@ Dialog {
                 id: riseField
                 //% "Fade-in duration (ms)"
                 label: qsTrId("edit_pattern.rise")
-                text: convertToLocale(convertToMs(pattern.rise))
+                text: Duration.convertToLocale(Duration.convertToMs(pattern.rise))
                 onValidValueChanged: pattern.rise = value
                 enabled: !lightOnOnlyMode
             }
@@ -115,7 +108,7 @@ Dialog {
                 id: holdField
                 //% "On duration (ms)"
                 label: qsTrId("edit_pattern.hold")
-                text: convertToLocale(convertToMs(pattern.hold))
+                text: Duration.convertToLocale(Duration.convertToMs(pattern.hold))
                 minValue: -0.000001
                 onValidValueChanged: pattern.hold = value
                 enabled: !lightOnOnlyMode
@@ -125,7 +118,7 @@ Dialog {
                 id: decayField
                 //% "Fade-out duration (ms)"
                 label: qsTrId("edit_pattern.decay")
-                text: convertToLocale(convertToMs(pattern.decay))
+                text: Duration.convertToLocale(Duration.convertToMs(pattern.decay))
                 onValidValueChanged: pattern.decay = value
                 enabled: !lightOnOnlyMode
             }
@@ -134,7 +127,7 @@ Dialog {
                 id: offField
                 //% "Off duration (ms)"
                 label: qsTrId("edit_pattern.off")
-                text: convertToLocale(convertToMs(pattern.off))
+                text: Duration.convertToLocale(Duration.convertToMs(pattern.off))
                 onValidValueChanged: pattern.off = value
                 enabled: !lightOnOnlyMode
             }
@@ -143,7 +136,7 @@ Dialog {
                 id: delayField
                 //% "Start delay (ms)"
                 label: qsTrId("edit_pattern.delay")
-                text: convertToLocale(convertToMs(pattern.delay))
+                text: Duration.convertToLocale(Duration.convertToMs(pattern.delay))
                 onValidValueChanged: pattern.delay = value
                 enabled: !lightOnOnlyMode
             }

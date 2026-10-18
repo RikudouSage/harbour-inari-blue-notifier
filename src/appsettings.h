@@ -18,6 +18,7 @@ class AppSettings : public QObject
     Q_PROPERTY(QJsonArray storedPatterns READ storedPatterns WRITE setStoredPatterns NOTIFY storedPatternsChanged)
     Q_PROPERTY(QJsonArray notificationFilters READ notificationFilters WRITE setNotificationFilters NOTIFY notificationFiltersChanged)
     Q_PROPERTY(QJsonArray customPatterns READ customPatterns WRITE setCustomPatterns NOTIFY customPatternsChanged)
+    Q_PROPERTY(QJsonObject knock READ knock WRITE setKnock NOTIFY knockChanged)
 
     Q_PROPERTY(QTime startTime READ startTime WRITE setStartTime NOTIFY startTimeChanged)
     Q_PROPERTY(QTime endTime READ endTime WRITE setEndTime NOTIFY endTimeChanged)
@@ -46,6 +47,7 @@ public:
     QJsonArray storedPatterns();
     QJsonArray notificationFilters();
     QJsonArray customPatterns();
+    QJsonObject knock();
 
     QTime startTime();
     QTime endTime();
@@ -53,6 +55,7 @@ public:
     void setStoredPatterns(const QJsonArray &value);
     void setNotificationFilters(const QJsonArray &value);
     void setCustomPatterns(const QJsonArray &value);
+    void setKnock(const QJsonObject &value);
 
     void setStartTime(const QTime &value);
     void setEndTime(const QTime &value);
@@ -66,6 +69,7 @@ signals:
     void storedPatternsChanged();
     void notificationFiltersChanged();
     void customPatternsChanged();
+    void knockChanged();
 
     void callPatternChanged();
     void favoriteCallPatternChanged();
@@ -103,6 +107,8 @@ private:
         bool (AppSettings::*currentValue)(),
         void (AppSettings::*notify)()
     );
+    QJsonObject parsePattern(const QString &raw) const;
+    QString encodePattern(const QJsonObject &pattern) const;
 
 private:
     QSettings settings = QSettings(

@@ -63,6 +63,12 @@ Page {
             }
 
             MenuItem {
+                //% "Knock"
+                text: qsTrId("knock.title")
+                onClicked: pageStack.push("KnockPage.qml")
+            }
+
+            MenuItem {
                 //% "Notification filters"
                 text: qsTrId("filters.title")
                 onClicked: {

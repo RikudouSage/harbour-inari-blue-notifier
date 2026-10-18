@@ -28,10 +28,12 @@ DISTFILES += qml/harbour-inari-blue-notifier.qml \
     qml/components/StandardLabel.qml \
     qml/cover/CoverPage.qml \
     qml/js/colors.js \
+    qml/js/duration.js \
     qml/pages/EditFilterPage.qml \
     qml/pages/EditPatternPage.qml \
     qml/pages/EnableContactsPage.qml \
     qml/pages/FiltersPage.qml \
+    qml/pages/KnockPage.qml \
     qml/pages/MainPage.qml \
     qml/pages/PatternSelectorPage.qml \
     qml/pages/PatternsPage.qml \

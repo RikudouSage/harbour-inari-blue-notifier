@@ -37,7 +37,7 @@
     </message>
     <message id="patterns.title">
         <location filename="../qml/pages/PatternsPage.qml" line="39"/>
-        <location filename="../qml/pages/SettingsPage.qml" line="75"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="81"/>
         <source>Patterns</source>
         <translation>Patterns</translation>
     </message>
@@ -58,7 +58,7 @@
     </message>
     <message id="settings.title">
         <location filename="../qml/pages/MainPage.qml" line="90"/>
-        <location filename="../qml/pages/SettingsPage.qml" line="89"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="95"/>
         <source>Settings</source>
         <translation>Settings</translation>
     </message>
@@ -189,7 +189,7 @@
     </message>
     <message id="app.save">
         <location filename="../qml/pages/EditFilterPage.qml" line="81"/>
-        <location filename="../qml/pages/EditPatternPage.qml" line="70"/>
+        <location filename="../qml/pages/EditPatternPage.qml" line="63"/>
         <source>Save</source>
         <translation>Save</translation>
     </message>
@@ -230,80 +230,80 @@
         <translation>No Android apps currently selected.</translation>
     </message>
     <message id="edit_pattern.name">
-        <location filename="../qml/pages/EditPatternPage.qml" line="76"/>
+        <location filename="../qml/pages/EditPatternPage.qml" line="69"/>
         <source>Name</source>
         <translation>Name</translation>
     </message>
     <message id="edit_pattern.warning_name">
-        <location filename="../qml/pages/EditPatternPage.qml" line="83"/>
+        <location filename="../qml/pages/EditPatternPage.qml" line="76"/>
         <source>Warning: A pattern with that name already exists, if you save it you will overwrite the existing pattern.</source>
         <translation>Warning: A pattern with that name already exists, if you save it you will overwrite the existing pattern.</translation>
     </message>
     <message id="edit_pattern.light_only_mode">
-        <location filename="../qml/pages/EditPatternPage.qml" line="89"/>
+        <location filename="../qml/pages/EditPatternPage.qml" line="82"/>
         <source>Light only</source>
         <translation>Light only</translation>
     </message>
     <message id="edit_pattern.light_only_mode.description">
-        <location filename="../qml/pages/EditPatternPage.qml" line="91"/>
+        <location filename="../qml/pages/EditPatternPage.qml" line="84"/>
         <source>Instead of playing a pattern, the LED will stay on indefinitely.</source>
         <oldsource>Instead of playing a pattern, the LED will only light up.</oldsource>
         <translation>Instead of playing a pattern, the LED will stay on indefinitely.</translation>
     </message>
     <message id="edit_pattern.rise">
-        <location filename="../qml/pages/EditPatternPage.qml" line="108"/>
+        <location filename="../qml/pages/EditPatternPage.qml" line="101"/>
         <source>Fade-in duration (ms)</source>
         <translation>Fade-in duration (ms)</translation>
     </message>
     <message id="edit_pattern.hold">
-        <location filename="../qml/pages/EditPatternPage.qml" line="117"/>
+        <location filename="../qml/pages/EditPatternPage.qml" line="110"/>
         <source>On duration (ms)</source>
         <translation>On duration (ms)</translation>
     </message>
     <message id="edit_pattern.decay">
-        <location filename="../qml/pages/EditPatternPage.qml" line="127"/>
+        <location filename="../qml/pages/EditPatternPage.qml" line="120"/>
         <source>Fade-out duration (ms)</source>
         <translation>Fade-out duration (ms)</translation>
     </message>
     <message id="edit_pattern.off">
-        <location filename="../qml/pages/EditPatternPage.qml" line="136"/>
+        <location filename="../qml/pages/EditPatternPage.qml" line="129"/>
         <source>Off duration (ms)</source>
         <translation>Off duration (ms)</translation>
     </message>
     <message id="edit_pattern.delay">
-        <location filename="../qml/pages/EditPatternPage.qml" line="145"/>
+        <location filename="../qml/pages/EditPatternPage.qml" line="138"/>
         <source>Start delay (ms)</source>
         <translation>Start delay (ms)</translation>
     </message>
     <message id="edit_pattern.repeat">
-        <location filename="../qml/pages/EditPatternPage.qml" line="154"/>
+        <location filename="../qml/pages/EditPatternPage.qml" line="147"/>
         <source>Repeat count</source>
         <translation>Repeat count</translation>
     </message>
     <message id="edit_pattern.brightness">
-        <location filename="../qml/pages/EditPatternPage.qml" line="168"/>
+        <location filename="../qml/pages/EditPatternPage.qml" line="161"/>
         <source>Brightness</source>
         <translation>Brightness</translation>
     </message>
     <message id="edit_pattern.channels">
-        <location filename="../qml/pages/EditPatternPage.qml" line="181"/>
+        <location filename="../qml/pages/EditPatternPage.qml" line="174"/>
         <source>Channels</source>
         <extracomment>The LED channels that will be used in the pattern</extracomment>
         <translation>Channels</translation>
     </message>
     <message id="edit_pattern.all_channels">
-        <location filename="../qml/pages/EditPatternPage.qml" line="187"/>
+        <location filename="../qml/pages/EditPatternPage.qml" line="180"/>
         <source>All channels</source>
         <translation>All channels</translation>
     </message>
     <message id="edit_pattern.channel">
-        <location filename="../qml/pages/EditPatternPage.qml" line="207"/>
+        <location filename="../qml/pages/EditPatternPage.qml" line="200"/>
         <source>Channel #%1</source>
         <extracomment>The index of the channel</extracomment>
         <translation>Channel #%1</translation>
     </message>
     <message id="edit_pattern.preview">
-        <location filename="../qml/pages/EditPatternPage.qml" line="250"/>
+        <location filename="../qml/pages/EditPatternPage.qml" line="243"/>
         <source>Preview</source>
         <translation>Preview</translation>
     </message>
@@ -318,48 +318,48 @@
         <translation>By accepting this dialog, you will give this app access to your contacts which is needed to check whether an incoming call is from a favourite contact. Note that if this is the first time you&apos;re enabling this, a system dialog will be shown asking you to grant the permission.</translation>
     </message>
     <message id="settings.pull_down_hint">
-        <location filename="../qml/pages/SettingsPage.qml" line="98"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="104"/>
         <source>Configure the patterns using the pull down menu.</source>
         <translation>Configure the patterns using the pull down menu.</translation>
     </message>
     <message id="settings.events">
-        <location filename="../qml/pages/SettingsPage.qml" line="104"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="110"/>
         <source>Events</source>
         <translation>Events</translation>
     </message>
     <message id="settings.events.description">
-        <location filename="../qml/pages/SettingsPage.qml" line="109"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="115"/>
         <source>Configure whether the Inari Blue TOH reacts to the following events.</source>
         <translation>Configure whether the Inari Blue TOH reacts to the following events.</translation>
     </message>
     <message id="settings.events.calls">
-        <location filename="../qml/pages/SettingsPage.qml" line="115"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="121"/>
         <source>Incoming calls</source>
         <translation>Incoming calls</translation>
     </message>
     <message id="settings.events.more">
-        <location filename="../qml/pages/SettingsPage.qml" line="136"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="142"/>
         <source>More events</source>
         <translation>More events</translation>
     </message>
     <message id="settings.events.more.explanation">
-        <location filename="../qml/pages/SettingsPage.qml" line="144"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="150"/>
         <source>Toggles in this section can override the behaviour of the parent ones. For example, if you disable calls but enable favourite calls, the TOH will only blink for calls from favourite callers.</source>
         <translation>Toggles in this section can override the behaviour of the parent ones. For example, if you disable calls but enable favourite calls, the TOH will only blink for calls from favourite callers.</translation>
     </message>
     <message id="settings.events.more.explanation2">
-        <location filename="../qml/pages/SettingsPage.qml" line="149"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="155"/>
         <source>And if you disable favourite calls but have normal calls enabled, the TOH will blink for favourite calls but it will use the pattern configured for calls, not the one configured for favourites.</source>
         <oldsource>And if you disable favourite calls but have normal calls enabled, you will still receive notifications for favourite calls but it will use the pattern configured for calls, not the one configured for favourites.</oldsource>
         <translation>And if you disable favourite calls but have normal calls enabled, the TOH will blink for favourite calls but it will use the pattern configured for calls, not the one configured for favourites.</translation>
     </message>
     <message id="settings.events.favorite_calls">
-        <location filename="../qml/pages/SettingsPage.qml" line="155"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="161"/>
         <source>Incoming calls from favourite contacts</source>
         <translation>Incoming calls from favourite contacts</translation>
     </message>
     <message id="settings.events.notifications">
-        <location filename="../qml/pages/SettingsPage.qml" line="124"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="130"/>
         <source>Active notifications</source>
         <translation>Active notifications</translation>
     </message>
@@ -370,7 +370,7 @@
     </message>
     <message id="filters.title">
         <location filename="../qml/pages/FiltersPage.qml" line="39"/>
-        <location filename="../qml/pages/SettingsPage.qml" line="67"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="73"/>
         <source>Notification filters</source>
         <oldsource>Filters</oldsource>
         <translation>Notification filters</translation>
@@ -385,51 +385,57 @@
         <source>Remove</source>
         <translation>Remove</translation>
     </message>
+    <message id="knock.title">
+        <location filename="../qml/pages/KnockPage.qml" line="36"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="67"/>
+        <source>Knock</source>
+        <translation>Knock</translation>
+    </message>
     <message id="settings.events.sms">
-        <location filename="../qml/pages/SettingsPage.qml" line="163"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="169"/>
         <source>SMS</source>
         <translation>SMS</translation>
     </message>
     <message id="settings.events.email">
-        <location filename="../qml/pages/SettingsPage.qml" line="171"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="177"/>
         <source>Emails</source>
         <translation>Emails</translation>
     </message>
     <message id="settings.events.signal">
-        <location filename="../qml/pages/SettingsPage.qml" line="180"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="186"/>
         <source>Signal</source>
         <oldsource>Signal Messenger</oldsource>
         <extracomment>This is the Signal app, probably don&apos;t translate</extracomment>
         <translation>Signal</translation>
     </message>
     <message id="settings.events.matrix">
-        <location filename="../qml/pages/SettingsPage.qml" line="189"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="195"/>
         <source>Matrix</source>
         <extracomment>This is the Matrix protocol, probably don&apos;t translate</extracomment>
         <translation>Matrix</translation>
     </message>
     <message id="settings.events.custom">
-        <location filename="../qml/pages/SettingsPage.qml" line="202"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="208"/>
         <source>Custom events</source>
         <translation>Custom events</translation>
     </message>
     <message id="settings.constraints">
-        <location filename="../qml/pages/SettingsPage.qml" line="228"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="234"/>
         <source>Constraints</source>
         <translation>Constraints</translation>
     </message>
     <message id="settings.enable_time_constraints">
-        <location filename="../qml/pages/SettingsPage.qml" line="234"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="240"/>
         <source>Disable TOH at certain times</source>
         <translation>Disable TOH at certain times</translation>
     </message>
     <message id="settings.start_time">
-        <location filename="../qml/pages/SettingsPage.qml" line="247"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="253"/>
         <source>Start TOH at</source>
         <translation>Start TOH at</translation>
     </message>
     <message id="settings.end_time">
-        <location filename="../qml/pages/SettingsPage.qml" line="264"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="270"/>
         <source>Stop TOH at</source>
         <translation>Stop TOH at</translation>
     </message>
@@ -452,6 +458,88 @@
         <location filename="../qml/pages/SelectAppPage.qml" line="22"/>
         <source>Select an app</source>
         <translation>Select an app</translation>
+    </message>
+    <message id="knock.description">
+        <location filename="../qml/pages/KnockPage.qml" line="45"/>
+        <source>Knock makes it possible to listen on a port of your choosing over either tcp, udp or both and play a pattern whenever any connection to that port is made.</source>
+        <translation>Knock makes it possible to listen on a port of your choosing over either tcp, udp or both and play a pattern whenever any connection to that port is made.</translation>
+    </message>
+    <message id="knock.settings">
+        <location filename="../qml/pages/KnockPage.qml" line="50"/>
+        <source>Settings</source>
+        <translation>Settings</translation>
+    </message>
+    <message id="knock.enabled">
+        <location filename="../qml/pages/KnockPage.qml" line="61"/>
+        <source>Enabled</source>
+        <translation>Enabled</translation>
+    </message>
+    <message id="knock.pattern">
+        <location filename="../qml/pages/KnockPage.qml" line="69"/>
+        <source>Pattern</source>
+        <translation>Pattern</translation>
+    </message>
+    <message id="knock.timeout">
+        <location filename="../qml/pages/KnockPage.qml" line="77"/>
+        <source>Timeout (ms)</source>
+        <translation>Timeout (ms)</translation>
+    </message>
+    <message id="knock.port">
+        <location filename="../qml/pages/KnockPage.qml" line="85"/>
+        <source>Port</source>
+        <translation>Port</translation>
+    </message>
+    <message id="knock.advanced">
+        <location filename="../qml/pages/KnockPage.qml" line="104"/>
+        <source>Advanced options</source>
+        <translation>Advanced options</translation>
+    </message>
+    <message id="knock.protocols">
+        <location filename="../qml/pages/KnockPage.qml" line="112"/>
+        <source>Protocols</source>
+        <translation>Protocols</translation>
+    </message>
+    <message id="knock.protocol.udp">
+        <location filename="../qml/pages/KnockPage.qml" line="123"/>
+        <source>UDP</source>
+        <translation>UDP</translation>
+    </message>
+    <message id="knock.protocol.tcp">
+        <location filename="../qml/pages/KnockPage.qml" line="125"/>
+        <source>TCP</source>
+        <translation>TCP</translation>
+    </message>
+    <message id="knock.addresses">
+        <location filename="../qml/pages/KnockPage.qml" line="146"/>
+        <source>Bind addresses</source>
+        <translation>Bind addresses</translation>
+    </message>
+    <message id="knock.addresses.description">
+        <location filename="../qml/pages/KnockPage.qml" line="151"/>
+        <source>This configures which addresses does your phone listen on. If you don&apos;t know what this means, keep all enabled.</source>
+        <translation>This configures which addresses does your phone listen on. If you don&apos;t know what this means, keep all enabled.</translation>
+    </message>
+    <message id="knock.addresses.all">
+        <location filename="../qml/pages/KnockPage.qml" line="158"/>
+        <source>All addresses</source>
+        <translation>All addresses</translation>
+    </message>
+    <message id="knock.addresses.address">
+        <location filename="../qml/pages/KnockPage.qml" line="185"/>
+        <source>Bind address</source>
+        <translation>Bind address</translation>
+    </message>
+    <message id="knock.addresses.hint_all_addresses">
+        <location filename="../qml/pages/KnockPage.qml" line="191"/>
+        <source>%1 means all addresses (%2)</source>
+        <oldsource>%1 means all addresses</oldsource>
+        <extracomment>%1 will be substituted with either 0.0.0.0 or :: and %2 with either IPv4 or IPv6</extracomment>
+        <translation>%1 means all addresses (%2)</translation>
+    </message>
+    <message id="knock.addresses.add">
+        <location filename="../qml/pages/KnockPage.qml" line="219"/>
+        <source>Add bind address</source>
+        <translation>Add bind address</translation>
     </message>
 </context>
 </TS>
