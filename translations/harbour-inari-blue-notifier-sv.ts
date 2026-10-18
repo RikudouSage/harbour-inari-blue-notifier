@@ -1,9 +1,11 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="sv">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="sv">
 <context>
-    <name/>
+    <name></name>
     <message id="app.name">
         <source>Inari Blue Notifier</source>
-        <extracomment>The app name, you may or may not translate it, it's up to you.</extracomment>
+        <extracomment>The app name, you may or may not translate it, it&apos;s up to you.</extracomment>
         <translation>Inari Blue Notifier</translation>
     </message>
     <message id="main.intro">
@@ -266,23 +268,23 @@
     </message>
     <message id="patterns.active.signal">
         <source>Signal</source>
-        <extracomment>This is the Signal app, probably don't translate</extracomment>
+        <extracomment>This is the Signal app, probably don&apos;t translate</extracomment>
         <translation>Signal</translation>
     </message>
     <message id="settings.events.signal">
         <source>Signal</source>
         <oldsource>Signal Messenger</oldsource>
-        <extracomment>This is the Signal app, probably don't translate</extracomment>
+        <extracomment>This is the Signal app, probably don&apos;t translate</extracomment>
         <translation>Signal</translation>
     </message>
     <message id="patterns.active.matrix">
         <source>Matrix</source>
-        <extracomment>This is the Matrix protocol, probably don't translate</extracomment>
+        <extracomment>This is the Matrix protocol, probably don&apos;t translate</extracomment>
         <translation>Matrix</translation>
     </message>
     <message id="settings.events.matrix">
         <source>Matrix</source>
-        <extracomment>This is the Matrix protocol, probably don't translate</extracomment>
+        <extracomment>This is the Matrix protocol, probably don&apos;t translate</extracomment>
         <translation>Matrix</translation>
     </message>
     <message id="filters.title">
@@ -350,6 +352,15 @@
     <message id="patterns.custom">
         <source>Custom patterns</source>
         <translation>Anpassade mönster</translation>
+    </message>
+    <message id="edit_pattern.light_only_mode">
+        <source>Light only</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="edit_pattern.light_only_mode.description">
+        <source>Instead of playing a pattern, the LED will stay on indefinitely.</source>
+        <oldsource>Instead of playing a pattern, the LED will only light up.</oldsource>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
