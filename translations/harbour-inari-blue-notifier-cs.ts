@@ -360,5 +360,75 @@
         <oldsource>Instead of playing a pattern, the LED will only light up.</oldsource>
         <translation>Namísto přehrávání vzoru bude LED svítit bez přerušení.</translation>
     </message>
+    <message id="knock.description">
+        <source>Knock makes it possible to listen on a port of your choosing over either tcp, udp or both and play a pattern whenever any connection to that port is made.</source>
+        <translation>Klepání umožňuje naslouchat na portu dle vaší volby na tcp, udp nebo obojím a přehrát vzor, kdykoliv se na tento port něco připojí.</translation>
+    </message>
+    <message id="knock.settings">
+        <source>Settings</source>
+        <translation>Nastavení</translation>
+    </message>
+    <message id="knock.enabled">
+        <source>Enabled</source>
+        <translation>Povoleno</translation>
+    </message>
+    <message id="knock.title">
+        <source>Knock</source>
+        <translation>Klepání</translation>
+    </message>
+    <message id="knock.pattern">
+        <source>Pattern</source>
+        <translation>Vzor</translation>
+    </message>
+    <message id="knock.timeout">
+        <source>Timeout (ms)</source>
+        <translation>Čas vypršení (ms)</translation>
+    </message>
+    <message id="knock.port">
+        <source>Port</source>
+        <translation>Port</translation>
+    </message>
+    <message id="knock.advanced">
+        <source>Advanced options</source>
+        <translation>Pokročilé možnosti</translation>
+    </message>
+    <message id="knock.protocols">
+        <source>Protocols</source>
+        <translation>Protokoly</translation>
+    </message>
+    <message id="knock.protocol.udp">
+        <source>UDP</source>
+        <translation>UDP</translation>
+    </message>
+    <message id="knock.protocol.tcp">
+        <source>TCP</source>
+        <translation>TCP</translation>
+    </message>
+    <message id="knock.addresses">
+        <source>Bind addresses</source>
+        <translation>Adresy naslouchání</translation>
+    </message>
+    <message id="knock.addresses.description">
+        <source>This configures which addresses does your phone listen on. If you don&apos;t know what this means, keep all enabled.</source>
+        <translation>Nastavujte, na kterých adresách telefon naslouchá. Pokud nevíte, co to znamená, nechte povoleny všechny.</translation>
+    </message>
+    <message id="knock.addresses.all">
+        <source>All addresses</source>
+        <translation>Všechny adresy</translation>
+    </message>
+    <message id="knock.addresses.address">
+        <source>Bind address</source>
+        <translation>Adresa naslouchání</translation>
+    </message>
+    <message id="knock.addresses.hint_all_addresses">
+        <source>%1 means all addresses (%2)</source>
+        <oldsource>%1 means all addresses</oldsource>
+        <extracomment>%1 will be substituted with either 0.0.0.0 or :: and %2 with either IPv4 or IPv6</extracomment>
+        <translation>%1 znamená všechny adresy (%2)</translation>
+    </message>
+    <message id="knock.addresses.add">
+        <source>Add bind address</source>
+        <translation>Přidat adresu naslouchání</translation>
+    </message>
 </context>
 </TS>
