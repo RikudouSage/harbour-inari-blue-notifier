@@ -428,7 +428,7 @@
     </message>
     <message id="knock.addresses.add">
         <source>Add bind address</source>
-        <translation>Přidat adresu nasloucháníé</translation>
+        <translation>Přidat adresu naslouchání</translation>
     </message>
 </context>
 </TS>
