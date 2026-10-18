@@ -1,11 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="cs">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="cs">
 <context>
-    <name></name>
+    <name/>
     <message id="app.name">
         <source>Inari Blue Notifier</source>
-        <extracomment>The app name, you may or may not translate it, it&apos;s up to you.</extracomment>
+        <extracomment>The app name, you may or may not translate it, it's up to you.</extracomment>
         <translation>Inari Blue Notifier</translation>
     </message>
     <message id="main.intro">
@@ -268,23 +266,23 @@
     </message>
     <message id="patterns.active.signal">
         <source>Signal</source>
-        <extracomment>This is the Signal app, probably don&apos;t translate</extracomment>
+        <extracomment>This is the Signal app, probably don't translate</extracomment>
         <translation>Signal</translation>
     </message>
     <message id="settings.events.signal">
         <source>Signal</source>
         <oldsource>Signal Messenger</oldsource>
-        <extracomment>This is the Signal app, probably don&apos;t translate</extracomment>
+        <extracomment>This is the Signal app, probably don't translate</extracomment>
         <translation>Signal</translation>
     </message>
     <message id="patterns.active.matrix">
         <source>Matrix</source>
-        <extracomment>This is the Matrix protocol, probably don&apos;t translate</extracomment>
+        <extracomment>This is the Matrix protocol, probably don't translate</extracomment>
         <translation>Matrix</translation>
     </message>
     <message id="settings.events.matrix">
         <source>Matrix</source>
-        <extracomment>This is the Matrix protocol, probably don&apos;t translate</extracomment>
+        <extracomment>This is the Matrix protocol, probably don't translate</extracomment>
         <translation>Matrix</translation>
     </message>
     <message id="filters.title">
@@ -361,76 +359,6 @@
         <source>Instead of playing a pattern, the LED will stay on indefinitely.</source>
         <oldsource>Instead of playing a pattern, the LED will only light up.</oldsource>
         <translation>Namísto přehrávání vzoru bude LED svítit bez přerušení.</translation>
-    </message>
-    <message id="knock.description">
-        <source>Knock makes it possible to listen on a port of your choosing over either tcp, udp or both and play a pattern whenever any connection to that port is made.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="knock.settings">
-        <source>Settings</source>
-        <translation type="unfinished">Nastavení</translation>
-    </message>
-    <message id="knock.enabled">
-        <source>Enabled</source>
-        <translation type="unfinished">Povoleno</translation>
-    </message>
-    <message id="knock.title">
-        <source>Knock</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="knock.pattern">
-        <source>Pattern</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="knock.timeout">
-        <source>Timeout (ms)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="knock.port">
-        <source>Port</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="knock.advanced">
-        <source>Advanced options</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="knock.protocols">
-        <source>Protocols</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="knock.protocol.udp">
-        <source>UDP</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="knock.protocol.tcp">
-        <source>TCP</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="knock.addresses">
-        <source>Bind addresses</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="knock.addresses.description">
-        <source>This configures which addresses does your phone listen on. If you don&apos;t know what this means, keep all enabled.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="knock.addresses.all">
-        <source>All addresses</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="knock.addresses.address">
-        <source>Bind address</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="knock.addresses.hint_all_addresses">
-        <source>%1 means all addresses (%2)</source>
-        <oldsource>%1 means all addresses</oldsource>
-        <extracomment>%1 will be substituted with either 0.0.0.0 or :: and %2 with either IPv4 or IPv6</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="knock.addresses.add">
-        <source>Add bind address</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
