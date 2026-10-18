@@ -5,12 +5,15 @@
 #include <QJsonDocument>
 #include <QByteArray>
 #include <QSet>
+#include <QStringList>
+#include <QRegExp>
 
 constexpr auto activePatternsSection = "activePatterns";
 constexpr auto storedPatternsSection = "storedPatterns";
 constexpr auto eventsSection = "events";
 constexpr auto constraintsSection = "constraints";
 constexpr auto sectionNotificationFilters = "notificationFilters";
+constexpr auto sectionKnock = "knock";
 
 constexpr auto callPatternKey = "call";
 constexpr auto favoriteCallPatternKey = "favoriteCall";
@@ -23,6 +26,13 @@ constexpr auto offPatternKey = "off";
 
 constexpr auto constraintStartTime = "startTime";
 constexpr auto constraintEndTime = "endTime";
+
+constexpr auto knockKeyEnabled = "enabled";
+constexpr auto knockKeyPattern = "pattern";
+constexpr auto knockKeyTimeout = "timeout";
+constexpr auto knockKeyProtocol = "protocol";
+constexpr auto knockKeyPort = "port";
+constexpr auto knockKeyAddresses = "addresses";
 
 AppSettings::AppSettings(QObject *parent) : QObject(parent)
 {
@@ -117,6 +127,24 @@ QJsonArray AppSettings::customPatterns()
         customPattern["pattern"] = getPattern(filterName, true);
         result.append(customPattern);
     }
+
+    return result;
+}
+
+QJsonObject AppSettings::knock()
+{
+    QJsonObject result;
+
+    settings.beginGroup(sectionKnock);
+    defer({
+        settings.endGroup();
+    });
+    result[knockKeyEnabled] = settings.value(knockKeyEnabled).toBool();
+    result[knockKeyPattern] = parsePattern(settings.value(knockKeyPattern).toString());
+    result[knockKeyTimeout] = settings.value(knockKeyTimeout).toLongLong();
+    result[knockKeyPort] = settings.value(knockKeyPort).toInt();
+    result[knockKeyProtocol] = QJsonArray::fromStringList(settings.value(knockKeyProtocol).toStringList());
+    result[knockKeyAddresses] = QJsonArray::fromStringList(settings.value(knockKeyAddresses).toStringList().filter(QRegExp("^.+$")));
 
     return result;
 }
@@ -270,6 +298,47 @@ void AppSettings::setCustomPatterns(const QJsonArray &value)
     }
 
     emit customPatternsChanged();
+}
+
+void AppSettings::setKnock(const QJsonObject &value)
+{
+    const auto currentValue = knock();
+    if (value == currentValue) {
+        return;
+    }
+
+    {
+        settings.beginGroup(sectionKnock);
+        defer({
+            settings.endGroup();
+        });
+
+        const auto convertArrayToStringList = [&](const QJsonArray &value) -> QVariant {
+            QStringList list;
+            for (const auto &val : value) {
+                const auto str = val.toString();
+                if (str.isEmpty()) {
+                    continue;
+                }
+                list.append(str);
+            }
+
+            if (list.isEmpty()) {
+                return "";
+            }
+
+            return list;
+        };
+
+        settings.setValue(knockKeyEnabled, value[knockKeyEnabled].toBool());
+        settings.setValue(knockKeyPattern, encodePattern(value[knockKeyPattern].toObject()));
+        settings.setValue(knockKeyPort, value[knockKeyPort].toInt());
+        settings.setValue(knockKeyTimeout, static_cast<qint64>(value[knockKeyTimeout].toDouble()));
+        settings.setValue(knockKeyProtocol, convertArrayToStringList(value[knockKeyProtocol].toArray()));
+        settings.setValue(knockKeyAddresses, convertArrayToStringList(value[knockKeyAddresses].toArray()));
+    }
+
+    emit knockChanged();
 }
 
 void AppSettings::setStartTime(const QTime &value)
@@ -527,4 +596,26 @@ void AppSettings::setEventEnabled(
     }
 
     emit (this->*notify)();;
+}
+
+QJsonObject AppSettings::parsePattern(const QString &raw) const
+{
+    const auto rawJson = QByteArray::fromBase64(raw.toUtf8(), QByteArray::Base64Option::Base64Encoding);
+    QJsonParseError error;
+    const auto document = QJsonDocument::fromJson(rawJson, &error);
+    if (error.error != QJsonParseError::NoError) {
+        qWarning() << "Error parsing JSON: " << error.errorString();
+        return QJsonObject();
+    }
+
+    return document.object();
+}
+
+QString AppSettings::encodePattern(const QJsonObject &pattern) const
+{
+    const auto document = QJsonDocument(pattern);
+    const auto rawJson = document.toJson(QJsonDocument::JsonFormat::Compact);
+    const auto encoded = rawJson.toBase64(QByteArray::Base64Option::Base64Encoding | QByteArray::Base64Option::OmitTrailingEquals);
+
+    return encoded;
 }

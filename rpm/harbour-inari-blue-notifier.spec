@@ -7,7 +7,7 @@ License:    MIT
 URL:        https://github.com/RikudouSage/harbour-inari-blue-notifier
 Source0:    %{name}-%{version}.tar.bz2
 Requires:   sailfishsilica-qt5 >= 0.10.9
-Requires:   inari-blue-notifier-daemon >= 1.10.1
+Requires:   inari-blue-notifier-daemon >= 1.11.2
 Requires(posttrans): desktop-file-utils
 BuildRequires:  pkgconfig(sailfishapp) >= 1.0.2
 BuildRequires:  pkgconfig(Qt5Core)
@@ -24,7 +24,7 @@ A controller for the Inari Blue Notifier
 
 %build
 
-%qmake5 
+%qmake5
 
 %make_build
 
