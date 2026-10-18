@@ -12,10 +12,37 @@ Dialog {
     });
     property string originalName
     property var pattern: ({name: '', rise: 0, hold: 0, decay: 0, off: 0, delay: 0, repeat: 0, brightness: 255, channels: []})
+    property bool lightOnOnlyMode: pattern.hold === -1
+
     id: page
 
     function convertToMs(value) {
         return value / 1000000;
+    }
+
+    function convertToLocale(value) {
+        return String(value).replace(".", Qt.locale().decimalPoint);
+    }
+
+    function enableLightOnOnlyMode() {
+        const newPattern = {
+            name: pattern.name,
+            rise: 0,
+            hold: -1,
+            decay: 0,
+            off: 0,
+            delay: 0,
+            repeat: 0,
+            brightness: pattern.brightness,
+            channels: pattern.channels,
+        };
+        pattern = newPattern;
+    }
+
+    function disableLightOnOnlyMode() {
+        const newPattern = pattern;
+        newPattern.hold = 0;
+        pattern = newPattern;
     }
 
     canAccept: nameField.text !== ''
@@ -57,44 +84,68 @@ Dialog {
                 color: Theme.errorColor
             }
 
+            TextSwitch {
+                //% "Light only"
+                text: qsTrId("edit_pattern.light_only_mode")
+                //% "Instead of playing a pattern, the LED will stay on indefinitely."
+                description: qsTrId("edit_pattern.light_only_mode.description")
+                checked: lightOnOnlyMode
+                automaticCheck: false
+
+                onClicked: {
+                    const targetChecked = !checked;
+                    if (targetChecked) {
+                        enableLightOnOnlyMode();
+                    } else {
+                        disableLightOnOnlyMode();
+                    }
+                }
+            }
+
             DurationInput {
                 id: riseField
                 //% "Fade-in duration (ms)"
                 label: qsTrId("edit_pattern.rise")
-                text: convertToMs(pattern.rise)
+                text: convertToLocale(convertToMs(pattern.rise))
                 onValidValueChanged: pattern.rise = value
+                enabled: !lightOnOnlyMode
             }
 
             DurationInput {
                 id: holdField
                 //% "On duration (ms)"
                 label: qsTrId("edit_pattern.hold")
-                text: convertToMs(pattern.hold)
+                text: convertToLocale(convertToMs(pattern.hold))
+                minValue: -0.000001
                 onValidValueChanged: pattern.hold = value
+                enabled: !lightOnOnlyMode
             }
 
             DurationInput {
                 id: decayField
                 //% "Fade-out duration (ms)"
                 label: qsTrId("edit_pattern.decay")
-                text: convertToMs(pattern.decay)
+                text: convertToLocale(convertToMs(pattern.decay))
                 onValidValueChanged: pattern.decay = value
+                enabled: !lightOnOnlyMode
             }
 
             DurationInput {
                 id: offField
                 //% "Off duration (ms)"
                 label: qsTrId("edit_pattern.off")
-                text: convertToMs(pattern.off)
+                text: convertToLocale(convertToMs(pattern.off))
                 onValidValueChanged: pattern.off = value
+                enabled: !lightOnOnlyMode
             }
 
             DurationInput {
                 id: delayField
                 //% "Start delay (ms)"
                 label: qsTrId("edit_pattern.delay")
-                text: convertToMs(pattern.delay)
+                text: convertToLocale(convertToMs(pattern.delay))
                 onValidValueChanged: pattern.delay = value
+                enabled: !lightOnOnlyMode
             }
 
             Slider {
@@ -108,6 +159,7 @@ Dialog {
                 value: pattern.repeat
                 valueText: value === 0 ? '∞' : value + "×"
                 onValueChanged: pattern.repeat = value
+                enabled: !lightOnOnlyMode
             }
 
             Slider {

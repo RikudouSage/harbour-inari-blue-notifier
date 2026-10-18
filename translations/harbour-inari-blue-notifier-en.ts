@@ -189,7 +189,7 @@
     </message>
     <message id="app.save">
         <location filename="../qml/pages/EditFilterPage.qml" line="81"/>
-        <location filename="../qml/pages/EditPatternPage.qml" line="43"/>
+        <location filename="../qml/pages/EditPatternPage.qml" line="70"/>
         <source>Save</source>
         <translation>Save</translation>
     </message>
@@ -230,69 +230,80 @@
         <translation>No Android apps currently selected.</translation>
     </message>
     <message id="edit_pattern.name">
-        <location filename="../qml/pages/EditPatternPage.qml" line="49"/>
+        <location filename="../qml/pages/EditPatternPage.qml" line="76"/>
         <source>Name</source>
         <translation>Name</translation>
     </message>
     <message id="edit_pattern.warning_name">
-        <location filename="../qml/pages/EditPatternPage.qml" line="56"/>
+        <location filename="../qml/pages/EditPatternPage.qml" line="83"/>
         <source>Warning: A pattern with that name already exists, if you save it you will overwrite the existing pattern.</source>
         <translation>Warning: A pattern with that name already exists, if you save it you will overwrite the existing pattern.</translation>
     </message>
+    <message id="edit_pattern.light_only_mode">
+        <location filename="../qml/pages/EditPatternPage.qml" line="89"/>
+        <source>Light only</source>
+        <translation>Light only</translation>
+    </message>
+    <message id="edit_pattern.light_only_mode.description">
+        <location filename="../qml/pages/EditPatternPage.qml" line="91"/>
+        <source>Instead of playing a pattern, the LED will stay on indefinitely.</source>
+        <oldsource>Instead of playing a pattern, the LED will only light up.</oldsource>
+        <translation>Instead of playing a pattern, the LED will stay on indefinitely.</translation>
+    </message>
     <message id="edit_pattern.rise">
-        <location filename="../qml/pages/EditPatternPage.qml" line="63"/>
+        <location filename="../qml/pages/EditPatternPage.qml" line="108"/>
         <source>Fade-in duration (ms)</source>
         <translation>Fade-in duration (ms)</translation>
     </message>
     <message id="edit_pattern.hold">
-        <location filename="../qml/pages/EditPatternPage.qml" line="71"/>
+        <location filename="../qml/pages/EditPatternPage.qml" line="117"/>
         <source>On duration (ms)</source>
         <translation>On duration (ms)</translation>
     </message>
     <message id="edit_pattern.decay">
-        <location filename="../qml/pages/EditPatternPage.qml" line="79"/>
+        <location filename="../qml/pages/EditPatternPage.qml" line="127"/>
         <source>Fade-out duration (ms)</source>
         <translation>Fade-out duration (ms)</translation>
     </message>
     <message id="edit_pattern.off">
-        <location filename="../qml/pages/EditPatternPage.qml" line="87"/>
+        <location filename="../qml/pages/EditPatternPage.qml" line="136"/>
         <source>Off duration (ms)</source>
         <translation>Off duration (ms)</translation>
     </message>
     <message id="edit_pattern.delay">
-        <location filename="../qml/pages/EditPatternPage.qml" line="95"/>
+        <location filename="../qml/pages/EditPatternPage.qml" line="145"/>
         <source>Start delay (ms)</source>
         <translation>Start delay (ms)</translation>
     </message>
     <message id="edit_pattern.repeat">
-        <location filename="../qml/pages/EditPatternPage.qml" line="103"/>
+        <location filename="../qml/pages/EditPatternPage.qml" line="154"/>
         <source>Repeat count</source>
         <translation>Repeat count</translation>
     </message>
     <message id="edit_pattern.brightness">
-        <location filename="../qml/pages/EditPatternPage.qml" line="116"/>
+        <location filename="../qml/pages/EditPatternPage.qml" line="168"/>
         <source>Brightness</source>
         <translation>Brightness</translation>
     </message>
     <message id="edit_pattern.channels">
-        <location filename="../qml/pages/EditPatternPage.qml" line="129"/>
+        <location filename="../qml/pages/EditPatternPage.qml" line="181"/>
         <source>Channels</source>
         <extracomment>The LED channels that will be used in the pattern</extracomment>
         <translation>Channels</translation>
     </message>
     <message id="edit_pattern.all_channels">
-        <location filename="../qml/pages/EditPatternPage.qml" line="135"/>
+        <location filename="../qml/pages/EditPatternPage.qml" line="187"/>
         <source>All channels</source>
         <translation>All channels</translation>
     </message>
     <message id="edit_pattern.channel">
-        <location filename="../qml/pages/EditPatternPage.qml" line="155"/>
+        <location filename="../qml/pages/EditPatternPage.qml" line="207"/>
         <source>Channel #%1</source>
         <extracomment>The index of the channel</extracomment>
         <translation>Channel #%1</translation>
     </message>
     <message id="edit_pattern.preview">
-        <location filename="../qml/pages/EditPatternPage.qml" line="198"/>
+        <location filename="../qml/pages/EditPatternPage.qml" line="250"/>
         <source>Preview</source>
         <translation>Preview</translation>
     </message>
