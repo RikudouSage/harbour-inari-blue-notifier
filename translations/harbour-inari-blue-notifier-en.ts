@@ -387,6 +387,7 @@
     </message>
     <message id="knock.title">
         <location filename="../qml/pages/KnockPage.qml" line="36"/>
+        <location filename="../qml/pages/KnockPage.qml" line="86"/>
         <location filename="../qml/pages/SettingsPage.qml" line="67"/>
         <source>Knock</source>
         <translation>Knock</translation>
@@ -484,60 +485,67 @@
         <source>Timeout (ms)</source>
         <translation>Timeout (ms)</translation>
     </message>
+    <message id="knock.stop_on_unlock">
+        <location filename="../qml/pages/KnockPage.qml" line="86"/>
+        <source>Stop %1 on phone unlock</source>
+        <oldsource>Stop Knock on phone unlock</oldsource>
+        <extracomment>%1 gets replaced with the title of the feature, Knock in English</extracomment>
+        <translation>Stop %1 on phone unlock</translation>
+    </message>
     <message id="knock.port">
-        <location filename="../qml/pages/KnockPage.qml" line="85"/>
+        <location filename="../qml/pages/KnockPage.qml" line="94"/>
         <source>Port</source>
         <translation>Port</translation>
     </message>
     <message id="knock.advanced">
-        <location filename="../qml/pages/KnockPage.qml" line="104"/>
+        <location filename="../qml/pages/KnockPage.qml" line="113"/>
         <source>Advanced options</source>
         <translation>Advanced options</translation>
     </message>
     <message id="knock.protocols">
-        <location filename="../qml/pages/KnockPage.qml" line="112"/>
+        <location filename="../qml/pages/KnockPage.qml" line="121"/>
         <source>Protocols</source>
         <translation>Protocols</translation>
     </message>
     <message id="knock.protocol.udp">
-        <location filename="../qml/pages/KnockPage.qml" line="123"/>
+        <location filename="../qml/pages/KnockPage.qml" line="132"/>
         <source>UDP</source>
         <translation>UDP</translation>
     </message>
     <message id="knock.protocol.tcp">
-        <location filename="../qml/pages/KnockPage.qml" line="125"/>
+        <location filename="../qml/pages/KnockPage.qml" line="134"/>
         <source>TCP</source>
         <translation>TCP</translation>
     </message>
     <message id="knock.addresses">
-        <location filename="../qml/pages/KnockPage.qml" line="146"/>
+        <location filename="../qml/pages/KnockPage.qml" line="155"/>
         <source>Bind addresses</source>
         <translation>Bind addresses</translation>
     </message>
     <message id="knock.addresses.description">
-        <location filename="../qml/pages/KnockPage.qml" line="151"/>
+        <location filename="../qml/pages/KnockPage.qml" line="160"/>
         <source>This configures which addresses does your phone listen on. If you don&apos;t know what this means, keep all enabled.</source>
         <translation>This configures which addresses does your phone listen on. If you don&apos;t know what this means, keep all enabled.</translation>
     </message>
     <message id="knock.addresses.all">
-        <location filename="../qml/pages/KnockPage.qml" line="158"/>
+        <location filename="../qml/pages/KnockPage.qml" line="167"/>
         <source>All addresses</source>
         <translation>All addresses</translation>
     </message>
     <message id="knock.addresses.address">
-        <location filename="../qml/pages/KnockPage.qml" line="185"/>
+        <location filename="../qml/pages/KnockPage.qml" line="194"/>
         <source>Bind address</source>
         <translation>Bind address</translation>
     </message>
     <message id="knock.addresses.hint_all_addresses">
-        <location filename="../qml/pages/KnockPage.qml" line="191"/>
+        <location filename="../qml/pages/KnockPage.qml" line="200"/>
         <source>%1 means all addresses (%2)</source>
         <oldsource>%1 means all addresses</oldsource>
         <extracomment>%1 will be substituted with either 0.0.0.0 or :: and %2 with either IPv4 or IPv6</extracomment>
         <translation>%1 means all addresses (%2)</translation>
     </message>
     <message id="knock.addresses.add">
-        <location filename="../qml/pages/KnockPage.qml" line="219"/>
+        <location filename="../qml/pages/KnockPage.qml" line="228"/>
         <source>Add bind address</source>
         <translation>Add bind address</translation>
     </message>

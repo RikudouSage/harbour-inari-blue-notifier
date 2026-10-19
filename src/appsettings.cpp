@@ -33,6 +33,7 @@ constexpr auto knockKeyTimeout = "timeout";
 constexpr auto knockKeyProtocol = "protocol";
 constexpr auto knockKeyPort = "port";
 constexpr auto knockKeyAddresses = "addresses";
+constexpr auto knockKeyStopOnUnlock = "stopOnUnlock";
 
 AppSettings::AppSettings(QObject *parent) : QObject(parent)
 {
@@ -145,6 +146,7 @@ QJsonObject AppSettings::knock()
     result[knockKeyPort] = settings.value(knockKeyPort).toInt();
     result[knockKeyProtocol] = QJsonArray::fromStringList(settings.value(knockKeyProtocol).toStringList());
     result[knockKeyAddresses] = QJsonArray::fromStringList(settings.value(knockKeyAddresses).toStringList().filter(QRegExp("^.+$")));
+    result[knockKeyStopOnUnlock] = settings.value(knockKeyStopOnUnlock).toBool();
 
     return result;
 }
@@ -336,6 +338,7 @@ void AppSettings::setKnock(const QJsonObject &value)
         settings.setValue(knockKeyTimeout, static_cast<qint64>(value[knockKeyTimeout].toDouble()));
         settings.setValue(knockKeyProtocol, convertArrayToStringList(value[knockKeyProtocol].toArray()));
         settings.setValue(knockKeyAddresses, convertArrayToStringList(value[knockKeyAddresses].toArray()));
+        settings.setValue(knockKeyStopOnUnlock, value[knockKeyStopOnUnlock].toBool());
     }
 
     emit knockChanged();
