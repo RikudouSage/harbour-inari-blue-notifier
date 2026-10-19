@@ -80,6 +80,15 @@ Page {
                 onValidValueChanged: updateKnock('timeout', value)
             }
 
+            TextSwitch {
+                //: %1 gets replaced with the title of the feature, Knock in English
+                //% "Stop %1 on phone unlock"
+                text: qsTrId("knock.stop_on_unlock").arg(qsTrId("knock.title"))
+                checked: appSettings.knock.stopOnUnlock
+                automaticCheck: false
+                onClicked: updateKnock('stopOnUnlock', !checked)
+            }
+
             TextField {
                 //% "Port"
                 label: qsTrId("knock.port")
