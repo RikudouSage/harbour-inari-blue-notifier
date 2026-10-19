@@ -430,5 +430,11 @@
         <source>Add bind address</source>
         <translation>Přidat adresu naslouchání</translation>
     </message>
+    <message id="knock.stop_on_unlock">
+        <source>Stop %1 on phone unlock</source>
+        <oldsource>Stop Knock on phone unlock</oldsource>
+        <extracomment>%1 gets replaced with the title of the feature, Knock in English</extracomment>
+        <translation>Zastavit %1 po odemknutí telefonu</translation>
+    </message>
 </context>
 </TS>
