@@ -360,5 +360,81 @@
         <oldsource>Instead of playing a pattern, the LED will only light up.</oldsource>
         <translation>Istället för att visa ett mönster lyser LED-lampan konstant..</translation>
     </message>
+    <message id="knock.description">
+        <source>Knock makes it possible to listen on a port of your choosing over either tcp, udp or both and play a pattern whenever any connection to that port is made.</source>
+        <translation>Knock gör det möjligt att lyssna på en port du väljer över antingen TCP, UDP eller båda och spela upp ett mönster varje gång någon kopplar upp sig mot den porten.</translation>
+    </message>
+    <message id="knock.settings">
+        <source>Settings</source>
+        <translation>Inställningar</translation>
+    </message>
+    <message id="knock.enabled">
+        <source>Enabled</source>
+        <translation>Aktiverad</translation>
+    </message>
+    <message id="knock.title">
+        <source>Knock</source>
+        <translation>Knock</translation>
+    </message>
+    <message id="knock.pattern">
+        <source>Pattern</source>
+        <translation>Mönster</translation>
+    </message>
+    <message id="knock.timeout">
+        <source>Timeout (ms)</source>
+        <translation>Tidsgräns (ms)</translation>
+    </message>
+    <message id="knock.port">
+        <source>Port</source>
+        <translation>Port</translation>
+    </message>
+    <message id="knock.advanced">
+        <source>Advanced options</source>
+        <translation>Avancerade alternativ</translation>
+    </message>
+    <message id="knock.protocols">
+        <source>Protocols</source>
+        <translation>Protokoll</translation>
+    </message>
+    <message id="knock.protocol.udp">
+        <source>UDP</source>
+        <translation>UDP</translation>
+    </message>
+    <message id="knock.protocol.tcp">
+        <source>TCP</source>
+        <translation>TCP</translation>
+    </message>
+    <message id="knock.addresses">
+        <source>Bind addresses</source>
+        <translation>Bindningsadresser</translation>
+    </message>
+    <message id="knock.addresses.description">
+        <source>This configures which addresses does your phone listen on. If you don&apos;t know what this means, keep all enabled.</source>
+        <translation>Det här konfigurerar vilka adresser din telefon lyssnar på. Om du inte vet vad det betyder, låt allt vara påslaget.</translation>
+    </message>
+    <message id="knock.addresses.all">
+        <source>All addresses</source>
+        <translation>Alla adresser</translation>
+    </message>
+    <message id="knock.addresses.address">
+        <source>Bind address</source>
+        <translation>Bindningsadresser</translation>
+    </message>
+    <message id="knock.addresses.hint_all_addresses">
+        <source>%1 means all addresses (%2)</source>
+        <oldsource>%1 means all addresses</oldsource>
+        <extracomment>%1 will be substituted with either 0.0.0.0 or :: and %2 with either IPv4 or IPv6</extracomment>
+        <translation>%1 betyder alla adresser (%2)</translation>
+    </message>
+    <message id="knock.addresses.add">
+        <source>Add bind address</source>
+        <translation>Lägg till bindningsadress</translation>
+    </message>
+    <message id="knock.stop_on_unlock">
+        <source>Stop %1 on phone unlock</source>
+        <oldsource>Stop Knock on phone unlock</oldsource>
+        <extracomment>%1 gets replaced with the title of the feature, Knock in English</extracomment>
+        <translation>Stoppa %1 när telefonen låses upp</translation>
+    </message>
 </context>
 </TS>
