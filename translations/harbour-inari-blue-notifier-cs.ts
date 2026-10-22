@@ -1,11 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="cs">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="cs">
 <context>
-    <name></name>
+    <name/>
     <message id="app.name">
         <source>Inari Blue Notifier</source>
-        <extracomment>The app name, you may or may not translate it, it&apos;s up to you.</extracomment>
+        <extracomment>The app name, you may or may not translate it, it's up to you.</extracomment>
         <translation>Inari Blue Notifier</translation>
     </message>
     <message id="main.intro">
@@ -268,23 +266,23 @@
     </message>
     <message id="patterns.active.signal">
         <source>Signal</source>
-        <extracomment>This is the Signal app, probably don&apos;t translate</extracomment>
+        <extracomment>This is the Signal app, probably don't translate</extracomment>
         <translation>Signal</translation>
     </message>
     <message id="settings.events.signal">
         <source>Signal</source>
         <oldsource>Signal Messenger</oldsource>
-        <extracomment>This is the Signal app, probably don&apos;t translate</extracomment>
+        <extracomment>This is the Signal app, probably don't translate</extracomment>
         <translation>Signal</translation>
     </message>
     <message id="patterns.active.matrix">
         <source>Matrix</source>
-        <extracomment>This is the Matrix protocol, probably don&apos;t translate</extracomment>
+        <extracomment>This is the Matrix protocol, probably don't translate</extracomment>
         <translation>Matrix</translation>
     </message>
     <message id="settings.events.matrix">
         <source>Matrix</source>
-        <extracomment>This is the Matrix protocol, probably don&apos;t translate</extracomment>
+        <extracomment>This is the Matrix protocol, probably don't translate</extracomment>
         <translation>Matrix</translation>
     </message>
     <message id="filters.title">
@@ -440,7 +438,7 @@
     </message>
     <message id="settings.stop_on_privacy_switch">
         <source>Stop when privacy switch is enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Vypnout, je-li zapnut Privacy Switch</translation>
     </message>
 </context>
 </TS>
