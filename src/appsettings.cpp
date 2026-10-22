@@ -26,6 +26,7 @@ constexpr auto offPatternKey = "off";
 
 constexpr auto constraintStartTime = "startTime";
 constexpr auto constraintEndTime = "endTime";
+constexpr auto constraintNamePrivacySwitch = "privacySwitch";
 
 constexpr auto knockKeyEnabled = "enabled";
 constexpr auto knockKeyPattern = "pattern";
@@ -175,6 +176,16 @@ QTime AppSettings::endTime()
     const auto value = settings.value(constraintEndTime, "00:00:00").toString();
 
     return QTime::fromString(value, "hh:mm:ss");
+}
+
+bool AppSettings::stopOnPrivacySwitch()
+{
+    settings.beginGroup(constraintsSection);
+    defer({
+        settings.endGroup();
+    });
+
+    return settings.value(constraintNamePrivacySwitch, false).toBool();
 }
 
 void AppSettings::setStoredPatterns(const QJsonArray &value)
@@ -382,6 +393,26 @@ void AppSettings::setEndTime(const QTime &value)
     }
 
     emit endTimeChanged();
+}
+
+void AppSettings::setStopOnPrivacySwitch(bool value)
+{
+    const auto current = stopOnPrivacySwitch();
+    if (value == current) {
+        return;
+    }
+
+    {
+        settings.beginGroup(constraintsSection);
+        defer({
+            settings.endGroup();
+        });
+
+        settings.setValue(constraintNamePrivacySwitch, value);
+        settings.sync();
+    }
+
+    emit stopOnPrivacySwitchChanged();
 }
 
 QJsonObject AppSettings::patternByName(const QString &name)

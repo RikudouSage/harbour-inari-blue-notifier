@@ -22,6 +22,7 @@ class AppSettings : public QObject
 
     Q_PROPERTY(QTime startTime READ startTime WRITE setStartTime NOTIFY startTimeChanged)
     Q_PROPERTY(QTime endTime READ endTime WRITE setEndTime NOTIFY endTimeChanged)
+    Q_PROPERTY(bool stopOnPrivacySwitch READ stopOnPrivacySwitch WRITE setStopOnPrivacySwitch NOTIFY stopOnPrivacySwitchChanged)
 
     declarePattern(callPattern)
     declarePattern(favoriteCallPattern)
@@ -51,6 +52,7 @@ public:
 
     QTime startTime();
     QTime endTime();
+    bool stopOnPrivacySwitch();
 
     void setStoredPatterns(const QJsonArray &value);
     void setNotificationFilters(const QJsonArray &value);
@@ -59,6 +61,7 @@ public:
 
     void setStartTime(const QTime &value);
     void setEndTime(const QTime &value);
+    void setStopOnPrivacySwitch(bool value);
 
     Q_INVOKABLE QJsonObject patternByName(const QString &name);
     Q_INVOKABLE void updatePattern(const QJsonObject &value, const QString &oldName = "");
@@ -90,6 +93,7 @@ signals:
 
     void startTimeChanged();
     void endTimeChanged();
+    void stopOnPrivacySwitchChanged();
 
 private:
     QJsonObject getPattern(const QString &key, bool nullAllowed);
