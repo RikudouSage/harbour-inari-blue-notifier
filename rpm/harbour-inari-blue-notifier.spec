@@ -1,7 +1,7 @@
 Name:       harbour-inari-blue-notifier
 
 Summary:    Inari Blue Notifier
-Version:    1.11.2
+Version:    1.12.0
 Release:    1
 License:    MIT
 URL:        https://github.com/RikudouSage/harbour-inari-blue-notifier
