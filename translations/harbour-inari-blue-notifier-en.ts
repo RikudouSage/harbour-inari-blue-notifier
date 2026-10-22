@@ -440,6 +440,11 @@
         <source>Stop TOH at</source>
         <translation>Stop TOH at</translation>
     </message>
+    <message id="settings.stop_on_privacy_switch">
+        <location filename="../qml/pages/SettingsPage.qml" line="287"/>
+        <source>Stop when privacy switch is enabled</source>
+        <translation>Stop when privacy switch is enabled</translation>
+    </message>
     <message id="pattern_selector.title">
         <location filename="../qml/pages/PatternSelectorPage.qml" line="21"/>
         <source>Choose a pattern</source>

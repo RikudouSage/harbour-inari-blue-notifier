@@ -281,6 +281,18 @@ Page {
                     });
                 }
             }
+
+            TextSwitch {
+                //% "Stop when privacy switch is enabled"
+                text: qsTrId("settings.stop_on_privacy_switch")
+                checked: appSettings.stopOnPrivacySwitch
+                automaticCheck: false
+
+                onClicked: {
+                    appSettings.stopOnPrivacySwitch = !checked;
+                    app.serviceNeedsRestart = true;
+                }
+            }
         }
     }
 
